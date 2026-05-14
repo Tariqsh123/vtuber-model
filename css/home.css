@@ -1935,7 +1935,7 @@ section.cta-banner {
     background: #21212d;
 }
 section.cta-banner p,section.cta-banner a span ,section.cta-banner .live-chat .chat-text span{
-    color: white;
+    color: #ccc;
 }
 section.cta-banner .h2{
     color: #adf71a;
@@ -2071,7 +2071,7 @@ header .navbar .nav-item button.btn-white-shade {
 header .navbar .nav-item .nav-link {
     color: #333 !important;
     font-family: Zilla Slab;
-    font-size: 20px !important;
+    font-size: large !important;
     font-weight: 700;
     height: 30px;
     margin: 0 2px 0 0;
@@ -2105,13 +2105,14 @@ header .navbar.fixed-top {
 
 .home-banner .banner-image {
     color: #fff;
-    min-height: 700px;
-    padding: 100px 0
+    /* min-height: 700px; */
+    height: fit-content;
+    padding: 40px 0
 }
 
 .home-banner .banner-image img.slider-img {
-    height: 700px;
     left: 0;
+    height: 900px;
     margin: auto;
     position: absolute;
     right: 0;
@@ -2144,16 +2145,23 @@ header .navbar.fixed-top {
 
 .home-banner .banner-image .tag {
     display: block;
-    margin: 20px 0
+    margin: 50px 0 20px;
+    color: #ccc;
 }
-
+.home-banner .banner-image a{
+    margin: 10px auto ;
+}
 .home-banner .banner-image ul {
     padding-top: 20px
 }
 
 .home-banner .banner-image ul li {
     font-size: 14px;
+    color: #ccc;
     margin-bottom: 10px
+}
+.home-banner .banner-image p{
+    color: #ccc;
 }
 
 .home-banner .banner-image a {
@@ -2333,7 +2341,7 @@ section.why-choose {
     background:#21212d;
 }
 section.why-choose p,section.why-choose .email-phone{
-    color: white !important;
+    color: #ccc !important;
 }
 section.why-choose h2{
     color: #adf71a;
@@ -2442,7 +2450,7 @@ section.faq-form .accordion .accordion-item .accordion-header button:not(.collap
 
 section.faq-form .accordion .accordion-item .accordion-body {
     padding: 0 0 20px;
-    color: white;
+    color: #ccc;
 }
 
 section.faq-form form {
@@ -2681,7 +2689,7 @@ footer .footer-copyrights img {
 
     .home-banner .banner-image {
         height: auto;
-        padding: 70px 0
+        padding: 70px 10px
     }
 
     .home-banner .banner-image img.slider-img {
@@ -2920,7 +2928,7 @@ footer .footer-copyrights img {
     background: #21212d;
 }
 .portfolio p{
-    color: white;
+    color: #ccc;
 }
 .portfolio h2{
     color: #adf71a;
@@ -2932,12 +2940,415 @@ section.portfolio .hr-line{
     height: 500px;
     width: 350px;
 }
-.process-img{
-    height: 500px;
+.process-img {
+    height: 480px;
     width: 350px;
+    margin-top: 37px;
 }
 @media(max-width:600px){
     #process-video{
         width: 100%;
     }
 }
+
+
+
+.services .container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.services-heading{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.services-heading h2{
+  font-size:42px;
+  color:#111;
+  margin-bottom:15px;
+  font-weight:700;
+}
+
+.services-heading p{
+  font-size:17px;
+  color:#666;
+  max-width:700px;
+  margin:auto;
+  line-height:1.7;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.service-box{
+  background:#adf71a;
+  padding:35px 30px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  transition:0.4s ease;
+  border:1px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.service-box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.service-image{
+  width:80px;
+  height:80px;
+  margin-bottom:25px;
+}
+
+.service-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.service-box h3{
+  font-size:24px;
+  color:#111;
+  margin-bottom:15px;
+  font-weight:700;
+}
+
+.service-box p{
+  font-size:16px;
+  line-height:1.7;
+}
+
+@media(max-width:991px){
+
+  .services-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:767px){
+
+
+  .services-heading h2{
+    font-size:32px;
+  }
+
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+.streamer-choice .container{
+  width:95%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.streamer-choice-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.streamer-choice-title p{
+  font-size:14px;
+  letter-spacing:3px;
+  color:#888;
+  margin-bottom:15px;
+  font-weight:600;
+}
+
+.streamer-choice-title h2{
+  font-size:40px;
+  color:#111;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.streamer-choice-wrapper{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.streamer-choice-card{
+  background:#fafafa;
+  border:1px solid #ececec;
+  border-radius:24px;
+  padding:45px 30px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  transition:0.35s ease;
+}
+
+.streamer-choice-card:hover{
+  background:#adf71a;
+  transform:translateY(-8px);
+}
+
+.streamer-choice-card h3{
+  font-size:20px;
+  color:#111;
+  margin-bottom:18px;
+  line-height:1.3;
+  transition:0.35s ease;
+}
+
+.streamer-choice-card p{
+  font-size:16px;
+  color:#000;
+  line-height:1.8;
+  transition:0.35s ease;
+}
+
+@media(max-width:991px){
+
+  .streamer-choice-wrapper{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .streamer-choice-title h2{
+    font-size:38px;
+  }
+
+}
+
+@media(max-width:767px){
+
+  
+  .streamer-choice-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .streamer-choice-title h2{
+    font-size:30px;
+  }
+
+  .streamer-choice-card{
+    padding:35px 25px;
+  }
+
+}
+
+
+
+
+.vtuber-packages .container{
+  width:95%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.vtuber-packages-heading{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.vtuber-packages-heading p{
+  font-size:14px;
+  letter-spacing:3px;
+  color:#777;
+  margin-bottom:15px;
+  font-weight:600;
+}
+
+.vtuber-packages-heading h2{
+  font-size:40px;
+  color:#111;
+  font-weight:700;
+}
+
+.vtuber-packages-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.vtuber-package-card{
+  background:#fff;
+  border-radius:28px;
+  padding:45px 35px;
+  box-shadow: 1px 1px 5px gray;
+  border:1px solid #ececec;
+  position:relative;
+  transition:0.4s ease;
+}
+
+.vtuber-package-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+.featured-package{
+  background:#111;
+  transform:scale(1.04);
+}
+
+.package-tag{
+  position:absolute;
+  top:-14px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#adf71a;
+  color:#000;
+  padding:10px 22px;
+  border-radius:50px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.vtuber-package-top{
+  margin-bottom:35px;
+}
+
+.vtuber-package-top h3{
+  font-size:large;
+  line-height:1.3;
+  text-align: center;
+  margin-bottom:20px;
+  color:#111;
+}
+
+.vtuber-price{
+  font-size:35px;
+  text-align: center;
+  font-weight:800;
+  color:#111;
+}
+
+.vtuber-package-card ul{
+  list-style:none;
+  padding:0;
+  margin:0 0 35px;
+}
+
+.vtuber-package-card ul li{
+  font-size:17px;
+  color:#000;
+  margin-bottom:18px;
+  line-height:1.7;
+  display:flex;
+  align-items:flex-start;
+}
+
+.vtuber-package-card ul li span{
+  min-width:24px;
+  height:24px;
+  border-radius:50%;
+  background:#adf71a;
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:700;
+  margin-right:12px;
+  margin-top:2px;
+}
+
+.vtuber-delivery{
+  font-size:16px;
+  color:#666;
+  margin-bottom:35px;
+  font-weight:600;
+}
+
+.vtuber-package-btn{
+  width:100%;
+  height:fit-content;
+  padding: 10px 0;
+  border-radius:16px;
+  background:#111;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:600;
+  transition:0.3s ease;
+}
+.vtuber-package-btn:hover{
+    color: white;
+}
+.featured-package h3,
+.featured-package .vtuber-price,
+.featured-package .vtuber-delivery,
+.featured-package ul li{
+  color:#fff;
+}
+
+.featured-package .vtuber-package-btn{
+  background:#fff;
+  color:#111;
+}
+
+@media(max-width:991px){
+
+  .vtuber-packages-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .featured-package{
+    transform:none;
+  }
+
+  .vtuber-packages-heading h2{
+    font-size:40px;
+  }
+
+}
+
+@media(max-width:767px){
+
+  
+  .vtuber-packages-grid{
+    grid-template-columns:1fr;
+  }
+
+  .vtuber-packages-heading h2{
+    font-size:32px;
+  }
+
+  .vtuber-package-card{
+    padding:35px 25px;
+  }
+
+  .vtuber-price{
+    font-size:42px;
+  }
+
+}
+
+
+
+
+
+
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
+    font-family: sans-serif;
+}
+p,.p,a,span,li{
+    font-family: 'Times New Roman', Times, serif !important;
+}
+
+
+
+
