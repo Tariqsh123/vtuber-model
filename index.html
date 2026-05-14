@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>V Tuber Model</title>
+        <style>
+            @font-face {
+        	font-family: 'Zilla Slab';
+        	font-style: normal;
+        	font-display: swap;
+        	font-weight: 300;
+        	src: local('Zilla Slab'),
+        		url('fonts/zilla-slab-v11-latin-300.eot');
+        	src: local('Zilla Slab'),
+        		url('fonts/zilla-slab-v11-latin-300.eot#iefix') format('embedded-opentype'),
+        		url('fonts/zilla-slab-v11-latin-300.woff2') format('woff2'),
+        		url('fonts/zilla-slab-v11-latin-300.woff') format('woff'),
+        		url('fonts/zilla-slab-v11-latin-300.ttf') format('truetype'),
+        		url('images/zilla-slab-v11-latin-300.svg#ZillaSlab') format('svg');
+            }
+
+            @font-face {
+            	font-family: 'Zilla Slab';
+            	font-style: normal;
+            	font-display: swap;
+            	font-weight: 400;
+            	src: local('Zilla Slab'),
+            		url('fonts/zilla-slab-v11-latin-regular.eot');
+            	src: local('Zilla Slab'),
+            		url('fonts/zilla-slab-v11-latin-regular.eot#iefix') format('embedded-opentype'),
+            		url('fonts/zilla-slab-v11-latin-regular.woff2') format('woff2'),
+            		url('fonts/zilla-slab-v11-latin-regular.woff') format('woff'),
+            		url('fonts/zilla-slab-v11-latin-regular.ttf') format('truetype'),
+            		url('images/zilla-slab-v11-latin-regular.svg#ZillaSlab') format('svg');
+            }
+            
+            @font-face {
+            	font-family: 'Zilla Slab';
+            	font-style: normal;
+            	font-display: swap;
+            	font-weight: 500;
+            	src: local('Zilla Slab'),
+            		url('fonts/zilla-slab-v11-latin-500.eot');
+            	src: local('Zilla Slab'),
+            		url('fonts/zilla-slab-v11-latin-500.eot#iefix') format('embedded-opentype'),
+            		url('fonts/zilla-slab-v11-latin-500.woff2') format('woff2'),
+            		url('fonts/zilla-slab-v11-latin-500.woff') format('woff'),
+            		url('fonts/zilla-slab-v11-latin-500.ttf') format('truetype'),
+            		url('images/zilla-slab-v11-latin-500.svg#ZillaSlab') format('svg');
+            }
+            
+            @font-face {
+            	font-family: 'Zilla Slab';
+            	font-style: normal;
+            	font-display: swap;
+            	font-weight: 600;
+            	src: local('Zilla Slab'),
+            		url('fonts/zilla-slab-v11-latin-600.eot');
+            	src: local('Zilla Slab'),
+            		url('fonts/zilla-slab-v11-latin-600.eot#iefix') format('embedded-opentype'),
+            		url('fonts/zilla-slab-v11-latin-600.woff2') format('woff2'),
+            		url('fonts/zilla-slab-v11-latin-600.woff') format('woff'),
+            		url('fonts/zilla-slab-v11-latin-600.ttf') format('truetype'),
+            		url('images/zilla-slab-v11-latin-600.svg#ZillaSlab') format('svg');
+            }
+            
+            @font-face {
+            	font-family: 'Zilla Slab';
+            	font-style: normal;
+            	font-display: swap;
+            	font-weight: 700;
+            	src: local('Zilla Slab'),
+            		url('fonts/zilla-slab-v11-latin-700.eot');
+            	src: local('Zilla Slab'),
+            		url('fonts/zilla-slab-v11-latin-700.eot#iefix') format('embedded-opentype'),
+            		url('fonts/zilla-slab-v11-latin-700.woff2') format('woff2'),
+            		url('fonts/zilla-slab-v11-latin-700.woff') format('woff'),
+            		url('fonts/zilla-slab-v11-latin-700.ttf') format('truetype'),
+            		url('images/zilla-slab-v11-latin-700.svg#ZillaSlab') format('svg');
+            }
+            
+            @font-face {
+            	font-family: 'Open Sans';
+            	font-style: normal;
+            	font-display: swap;
+            	font-weight: 300;
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-300.eot');
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-300.eot#iefix') format('embedded-opentype'),
+            		url('fonts/open-sans-v34-latin-300.woff2') format('woff2'),
+            		url('fonts/open-sans-v34-latin-300.woff') format('woff'),
+            		url('fonts/open-sans-v34-latin-300.ttf') format('truetype'),
+            		url('images/open-sans-v34-latin-300.svg#OpenSans') format('svg');
+            }
+            
+            @font-face {
+            	font-family: 'Open Sans';
+            	font-style: normal;
+            	font-display: swap;
+            	font-weight: 400;
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-regular.eot');
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-regular.eot#iefix') format('embedded-opentype'),
+            		url('fonts/open-sans-v34-latin-regular.woff2') format('woff2'),
+            		url('fonts/open-sans-v34-latin-regular.woff') format('woff'),
+            		url('fonts/open-sans-v34-latin-regular.ttf') format('truetype'),
+            		url('images/open-sans-v34-latin-regular.svg#OpenSans') format('svg');
+            }
+            
+            @font-face {
+            	font-family: 'Open Sans';
+            	font-style: normal;
+            	font-display: swap;
+            	font-weight: 500;
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-500.eot');
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-500.eot#iefix') format('embedded-opentype'),
+            		url('fonts/open-sans-v34-latin-500.woff2') format('woff2'),
+            		url('fonts/open-sans-v34-latin-500.woff') format('woff'),
+            		url('fonts/open-sans-v34-latin-500.ttf') format('truetype'),
+            		url('images/open-sans-v34-latin-500.svg#OpenSans') format('svg');
+            }
+            
+            @font-face {
+            	font-family: 'Open Sans';
+            	font-style: normal;
+            	font-display: swap;
+            	font-weight: 600;
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-600.eot');
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-600.eot#iefix') format('embedded-opentype'),
+            		url('fonts/open-sans-v34-latin-600.woff2') format('woff2'),
+            		url('fonts/open-sans-v34-latin-600.woff') format('woff'),
+            		url('fonts/open-sans-v34-latin-600.ttf') format('truetype'),
+            		url('images/open-sans-v34-latin-600.svg#OpenSans') format('svg');
+            }
+            
+            @font-face {
+            	font-family: 'Open Sans';
+            	font-style: normal;
+            	font-display: swap;
+            	font-weight: 700;
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-700.eot');
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-700.eot#iefix') format('embedded-opentype'),
+            		url('fonts/open-sans-v34-latin-700.woff2') format('woff2'),
+            		url('fonts/open-sans-v34-latin-700.woff') format('woff'),
+            		url('fonts/open-sans-v34-latin-700.ttf') format('truetype'),
+            		url('images/open-sans-v34-latin-700.svg#OpenSans') format('svg');
+            }
+            
+            @font-face {
+            	font-family: 'Open Sans';
+            	font-style: normal;
+            	font-display: swap;
+            	font-weight: 800;
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-800.eot');
+            	src: local('Open Sans'),
+            		url('fonts/open-sans-v34-latin-800.eot#iefix') format('embedded-opentype'),
+            		url('fonts/open-sans-v34-latin-800.woff2') format('woff2'),
+            		url('fonts/open-sans-v34-latin-800.woff') format('woff'),
+            		url('fonts/open-sans-v34-latin-800.ttf') format('truetype'),
+            		url('images/open-sans-v34-latin-800.svg#OpenSans') format('svg');
+            }
+            
+            
+            .fa-pinterest-p:before {
+                content: "\f231";
+            }
+        </style>
+
+        
+
+        <link rel="stylesheet" href="css/home.css">
+    </head>
+    <body>
+        <header>
+
+            
+                <section class="top-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+
+                
+                    <a class="social-icons" href="#" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="sr-only">Facebook</span>
+                    </a>
+
+                
+                    <a class="social-icons" href="#" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+
+                
+                    <a class="social-icons" href="#" target="_blank">
+                        <i class="fab fa-pinterest-p"></i>
+                        <span class="sr-only">Pinterest-p</span>
+                    </a>
+
+                
+            </div>
+            <div class="col-12 col-md-8">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-envelope"></i>
+                            info@bookcoverdesigners.co.uk
+                        </a>
+                    </li>
+                    <li>
+                        |
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-phone"></i>
+                            +44 20 3930 1313
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<nav class="navbar navbar-expand-lg navbar-light" aria-label="Book Cover Designers UK - Navigation">
+    <div class="container">
+        <a class="navbar-brand m-0" href="#" aria-current="page">
+            <img src="https://www.bookcoverdesigners.co.uk/frontend/images/logo/book-cover-design.webp" class="img-fluid lazyload" alt="logo" title="logo" loading="lazy" width="144" height="45">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bookCoverDesignNavbar" aria-controls="bookCoverDesignNavbar" aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="bookCoverDesignNavbar">
+            <ul class="navbar-nav menu-bar">
+                <li class="nav-item">
+                    <a class="nav-link " href="#">
+                        About us
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdownServices" data-bs-toggle="dropdown" aria-expanded="false">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownServices">
+                        <li>
+                            <a class="dropdown-item " href="#">
+                                Book illustration
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item " href="#">
+                                Book Layout
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item " href="#">
+                                Children's book
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item " href="#">
+                                Thesis Printing
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav menu-btn">
+                <li class="nav-item">
+                    <a class="btn btn-md btn-dual-shade " href="#">
+                        Request a Quote
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+            
+        </header>
+
+        <div class="clearfix"></div>
+    <section class="home-banner">
+        <div class="container">
+            <div id="bannerSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active" data-bs-interval="2500">
+                        <div class="banner-image">
+                            <img src="https://www.bookcoverdesigners.co.uk/frontend/images/bg/book-cover-designers.webp" class="img-fluid lazyload slider-img" alt="Book Cover Designers" title="Book Cover Designers" width="1366" height="640" loading="lazy">
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <h1 class="h1">Book Cover Designers – A Home to Creative Minds</h1>
+                                    <hr class="hr-line">
+                                    <span class="tag">
+                                        Design  |  Illustration  |  3D
+                                    </span>
+                                    <p>BookCoverDesigners.co.uk is UK's highest rated and best book cover design agency, creating impactful cover designs for 10+ years.</p>
+                                    <a href="#" class="btn-dual-shade">
+                                        See Portfolio
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14.096" height="13.786" viewBox="0 0 14.096 13.786">
+                                                <g transform="translate(-138.905 -609.964)">
+                                                    <path d="M2924.882,551.194a6.88,6.88,0,1,1-8.091-6.662,6.71,6.71,0,0,1,5.379,1.285c.171.126.17.195.016.327a7.37,7.37,0,0,0-.634.608c-.127.138-.211.146-.369.034a5.4,5.4,0,0,0-3.247-1.008,5.533,5.533,0,1,0,5.433,4.2.316.316,0,0,1,.1-.369c.267-.235.525-.48.77-.736.149-.156.188-.074.238.068A6.576,6.576,0,0,1,2924.882,551.194Z" transform="translate(-2772.225 65.554)" fill="#fff"></path>
+                                                    <path d="M2920.512,551.988c.04.034.087.073.131.115.532.5,1.069.99,1.591,1.5.145.14.223.149.375,0q3.131-3.03,6.27-6.049c.157-.152.237-.132.376.006.347.344.7.68,1.068,1,.155.137.143.211,0,.349q-2.517,2.4-5.022,4.808-1.356,1.3-2.71,2.6c-.112.108-.174.149-.312.018q-1.515-1.441-3.051-2.861c-.135-.125-.177-.193-.011-.337.382-.331.741-.689,1.113-1.032C2920.378,552.061,2920.417,551.994,2920.512,551.988Z" transform="translate(-2777.435 63.607)" fill="#fff"></path>
+                                                </g>
+                                            </svg>
+                                             
+                                            Unlimited Cycles of Revisions
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14.096" height="13.786" viewBox="0 0 14.096 13.786">
+                                                <g transform="translate(-138.905 -609.964)">
+                                                    <path d="M2924.882,551.194a6.88,6.88,0,1,1-8.091-6.662,6.71,6.71,0,0,1,5.379,1.285c.171.126.17.195.016.327a7.37,7.37,0,0,0-.634.608c-.127.138-.211.146-.369.034a5.4,5.4,0,0,0-3.247-1.008,5.533,5.533,0,1,0,5.433,4.2.316.316,0,0,1,.1-.369c.267-.235.525-.48.77-.736.149-.156.188-.074.238.068A6.576,6.576,0,0,1,2924.882,551.194Z" transform="translate(-2772.225 65.554)" fill="#fff"></path>
+                                                    <path d="M2920.512,551.988c.04.034.087.073.131.115.532.5,1.069.99,1.591,1.5.145.14.223.149.375,0q3.131-3.03,6.27-6.049c.157-.152.237-.132.376.006.347.344.7.68,1.068,1,.155.137.143.211,0,.349q-2.517,2.4-5.022,4.808-1.356,1.3-2.71,2.6c-.112.108-.174.149-.312.018q-1.515-1.441-3.051-2.861c-.135-.125-.177-.193-.011-.337.382-.331.741-.689,1.113-1.032C2920.378,552.061,2920.417,551.994,2920.512,551.988Z" transform="translate(-2777.435 63.607)" fill="#fff"></path>
+                                                </g>
+                                            </svg>
+                                            100% Satisfaction Guaranteed
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="p-0 d-inline">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/icons/rating.webp" class="img-fluid lazyload" alt="Top Rated Book Cover Designer" title="Top Rated Book Cover Designer" width="200" height="38" loading="lazy">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-area text-center">
+        <div class="container">
+            <h2 class="h2">Cut Through the Crowded Shelves With Fantasy Book Cover Designers in UK</h2>
+            <hr class="hr-line">
+            <p>Born in 2010, Book Cover Designers is an award-winning and professional book cover design service from UK, specializing in creating bold and best book cover designs for clients. The delivered creative book covers resonate with your content genre, reflecting the uniqueness. These phenomenal book cover designs makes your product cut through the crowded shelves. The team of artistic book cover designers' masters in <a href="https://www.bookcoverdesigners.co.uk/book-illustration">book cover illustrations</a> to communicate your hot-selling idea, even before they have a read a word.</p>
+            <img src="https://www.bookcoverdesigners.co.uk/frontend/images/other/awesome-books.webp" class="img-fluid lazyload d-block mx-auto" alt="Fantasy Book Cover" title="Fantasy Book Cover" width="766" height="459" loading="lazy">
+            <a href="#" class="btn-dual-shade">
+                Get Your Book Cover Design Now
+            </a>
+        </div>
+    </section>
+    <section class="portfolio">
+        <div class="container">
+            <h2 class="h2">We Don't Blow Our Own Triumphant – But Our Book Cover Design Samples Do!</h2>
+            <hr class="hr-line">
+            <p>While catering to the largest number of queries like "design my book cover", we have enough book cover design samples that can vouch for our expertise and skills. We present you some of our masterpieces below, including children's book cover designs, back and front book cover designs, and much more. Dive into it, and enjoy a sphere filled with artistry.</p>
+        </div>
+        <div class="container-fluid">
+            <div class="row m-t-30 d-flex align-items-center">
+                <div class="col-12">
+                    <div id="portfolioSlider" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="2000">
+                                <div class="row">
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/flowers-from-the-dust.webp" class="img-fluid lazyload" alt="Flowers From The Dust" title="Flowers From The Dust" width="325" height="515" loading="lazy">
+                                    </div>
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/in-perfect-harmony.webp" class="img-fluid lazyload" alt="In Perfect Harmony" title="In Perfect Harmony" width="325" height="515" loading="lazy">
+                                    </div>
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/jupitters-gate.webp" class="img-fluid lazyload" alt="Jupitters Gate" title="Jupitters Gate" width="325" height="515" loading="lazy">
+                                    </div>
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/how-to-talk-to-anyone-with-ease.webp" class="img-fluid lazyload" alt="How To Talk To Anyone With Ease" title="How To Talk To Anyone With Ease" width="325" height="515" loading="lazy">
+                                    </div>
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/the-darkened-scent-of-macabre-love-and-passion.webp" class="img-fluid lazyload" alt="The Darkened Scent Of Macabre Love And Passion" title="The Darkened Scent Of Macabre Love And Passion" width="325" height="515" loading="lazy">
+                                    </div>
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/the-jewels-of-darkness.webp" class="img-fluid lazyload" alt="The Jewels Of Darkness" title="The Jewels Of Darkness" width="325" height="515" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <div class="row">
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/the-last-boy-in-auschwitz.webp" class="img-fluid lazyload" alt="The Last Boy In Auschwitz" title="The Last Boy In Auschwitz" width="325" height="515" loading="lazy">
+                                    </div>
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/the-lense-of-victory-over-every-life-challenge.webp" class="img-fluid lazyload" alt="The Lense Of Victory Over Every Life Challenge" title="The Lense Of Victory Over Every Life Challenge" width="325" height="515" loading="lazy">
+                                    </div>
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/dream.webp" class="img-fluid lazyload" alt="Dream" title="Dream" width="325" height="515" loading="lazy">
+                                    </div>
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/mandy-man-the-legendry-life-of-aries.webp" class="img-fluid lazyload" alt="Mandy Man The Legendry Life Of Aries" title="Mandy Man The Legendry Life Of Aries" width="325" height="515" loading="lazy">
+                                    </div>
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/mindfire.webp" class="img-fluid lazyload" alt="mindfire" title="mindfire" width="325" height="515" loading="lazy">
+                                    </div>
+                                    <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/assassins-secret.webp" class="img-fluid lazyload" alt="Assassins Secret" title="Assassins Secret" width="325" height="515" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 m-t-30">
+                    <a href="#" class="btn-dual-shade">
+                        View Our Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="how-order">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <img src="https://www.bookcoverdesigners.co.uk/frontend/images/other/book-design.webp" class="img-fluid lazyload d-block mx-auto" alt="Awesome Book Cover in UK" title="Awesome Book Cover in UK" width="565" height="536" loading="lazy">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2 class="h2">4 Steps To Design an Awesome Book Cover in UK</h2>
+                    <hr class="hr-line">
+                    <div class="row m-t-30 g-0">
+                        <div class="col-12 col-lg-2">
+                            <div class="text-num">
+                                1
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-10">
+                            <span class="h5">Discuss Your Design With Us</span>
+                            <p>Share your thoughts with us, so we can discuss your unique book cover design details and can take things forward.</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row m-t-20 g-0">
+                        <div class="col-12 col-lg-2">
+                            <div class="text-num">
+                                2
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-10">
+                            <span class="h5">We'd Turn The Idea Into Design</span>
+                            <p>By incorporating the brave creativity equation into your idea, the force of artistic designers would turn your idea into a design.</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row m-t-20 g-0">
+                        <div class="col-12 col-lg-2">
+                            <div class="text-num">
+                                3
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-10">
+                            <span class="h5">Skim Through The Design</span>
+                            <p>A draft is shared with the client, and they can skim through it to claim any changes/amendments – for free.</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row m-t-20 g-0">
+                        <div class="col-12 col-lg-2">
+                            <div class="text-num">
+                                4
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-10">
+                            <span class="h5">Take The Final Delivery</span>
+                            <p>Once the outcomes reflect your creative imagination, we'd make the final delivery, so you represent your book in the best light.</p>
+                        </div>
+                    </div>
+                    <div class="row m-t-20 align-items-end">
+                        <div class="col-12 col-sm-6 col-lg-5">
+                            <a href="#" class="btn-dual-shade">
+                                Design My Book Cover
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-7">
+                            <button role="button" type="button"   class="live-chat">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35.052" height="30.535" viewBox="0 0 35.052 30.535">
+                                    <path d="M6701.662,162.836l-1.259,1.291q-.64.655-1.284,1.309a.577.577,0,0,1-.7.195.617.617,0,0,1-.338-.634c.007-.921,0-1.843,0-2.765v-.247c-.323-.034-.623-.04-.913-.1a2.682,2.682,0,0,1-2.117-2.6q-.015-4.815,0-9.631a2.664,2.664,0,0,1,2.649-2.671q7.64,0,15.283,0a2.665,2.665,0,0,1,2.61,2.634c.009.6,0,1.2,0,1.8v.27h10.974a3.533,3.533,0,0,1,3.515,3.543q.018,6.713,0,13.426a3.549,3.549,0,0,1-3.582,3.625h-.655c-.006.072-.017.131-.017.191,0,1.453,0,2.905,0,4.358a.6.6,0,0,1-.337.632.589.589,0,0,1-.7-.193q-2.361-2.415-4.726-4.825a.5.5,0,0,0-.4-.168q-7.2.006-14.41,0a3.536,3.536,0,0,1-3.578-3.185,11.492,11.492,0,0,1-.025-1.428q0-2.261,0-4.523Zm22.966,12.709.084-.057v-.223c0-1.148,0-2.3,0-3.444,0-.469.2-.675.656-.68.39,0,.781,0,1.171,0a2.44,2.44,0,0,0,2.434-2.436q0-6.689,0-13.379a2.412,2.412,0,0,0-2.436-2.493H6705.19a2.422,2.422,0,0,0-2.414,2.471q0,2.518,0,5.037,0,4.193,0,8.388a2.384,2.384,0,0,0,2.208,2.385c1.385.048,2.771.025,4.158.026q5.444,0,10.891,0a.749.749,0,0,1,.573.24q1.848,1.893,3.7,3.781C6724.427,175.274,6724.521,175.414,6724.627,175.545Zm-25.419-11.9.089.053a1.414,1.414,0,0,1,.145-.21c.674-.693,1.349-1.385,2.033-2.069a.6.6,0,0,0,.192-.468c-.007-1.874-.005-3.749-.005-5.623a3.544,3.544,0,0,1,3.562-3.639h9.263c0-.681,0-1.328,0-1.975a1.571,1.571,0,0,0-1.58-1.6c-.414,0-.828,0-1.241,0l-13.856,0a1.581,1.581,0,0,0-1.639,1.681c.006,1.28,0,2.561,0,3.842,0,1.859,0,3.717,0,5.576a1.552,1.552,0,0,0,1.55,1.6c.283.007.567,0,.85,0a.575.575,0,0,1,.633.633c.006.359,0,.718,0,1.078S6699.208,163.27,6699.208,163.643Z" transform="translate(-6695.046 -146.979)" fill="#333"></path>
+                                </svg>
+                                <div class="chat-text">
+                                    <span class="font-bold">Live Chat</span>
+                                    <span class="font-light">to discuss your project</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-4 text-center">
+
+                <img src="https://www.bookcoverdesigners.co.uk/frontend/images/other/client-satisfaction.webp" class="img-fluid lazyload d-block mx-auto" alt="100% Satisfaction" title="100% Satisfaction" width="267" height="268" loading="lazy">
+
+            </div>
+            <div class="col-12 col-lg-8">
+
+                <h2 class="h2">Book Cover Designers in UK Assures 100% Satisfaction</h2>
+
+                <hr class="hr-line">
+
+                <p>We just don't bang the drums for being the best book cover designers in UK – but we further prove it by offering countless free revisions until the client is completely happy with the outcomes. Our book cover designers don't sleep if the client is doubtful about the quality. And this makes us the best book cover design service to trust your artwork with.</p>
+
+                <div class="row m-t-20">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                        <a href="#" class="btn-dual-shade">
+                            Design My Book Cover
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 sty-ad">
+                        <a href="#" class="live-chat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="37.202" height="37.184" viewBox="0 0 37.202 37.184">
+                                <g transform="matrix(0.974, 0.225, -0.225, 0.974, -5619.225, -1723.919)">
+                                    <path d="M5893.136,445.116a15.531,15.531,0,0,1-5.746-1.48,30.966,30.966,0,0,1-12.488-9.926,27.868,27.868,0,0,1-4.375-8.2,12.356,12.356,0,0,1-.581-5.958,7.421,7.421,0,0,1,2.711-4.609,3.86,3.86,0,0,1,2.117-.747c.707-.072,1.423-.062,2.136-.08a.584.584,0,0,1,.6.409c1.071,2.642,2.132,5.289,3.231,7.919a1.721,1.721,0,0,1-.323,2c-.673.749-1.339,1.5-2.02,2.247a.7.7,0,0,0-.153.942,9.427,9.427,0,0,0,1.6,2.427,48.472,48.472,0,0,0,5.394,5.353,8.463,8.463,0,0,0,2.1,1.287.723.723,0,0,0,.887-.159c.748-.707,1.527-1.381,2.3-2.066a1.662,1.662,0,0,1,1.907-.308c2.653,1.1,5.322,2.168,7.976,3.269a.717.717,0,0,1,.376.5,8.789,8.789,0,0,1-.336,3.458,4.254,4.254,0,0,1-1.377,1.819A8.281,8.281,0,0,1,5893.136,445.116ZM5870.9,421.272c0,.124,0,.249,0,.373a15.577,15.577,0,0,0,1.621,5.959,30.284,30.284,0,0,0,13.887,14.356,17.268,17.268,0,0,0,6.4,2.027,7.185,7.185,0,0,0,5.095-1.249,3.462,3.462,0,0,0,1.667-2.3c.08-.628.1-1.262.158-1.893.017-.194-.071-.277-.241-.345-.484-.191-.958-.407-1.441-.6-2.015-.813-4.033-1.617-6.045-2.435a.635.635,0,0,0-.74.108c-.749.673-1.519,1.324-2.251,2.016a1.787,1.787,0,0,1-2.2.37,10.929,10.929,0,0,1-2.637-1.716,43.941,43.941,0,0,1-5.2-5.263,11.5,11.5,0,0,1-1.723-2.593,1.759,1.759,0,0,1,.378-2.193c.69-.732,1.345-1.5,2.015-2.253a.605.605,0,0,0,.116-.708c-1.032-2.513-2.048-5.032-3.081-7.544a.383.383,0,0,0-.292-.192c-.576.02-1.152.057-1.726.115a2.942,2.942,0,0,0-1.862.951A6.837,6.837,0,0,0,5870.9,421.272Z" fill="#ffffff"></path>
+                                    <path d="M5904.1,430.153c0,.124.006.317,0,.509a.559.559,0,0,1-.554.6c-.322,0-.526-.231-.534-.614a11.309,11.309,0,0,0-1.2-5.078,11.678,11.678,0,0,0-10.3-6.665c-.08-.005-.158,0-.238-.006-.4-.015-.631-.223-.624-.558a.543.543,0,0,1,.653-.527,18.975,18.975,0,0,1,2.261.226,12.885,12.885,0,0,1,10.387,10.724C5904.018,429.2,5904.044,429.645,5904.1,430.153Z" transform="translate(-5.878 -1.043)" fill="#ffffff"></path>
+                                    <path d="M5901.184,431.506c0,.1,0,.2,0,.306a.543.543,0,0,1-.558.591c-.31,0-.5-.224-.536-.58a16.381,16.381,0,0,0-.268-2.082,8.883,8.883,0,0,0-8.476-6.783c-.438-.009-.664-.164-.7-.483-.039-.359.219-.612.64-.607a9.622,9.622,0,0,1,5.436,1.68A9.917,9.917,0,0,1,5901.184,431.506Z" transform="translate(-5.877 -2.186)" fill="#ffffff"></path>
+                                    <path d="M5891.429,426.329a6.824,6.824,0,0,1,6.552,6.644c0,.418-.2.681-.531.692s-.544-.23-.56-.659a5.7,5.7,0,0,0-5.516-5.575c-.462-.014-.736-.262-.729-.568C5890.655,426.5,5890.917,426.316,5891.429,426.329Z" transform="translate(-5.877 -3.443)" fill="#333"></path>
+                                </g>
+                            </svg>
+                            <div class="chat-text">
+                                <span>+44 20 3930 1313</span>
+                                <span class="font-light">Call Us Anytime</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                        <button role="button" type="button"   class="live-chat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35.052" height="30.535" viewBox="0 0 35.052 30.535">
+                                <path d="M6701.662,162.836l-1.259,1.291q-.64.655-1.284,1.309a.577.577,0,0,1-.7.195.617.617,0,0,1-.338-.634c.007-.921,0-1.843,0-2.765v-.247c-.323-.034-.623-.04-.913-.1a2.682,2.682,0,0,1-2.117-2.6q-.015-4.815,0-9.631a2.664,2.664,0,0,1,2.649-2.671q7.64,0,15.283,0a2.665,2.665,0,0,1,2.61,2.634c.009.6,0,1.2,0,1.8v.27h10.974a3.533,3.533,0,0,1,3.515,3.543q.018,6.713,0,13.426a3.549,3.549,0,0,1-3.582,3.625h-.655c-.006.072-.017.131-.017.191,0,1.453,0,2.905,0,4.358a.6.6,0,0,1-.337.632.589.589,0,0,1-.7-.193q-2.361-2.415-4.726-4.825a.5.5,0,0,0-.4-.168q-7.2.006-14.41,0a3.536,3.536,0,0,1-3.578-3.185,11.492,11.492,0,0,1-.025-1.428q0-2.261,0-4.523Zm22.966,12.709.084-.057v-.223c0-1.148,0-2.3,0-3.444,0-.469.2-.675.656-.68.39,0,.781,0,1.171,0a2.44,2.44,0,0,0,2.434-2.436q0-6.689,0-13.379a2.412,2.412,0,0,0-2.436-2.493H6705.19a2.422,2.422,0,0,0-2.414,2.471q0,2.518,0,5.037,0,4.193,0,8.388a2.384,2.384,0,0,0,2.208,2.385c1.385.048,2.771.025,4.158.026q5.444,0,10.891,0a.749.749,0,0,1,.573.24q1.848,1.893,3.7,3.781C6724.427,175.274,6724.521,175.414,6724.627,175.545Zm-25.419-11.9.089.053a1.414,1.414,0,0,1,.145-.21c.674-.693,1.349-1.385,2.033-2.069a.6.6,0,0,0,.192-.468c-.007-1.874-.005-3.749-.005-5.623a3.544,3.544,0,0,1,3.562-3.639h9.263c0-.681,0-1.328,0-1.975a1.571,1.571,0,0,0-1.58-1.6c-.414,0-.828,0-1.241,0l-13.856,0a1.581,1.581,0,0,0-1.639,1.681c.006,1.28,0,2.561,0,3.842,0,1.859,0,3.717,0,5.576a1.552,1.552,0,0,0,1.55,1.6c.283.007.567,0,.85,0a.575.575,0,0,1,.633.633c.006.359,0,.718,0,1.078S6699.208,163.27,6699.208,163.643Z" transform="translate(-6695.046 -146.979)" fill="#ffffff"></path>
+                            </svg>
+                            <div class="chat-text">
+                                <span class="font-bold">Live Chat</span>
+                                <span class="font-light">To Share Your Ideas</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="book-design text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-10 mx-auto">
+                    <h2 class="h2">The Roadmap Towards Best-Selling Book Cover Designs For You</h2>
+                    <hr class="hr-line">
+                    <p>As one of the best book cover design services, we have adopted a simple roadmap towards our services.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 m-t-20">
+                    <span class="h4 mb-4">You Think of An Artwork</span>
+                    <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/your-concept.webp" class="img-fluid lazyload d-block mx-auto" alt="Artwork" title="Artwork" width="303" height="358" loading="lazy">
+                </div>
+                <div class="col-12 col-md-4 m-t-20">
+                    <span class="h4 mb-4">We Breathe Soul Into It</span>
+                    <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/our-design.webp" class="img-fluid lazyload d-block mx-auto" alt="Breathe Soul" title="Breathe Soul" width="303" height="358" loading="lazy">
+                </div>
+                <div class="col-12 col-md-4 m-t-20">
+                    <span class="h4 mb-4">Get Perfect Design In Action</span>
+                    <img src="https://www.bookcoverdesigners.co.uk/frontend/images/book-cover/cover-ready.webp" class="img-fluid lazyload d-block mx-auto" alt="Get Perfect Design" title="Get Perfect Design" width="303" height="358" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-banner cta-banner-two">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-7">
+                    <h3 class="h2">BookCoverDesigners.co.uk Drove 1M+ Clients to Success</h3>
+                    <hr class="hr-line">
+                    <p>The capable team of artistic book cover designers will leave you questioning why you did not hire us sooner! Because that's exactly what our multiple clients say about us when they come to us after experiencing a bummer with other book cover design companies. We have driven 1M+ clients to success through high-octane cover designs. Checkout the long list of our clients.</p>
+                    <div class="row m-t-20 mb-5 align-itmes-center justify-content-center">
+                        <div class="col-12 col-sm-6 col-md-5 col-lg-4">
+                            <a href="#" class="live-chat">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="37.202" height="37.184" viewBox="0 0 37.202 37.184">
+                                    <g transform="matrix(0.974, 0.225, -0.225, 0.974, -5619.225, -1723.919)">
+                                        <path d="M5893.136,445.116a15.531,15.531,0,0,1-5.746-1.48,30.966,30.966,0,0,1-12.488-9.926,27.868,27.868,0,0,1-4.375-8.2,12.356,12.356,0,0,1-.581-5.958,7.421,7.421,0,0,1,2.711-4.609,3.86,3.86,0,0,1,2.117-.747c.707-.072,1.423-.062,2.136-.08a.584.584,0,0,1,.6.409c1.071,2.642,2.132,5.289,3.231,7.919a1.721,1.721,0,0,1-.323,2c-.673.749-1.339,1.5-2.02,2.247a.7.7,0,0,0-.153.942,9.427,9.427,0,0,0,1.6,2.427,48.472,48.472,0,0,0,5.394,5.353,8.463,8.463,0,0,0,2.1,1.287.723.723,0,0,0,.887-.159c.748-.707,1.527-1.381,2.3-2.066a1.662,1.662,0,0,1,1.907-.308c2.653,1.1,5.322,2.168,7.976,3.269a.717.717,0,0,1,.376.5,8.789,8.789,0,0,1-.336,3.458,4.254,4.254,0,0,1-1.377,1.819A8.281,8.281,0,0,1,5893.136,445.116ZM5870.9,421.272c0,.124,0,.249,0,.373a15.577,15.577,0,0,0,1.621,5.959,30.284,30.284,0,0,0,13.887,14.356,17.268,17.268,0,0,0,6.4,2.027,7.185,7.185,0,0,0,5.095-1.249,3.462,3.462,0,0,0,1.667-2.3c.08-.628.1-1.262.158-1.893.017-.194-.071-.277-.241-.345-.484-.191-.958-.407-1.441-.6-2.015-.813-4.033-1.617-6.045-2.435a.635.635,0,0,0-.74.108c-.749.673-1.519,1.324-2.251,2.016a1.787,1.787,0,0,1-2.2.37,10.929,10.929,0,0,1-2.637-1.716,43.941,43.941,0,0,1-5.2-5.263,11.5,11.5,0,0,1-1.723-2.593,1.759,1.759,0,0,1,.378-2.193c.69-.732,1.345-1.5,2.015-2.253a.605.605,0,0,0,.116-.708c-1.032-2.513-2.048-5.032-3.081-7.544a.383.383,0,0,0-.292-.192c-.576.02-1.152.057-1.726.115a2.942,2.942,0,0,0-1.862.951A6.837,6.837,0,0,0,5870.9,421.272Z" fill="#ffffff"></path>
+                                        <path d="M5904.1,430.153c0,.124.006.317,0,.509a.559.559,0,0,1-.554.6c-.322,0-.526-.231-.534-.614a11.309,11.309,0,0,0-1.2-5.078,11.678,11.678,0,0,0-10.3-6.665c-.08-.005-.158,0-.238-.006-.4-.015-.631-.223-.624-.558a.543.543,0,0,1,.653-.527,18.975,18.975,0,0,1,2.261.226,12.885,12.885,0,0,1,10.387,10.724C5904.018,429.2,5904.044,429.645,5904.1,430.153Z" transform="translate(-5.878 -1.043)" fill="#ffffff"></path>
+                                        <path d="M5901.184,431.506c0,.1,0,.2,0,.306a.543.543,0,0,1-.558.591c-.31,0-.5-.224-.536-.58a16.381,16.381,0,0,0-.268-2.082,8.883,8.883,0,0,0-8.476-6.783c-.438-.009-.664-.164-.7-.483-.039-.359.219-.612.64-.607a9.622,9.622,0,0,1,5.436,1.68A9.917,9.917,0,0,1,5901.184,431.506Z" transform="translate(-5.877 -2.186)" fill="#ffffff"></path>
+                                        <path d="M5891.429,426.329a6.824,6.824,0,0,1,6.552,6.644c0,.418-.2.681-.531.692s-.544-.23-.56-.659a5.7,5.7,0,0,0-5.516-5.575c-.462-.014-.736-.262-.729-.568C5890.655,426.5,5890.917,426.316,5891.429,426.329Z" transform="translate(-5.877 -3.443)" fill="#333"></path>
+                                    </g>
+                                </svg>
+                                <div class="chat-text">
+                                    <span>+44 20 3930 1313</span>
+                                    <span class="font-light">Call Us 24/7</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-5 col-lg-8">
+                            <button role="button" type="button"   class="live-chat">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35.052" height="30.535" viewBox="0 0 35.052 30.535">
+                                    <path d="M6701.662,162.836l-1.259,1.291q-.64.655-1.284,1.309a.577.577,0,0,1-.7.195.617.617,0,0,1-.338-.634c.007-.921,0-1.843,0-2.765v-.247c-.323-.034-.623-.04-.913-.1a2.682,2.682,0,0,1-2.117-2.6q-.015-4.815,0-9.631a2.664,2.664,0,0,1,2.649-2.671q7.64,0,15.283,0a2.665,2.665,0,0,1,2.61,2.634c.009.6,0,1.2,0,1.8v.27h10.974a3.533,3.533,0,0,1,3.515,3.543q.018,6.713,0,13.426a3.549,3.549,0,0,1-3.582,3.625h-.655c-.006.072-.017.131-.017.191,0,1.453,0,2.905,0,4.358a.6.6,0,0,1-.337.632.589.589,0,0,1-.7-.193q-2.361-2.415-4.726-4.825a.5.5,0,0,0-.4-.168q-7.2.006-14.41,0a3.536,3.536,0,0,1-3.578-3.185,11.492,11.492,0,0,1-.025-1.428q0-2.261,0-4.523Zm22.966,12.709.084-.057v-.223c0-1.148,0-2.3,0-3.444,0-.469.2-.675.656-.68.39,0,.781,0,1.171,0a2.44,2.44,0,0,0,2.434-2.436q0-6.689,0-13.379a2.412,2.412,0,0,0-2.436-2.493H6705.19a2.422,2.422,0,0,0-2.414,2.471q0,2.518,0,5.037,0,4.193,0,8.388a2.384,2.384,0,0,0,2.208,2.385c1.385.048,2.771.025,4.158.026q5.444,0,10.891,0a.749.749,0,0,1,.573.24q1.848,1.893,3.7,3.781C6724.427,175.274,6724.521,175.414,6724.627,175.545Zm-25.419-11.9.089.053a1.414,1.414,0,0,1,.145-.21c.674-.693,1.349-1.385,2.033-2.069a.6.6,0,0,0,.192-.468c-.007-1.874-.005-3.749-.005-5.623a3.544,3.544,0,0,1,3.562-3.639h9.263c0-.681,0-1.328,0-1.975a1.571,1.571,0,0,0-1.58-1.6c-.414,0-.828,0-1.241,0l-13.856,0a1.581,1.581,0,0,0-1.639,1.681c.006,1.28,0,2.561,0,3.842,0,1.859,0,3.717,0,5.576a1.552,1.552,0,0,0,1.55,1.6c.283.007.567,0,.85,0a.575.575,0,0,1,.633.633c.006.359,0,.718,0,1.078S6699.208,163.27,6699.208,163.643Z" transform="translate(-6695.046 -146.979)" fill="#ffffff"></path>
+                                </svg>
+                                <div class="chat-text">
+                                    <span class="font-bold">Live Chat</span>
+                                    <span class="font-light">To Make Something Awesome</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <img src="https://www.bookcoverdesigners.co.uk/frontend/images/other/our-customer.webp" class="img-fluid lazyload d-block mx-auto" alt="Clients to Success" title="Clients to Success" width="377" height="354" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12 col-md-10 mx-auto">
+
+                                    <h3 class="h2">Legit Words-of-Mouths About Book Cover Designers UK</h3>
+            <hr class="hr-line">
+                
+            </div>
+        </div>
+        <div class="row align-items-center m-t-50">
+            <div class="col-12 col-lg-3">
+
+                <img src="https://www.bookcoverdesigners.co.uk/frontend/images/icons/client-rating.webp" class="img-fluid lazyload d-block mx-auto" alt="Book Cover Designers UK" title="Book Cover Designers UK" width="205" height="194" loading="lazy">
+
+            </div>
+            <div class="col-12 col-lg-9">
+                <div id="trustpilot" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active" data-bs-interval="5000">
+                            <div class="reviews-box">
+
+                                <img src="https://www.bookcoverdesigners.co.uk/frontend/images/icons/stars.webp" class="img-fluid lazyload d-block mx-auto" alt="Book Cover Designers UK" title="Book Cover Designers UK" width="200" height="38" loading="lazy">
+            <span class="h5">Finest Designs</span>
+            <p>You guys delivered me the finest designs of the book cover. I am 100% satisfied with the quality and the colors. They just provoked my curiosity too! Lol! Loved the design.</p>
+            <div class="review-days">2 Weeks Ago</div>
+
+                            </div>
+                            <div class="reviews-box">
+
+                                <img src="https://www.bookcoverdesigners.co.uk/frontend/images/icons/stars.webp" class="img-fluid lazyload d-block mx-auto" alt="Book Cover Designers UK" title="Book Cover Designers UK" width="200" height="38" loading="lazy">
+            <span class="h5">Beyond Expectations</span>
+            <p>I wasn't expecting such brilliant book cover designs from your end. The book cover designer really did a great job. The outcomes were beyond my expectations.</p>
+            <div class="review-days">4 Days Ago</div>
+
+                            </div>
+                            <div class="reviews-box">
+
+                                <img src="https://www.bookcoverdesigners.co.uk/frontend/images/icons/stars.webp" class="img-fluid lazyload d-block mx-auto" alt="Book Cover Designers UK" title="Book Cover Designers UK" width="200" height="38" loading="lazy">
+            <span class="h5">I'd Say – Cheap!</span>
+            <p>Yes, this is the cheap book cover design service in the UK. The pricing they quoted made my day. And the quality? That's unquestionable! The designer did a great job.</p>
+            <div class="review-days">6 Weeks Ago</div>
+
+                            </div>
+                        </div>
+
+                        
+                            <div class="carousel-item" data-bs-interval="5000">
+
+                                
+                                    <div class="reviews-box">
+
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/icons/stars.webp" class="img-fluid lazyload d-block mx-auto" alt="Book Cover Designers UK" title="Book Cover Designers UK" width="200" height="38" loading="lazy">
+            <span class="h5">It's My 2nd Order</span>
+            <p>It was my 2nd order with them, and as per the ritual – the cover design they handed over to me was exceptional. Best book cover design service in UK. Keep it up.</p>
+            <div class="review-days">2 Weeks Ago</div>
+
+                                    </div>
+
+                                                                
+                                    <div class="reviews-box">
+
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/icons/stars.webp" class="img-fluid lazyload d-block mx-auto" alt="Book Cover Designers UK" title="Book Cover Designers UK" width="200" height="38" loading="lazy">
+            <span class="h5">Can't Recommend Enough</span>
+            <p>I don't have enough words to recommend BookCoverDesigners.co.uk enough! They are the best in every regard. Starting right from the quality to everything else- it's perfect.</p>
+            <div class="review-days">6 Days Ago</div>
+
+                                    </div>
+
+                                                                
+                                    <div class="reviews-box">
+
+                                        <img src="https://www.bookcoverdesigners.co.uk/frontend/images/icons/stars.webp" class="img-fluid lazyload d-block mx-auto" alt="Book Cover Designers UK" title="Book Cover Designers UK" width="200" height="38" loading="lazy">
+            <span class="h5">Cracked Perfection</span>
+            <p>BookCoverDesigners.co.uk refined the true meaning of high quality – honestly. The pricing was cheap, while the designs were excellent. Thanks for the free revisions.</p>
+            <div class="review-days">3 Weeks Ago</div>
+
+                                    </div>
+
+                                
+                            </div>
+
+                                                
+                    </div>
+                    <a class="carousel-control-prev bg-transparent w-aut" href="#trustpilot" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">
+                            Previous
+                        </span>
+                    </a>
+                    <a class="carousel-control-next bg-transparent w-aut" href="#trustpilot" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">
+                            Next
+                        </span>
+                    </a>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#trustpilot" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+
+                        
+                            <button type="button" data-bs-target="#trustpilot" data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+                                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="why-choose">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-6">
+                            <div class="choose-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="47.811" height="53.202" viewBox="0 0 47.811 53.202">
+                                    <g transform="translate(-1275.723 1036.071)">
+                                        <path d="M1309.9-1019.723l5.212-4.041q3.508-2.719,7.016-5.436a.836.836,0,0,1,1.223.088.835.835,0,0,1-.2,1.228l-11.385,8.823c-.656.509-1.311,1.02-2.014,1.568l-1.072-1.2a8.448,8.448,0,0,0-1.537,2.03,12.286,12.286,0,0,0-1.42,4.6c-.123,1.141-.153,2.294-.194,3.442a2.077,2.077,0,0,1-1.539,1.951q-6.618,2.047-13.234,4.1c-1.4.435-2.8.866-4.2,1.31a1.87,1.87,0,0,0-.4.25,3.779,3.779,0,0,1-.369.236,54.993,54.993,0,0,0-6.028,3.294,9.98,9.98,0,0,0-2.078,1.668,1.938,1.938,0,0,0-.158.206,1.648,1.648,0,0,0-.087.171,1.33,1.33,0,0,0,.966.391,10.955,10.955,0,0,0,1.983-.133c1.674-.339,3.331-.761,5-1.126a20.707,20.707,0,0,1,4.667-.62,7.789,7.789,0,0,1,1.617.181,2.125,2.125,0,0,1,1.51,3.166,4.821,4.821,0,0,1-1.268,1.558c-.41.359-.832.7-1.233,1.074a2.964,2.964,0,0,0-.816,1.334c-.111.36-.045.531.293.7a4.051,4.051,0,0,0,1.7.311,18.663,18.663,0,0,0,3.72-.289c2.187-.374,4.365-.8,6.552-1.178a37.007,37.007,0,0,1,6.919-.591,14.492,14.492,0,0,1,4.669.722,5.262,5.262,0,0,1,3.058,2.42,4.912,4.912,0,0,1,.511,2.842,9.276,9.276,0,0,1-.153,1.025.847.847,0,0,1-1.015.755.857.857,0,0,1-.619-1.108,4.437,4.437,0,0,0,.07-1.979,3.111,3.111,0,0,0-1.893-2.19,8.746,8.746,0,0,0-2.926-.733,28.919,28.919,0,0,0-6.24.191c-2.312.263-4.584.754-6.868,1.18a27.232,27.232,0,0,1-5.847.6,5.785,5.785,0,0,1-2.323-.463,2.106,2.106,0,0,1-1.2-2.7,5.552,5.552,0,0,1,2.018-2.73,10.492,10.492,0,0,0,1-.906,2.093,2.093,0,0,0,.4-.625c.18-.421.064-.659-.385-.771a3.3,3.3,0,0,0-1.021-.139,26.624,26.624,0,0,0-3.063.331c-1.77.343-3.52.788-5.281,1.175a14.178,14.178,0,0,1-3.126.43,3.685,3.685,0,0,1-2.294-.68,1.655,1.655,0,0,1-.437-2.414,7.153,7.153,0,0,1,1.256-1.333,27.316,27.316,0,0,1,4.615-2.928c.654-.353,1.324-.677,1.978-1.029a.549.549,0,0,0,.245-.293q2.391-8,4.767-16.008.462-1.552.926-3.1a1.908,1.908,0,0,1,1.815-1.334,22.322,22.322,0,0,0,3.778-.212,12.654,12.654,0,0,0,6.128-2.476c.067-.053.13-.11.2-.17l-1.017-.982c.578-.7,1.12-1.362,1.664-2.021q3.031-3.674,6.063-7.348a.847.847,0,0,1,1.435-.018.834.834,0,0,1-.1,1.03q-1.1,1.345-2.213,2.684l-4.557,5.521Zm-7.149-4.212c-.045.035-.1.076-.153.118a12.975,12.975,0,0,1-4.529,2.289,20.293,20.293,0,0,1-6.13.737c-.423-.009-.443.008-.561.406l-3.687,12.41q-.511,1.721-1.024,3.442l.093.082c.2-.236.385-.491.608-.706q4.433-4.286,8.877-8.559a.226.226,0,0,0,.055-.309,1.958,1.958,0,0,1,.261-2.144,1.982,1.982,0,0,1,2.084-.732,2.084,2.084,0,0,1,1.595,2.335,2.069,2.069,0,0,1-2.312,1.746.422.422,0,0,0-.308.1q-4.3,4.137-8.6,8.288c-.311.3-.591.634-.864.929l2.075-.645q6.628-2.057,13.257-4.11a.448.448,0,0,0,.366-.5,22.027,22.027,0,0,1,.356-4.493,13.106,13.106,0,0,1,2.159-5.308c.246-.341.521-.66.789-1Z" transform="translate(0)" fill="#55908c"></path>
+                                        <path d="M1489.557-1005.749a.82.82,0,0,1,.756.5.808.808,0,0,1-.181.93c-.687.694-1.379,1.382-2.069,2.073-.415.416-.827.835-1.248,1.244a.8.8,0,0,1-.932.17.768.768,0,0,1-.477-.813,1.048,1.048,0,0,1,.254-.545c1.069-1.093,2.155-2.169,3.235-3.252A.883.883,0,0,1,1489.557-1005.749Z" transform="translate(-178.074 -25.752)" fill="#55908c"></path>
+                                        <path d="M1499.046-985.167a1.84,1.84,0,0,1,.268-.479q1.624-1.657,3.275-3.287a.824.824,0,0,1,1.436.379.725.725,0,0,1-.2.739q-1.667,1.687-3.354,3.353a.745.745,0,0,1-.882.159A.929.929,0,0,1,1499.046-985.167Z" transform="translate(-189.665 -39.789)" fill="#55908c"></path>
+                                    </g>
+                                </svg>
+                                <span class="h5">Enthusiast Designers</span>
+                                <p>Our designers' enthusiasm and restless passion is the biggest strength that makes your audience captivate the book at a glance.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="choose-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="47.847" height="45.667" viewBox="0 0 47.847 45.667">
+                                    <g transform="translate(391.054 -567.302)">
+                                        <path d="M-346.335,615.121h6.975v1.491h-6.975Z" transform="translate(-29.332 -31.365)" fill="#55908c"></path>
+                                        <path d="M-346.335,624.48h12.4v1.49h-12.4Z" transform="translate(-29.332 -37.504)" fill="#55908c"></path>
+                                        <path d="M-349.377,595.5a.975.975,0,0,0-1.192.715,19.407,19.407,0,0,1-8.943,11.983,19.326,19.326,0,0,1-14.844,2.146,19.633,19.633,0,0,1-14.188-23.787,19.655,19.655,0,0,1,22.654-14.428l-.716,2.862,7.691-2.146-5.724-5.544-.715,2.921a21.546,21.546,0,0,0-25.039,15.858,21.655,21.655,0,0,0,15.62,26.232,20.528,20.528,0,0,0,5.306.656,21.512,21.512,0,0,0,11.029-3.04,21.408,21.408,0,0,0,9.9-13.235,1.148,1.148,0,0,0-.835-1.193Z" transform="translate(0)" fill="#55908c"></path>
+                                        <path d="M-323.717,592.274a3.465,3.465,0,0,0-4.829-.357l-.238.238-.358.3-1.371,1.192-.179.119-6.319,5.544-.358.3v-3.875a1.045,1.045,0,0,0-1.013-1.013H-359.01a1.045,1.045,0,0,0-1.013,1.013v24.443a1.045,1.045,0,0,0,1.013,1.013h20.627a1.045,1.045,0,0,0,1.013-1.013V608.669l2.325-2.027,1.312-1.132,1.908-1.669,1.311-1.133.656-.6,3.577-3.1,1.49-1.252.656-.6.119-.119a3.329,3.329,0,0,0,.3-4.77Zm-15.62,26.947h-18.6V596.8h18.6v4.65l-4.173,3.637-1.67,1.431v-.834h-10.135v1.491h9.36l-2.027,1.788h-7.333v1.491h6.439l-1.073,1.967-.119.179-1.609,3.1-.119.179a.785.785,0,0,0,.179.716.9.9,0,0,0,.656.238h.06l.238-.06,6.915-2.5c.119-.06.179-.119.238-.119l4.233-3.637v8.7Zm-7.511-8.465a6.547,6.547,0,0,1,.954.895,5.316,5.316,0,0,1,.775,1.073,3.5,3.5,0,0,0,.238.477l-2.742,1.014-1.073-1.193,1.371-2.563a1.3,1.3,0,0,1,.477.3Zm17.408-10.791-2.146,1.848-3.279,2.861-1.312,1.132-1.192,1.073-1.967,1.729-4.352,3.815a1.49,1.49,0,0,0-.239-.417,7.981,7.981,0,0,0-.954-1.312c-.06-.119-.179-.179-.238-.3a11.361,11.361,0,0,0-.895-.834,1.242,1.242,0,0,0-.357-.238l.417-.417,4.233-3.7,2.325-2.027.238-.179.834-.716.954-.834,2.444-2.146.477-.417.3-.3,2.325-2.027a5.815,5.815,0,0,1,2.742,2.981Zm.834-.715a5.921,5.921,0,0,0-2.742-2.981l.418-.357a5.453,5.453,0,0,1,2.683,3.04Zm3.7-3.16-.6.477-.357.358-.716.6-.3.239-.656.6-.238.179a6.049,6.049,0,0,0-2.683-3.04l.119-.119,1.073-.954,1.312-1.192.179-.119.119-.119a2.053,2.053,0,0,1,2.861.179,2.065,2.065,0,0,1-.119,2.92Z" transform="translate(-20.354 -15.612)" fill="#55908c"></path>
+                                    </g>
+                                </svg>
+                                <span class="h5">Transparent Process</span>
+                                <p>We are an honest book cover design agency – and we keep everything clear between the client and us. You'd know every move of the designer.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="choose-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="78" height="52.425" viewBox="0 0 78 52.425">
+                                    <g transform="translate(-786.894 -100.942)">
+                                        <g transform="translate(822.728 100.942)">
+                                            <path d="M894.414,142.589l-.848-.4.146-.431.1-.3c.073-.22.146-.439.224-.658a97.358,97.358,0,0,1,6.282-14.09A67.788,67.788,0,0,1,911.6,111.079a35.837,35.837,0,0,1,11.42-8.008,26.4,26.4,0,0,1,11.425-2.109c.133.005.265.015.39.028a.646.646,0,0,1,.286.108c.022.013.053.032.1.058l.515.288-.358.469a19.919,19.919,0,0,1-8.8,6.47l.168-.012c.757-.058,1.5-.188,2.292-.326.344-.06.7-.122,1.056-.177l.88-.137-.326.829a8.7,8.7,0,0,1-1.969,2.919,14.84,14.84,0,0,1-7.682,3.965q-.2.045-.409.085a23.219,23.219,0,0,0,5.4.1l.836-.121-.281.8c-.026.075-.049.147-.072.218a3.4,3.4,0,0,1-.192.507,9.559,9.559,0,0,1-4.015,3.871,27.51,27.51,0,0,1-7.557,2.721,18.833,18.833,0,0,0-1.9.581,27.2,27.2,0,0,0,6.455.57l1.15-.074-.718.9c-.056.07-.106.135-.153.2-.1.127-.19.246-.293.361a16.307,16.307,0,0,1-8.993,5.024,22.308,22.308,0,0,1-6.239.392,1.172,1.172,0,0,0-1.156.521c-1.958,2.485-3.976,4.988-5.927,7.409q-.967,1.2-1.932,2.4c-.074.092-.152.182-.229.272l-.1.118Zm38.994-40.624a25.4,25.4,0,0,0-9.991,2.047,34.84,34.84,0,0,0-11.1,7.788,66.783,66.783,0,0,0-11.108,15.4,96.521,96.521,0,0,0-5.639,12.353l.56-.7c1.95-2.419,3.966-4.92,5.92-7.4a2.162,2.162,0,0,1,2.023-.908,21.324,21.324,0,0,0,5.956-.371,15.424,15.424,0,0,0,8.125-4.356,34.077,34.077,0,0,1-5.822-.669l-.136-.024a1.371,1.371,0,0,1-.617-.326c-.05-.039-.1-.077-.136-.1l-.567-.368.509-.445c.033-.029.072-.07.114-.113a1.377,1.377,0,0,1,.537-.393l.177-.062a21.91,21.91,0,0,1,2.257-.7,26.571,26.571,0,0,0,7.278-2.612,8.77,8.77,0,0,0,3.532-3.29c-2.462.16-6.431-.19-7.51-.847l-1.166-.709,1.345-.231c.3-.051.6-.1.9-.146.636-.1,1.293-.206,1.925-.344a13.857,13.857,0,0,0,7.172-3.684,8.511,8.511,0,0,0,1.336-1.723l-.072.012c-.779.136-1.584.276-2.389.338s-1.632.048-2.425.033c-.34-.006-.691-.013-1.034-.013h-3.868l3.735-1a20.492,20.492,0,0,0,10.786-6.434Q933.711,101.965,933.407,101.965Z" transform="translate(-893.566 -100.942)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(786.894 108.524)">
+                                            <path d="M835.846,129.74c0-.42.008-.839,0-1.259a3.673,3.673,0,0,0-3.563-3.627,3.569,3.569,0,0,0-3.71,3.394c-.091,2.841-.037,5.687-.045,8.53,0,.182,0,.365,0,.595h2.051a1.512,1.512,0,0,1-2.133,1.266,5.735,5.735,0,0,1-1.247,4.827v-1.357q0-6.743,0-13.487a5.045,5.045,0,0,1,1.06-3.184c.122-.157.232-.322.422-.586h-.69q-12.951,0-25.9,0a5.016,5.016,0,0,0-5.209,5.22q0,16.373.011,32.747a5.7,5.7,0,0,1-1.268,3.885,3.179,3.179,0,0,0-.183.282c.189.017.327.04.465.04q13.078,0,26.157,0a4.993,4.993,0,0,0,5.134-5.136c.011-2.111.013-4.223-.006-6.335a1.537,1.537,0,0,1,.423-1.2,9.332,9.332,0,0,1,.915-.948v.579q0,4.011,0,8.021a6.306,6.306,0,0,1-6.322,6.343q-15.147.013-30.295,0a4.944,4.944,0,0,1-5-4.939c-.025-3.116-.009-6.233-.008-9.349,0-.674.214-.893.882-.894q3.55-.008,7.1,0h.657c0-.245,0-.428,0-.612q0-11.214,0-22.428a6.362,6.362,0,0,1,6.594-6.611q14.968,0,29.937,0a4.955,4.955,0,0,1,5.054,4.339,1.146,1.146,0,0,1-.192.735c-.285.419-.64.79-.966,1.181Zm-40.306,24.8h-7.285c-.009.192-.022.357-.022.523,0,2.723-.006,5.447,0,8.17a3.653,3.653,0,1,0,7.3,0q.009-4.059,0-8.119C795.54,154.945,795.54,154.777,795.54,154.539Z" transform="translate(-786.894 -123.512)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(798.849 129.849)">
+                                            <path d="M835.323,186.991h11.838c.119,0,.238.012.357.017a.556.556,0,0,1,.578.633c-.033.239-.3.474-.519.648-.107.086-.329.037-.5.037H823.53a2.423,2.423,0,0,1-.459-.016.63.63,0,0,1-.587-.706.619.619,0,0,1,.632-.61,1.971,1.971,0,0,1,.2,0l11.6.009h.408Z" transform="translate(-822.482 -186.991)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(798.849 126.107)">
+                                            <path d="M835.318,177.181h-11.8a4.02,4.02,0,0,1-.459-.009.6.6,0,0,1-.58-.6.616.616,0,0,1,.493-.682,1.936,1.936,0,0,1,.507-.033H847.13c.1,0,.2,0,.306,0a.643.643,0,0,1,.68.677.621.621,0,0,1-.7.651c-.749.006-1.5,0-2.247,0h-9.856Z" transform="translate(-822.481 -175.852)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(798.851 144.75)">
+                                            <path d="M835.317,231.365h11.748c.17,0,.383-.054.5.027a1.3,1.3,0,0,1,.536.582.554.554,0,0,1-.459.685,2.157,2.157,0,0,1-.556.042q-11.774,0-23.547,0c-.119,0-.239,0-.357,0-.41-.029-.679-.219-.694-.658-.013-.412.253-.669.723-.672,1.311-.01,2.622,0,3.933,0Z" transform="translate(-822.488 -231.348)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(798.849 122.388)">
+                                            <path d="M835.318,166.112h-11.8a2.672,2.672,0,0,1-.459-.01.626.626,0,0,1-.579-.663.611.611,0,0,1,.592-.646,3.059,3.059,0,0,1,.408-.008h23.8c.544.009.851.25.847.666s-.323.66-.859.66Q841.292,166.114,835.318,166.112Z" transform="translate(-822.483 -164.781)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(798.852 133.565)">
+                                            <path d="M835.319,198.057h11.644c.153,0,.307-.005.46,0a.645.645,0,0,1,.7.659.628.628,0,0,1-.68.67c-.136.007-.272,0-.409,0H823.541c-.136,0-.273.005-.409-.007a.616.616,0,0,1-.643-.649.629.629,0,0,1,.624-.673,3.486,3.486,0,0,1,.459-.007Z" transform="translate(-822.49 -198.054)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(798.881 148.481)">
+                                            <path d="M835.379,243.8h-11.8c-.17,0-.386.055-.5-.027-.212-.154-.489-.382-.5-.594s.225-.488.424-.646c.133-.105.391-.067.593-.067q11.773,0,23.545,0a3.178,3.178,0,0,1,.408.009.637.637,0,0,1,.633.671.625.625,0,0,1-.646.651c-.152.013-.306.006-.46.006Z" transform="translate(-822.577 -242.455)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(798.848 137.308)">
+                                            <path d="M846.938,209.2c-.166.43-.276.769-.429,1.087a.614.614,0,0,1-.327.241,1.053,1.053,0,0,1-.354.009H823.571c-.782,0-1.091-.193-1.092-.678s.3-.658,1.1-.658h23.358Z" transform="translate(-822.479 -209.195)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(798.877 141.025)">
+                                            <path d="M845.551,220.284l-.179,1.286c-.147.01-.326.032-.5.032q-10.7,0-21.4,0c-.152,0-.351.039-.447-.039-.193-.158-.445-.376-.459-.583a.988.988,0,0,1,.382-.634c.114-.1.355-.078.539-.079q10.8-.006,21.6,0C845.237,220.261,845.387,220.275,845.551,220.284Z" transform="translate(-822.565 -220.261)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(807.321 117.361)">
+                                            <path d="M853.029,151.159q-2.142,0-4.284,0a2.337,2.337,0,0,1-.507-.03.622.622,0,0,1-.533-.7.608.608,0,0,1,.584-.6,2.469,2.469,0,0,1,.356-.012h8.773a2.568,2.568,0,0,1,.407.017c.349.056.606.29.542.617a1.386,1.386,0,0,1-.506.662c-.1.087-.327.042-.5.042Q855.2,151.161,853.029,151.159Z" transform="translate(-847.703 -149.818)" fill="#55908c"></path>
+                                        </g>
+                                        <g transform="translate(809.542 114.113)">
+                                            <path d="M857.477,140.152c.764,0,1.527-.005,2.291,0,.5.005.8.267.794.663s-.314.655-.807.657q-2.317.009-4.633,0c-.511,0-.8-.242-.808-.645-.01-.433.274-.674.821-.678.781-.005,1.561,0,2.342,0Z" transform="translate(-854.313 -140.149)" fill="#55908c"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <span class="h5">Affordable Help</span>
+                                <p>Low-priced book cover designs are no longer scary! With us, you get the UK's most professional and cheap book cover design services.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="choose-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="51.923" height="52.356" viewBox="0 0 51.923 52.356">
+                                    <g transform="translate(-1165.591 -86.75)">
+                                        <path d="M1180.871,140.123a3.931,3.931,0,0,0,1.625-1.026c.5-.516,1.018-1.007,1.515-1.522a3.16,3.16,0,0,0,.809-3.561,1.088,1.088,0,0,1,.333-1.378c1.028-.97,2.016-1.984,3.006-2.994a2.118,2.118,0,0,1,1.507-.63c1.416-.067,2.822.212,4.236.075a.613.613,0,0,1,.5.226c1.248,1.234,2.484,2.479,3.726,3.72a.68.68,0,0,1,.173.789,3.354,3.354,0,0,0,.984,3.847c.493.472.961.967,1.449,1.442a3.291,3.291,0,0,0,4.87-.01q5.426-5.419,10.845-10.844a3.289,3.289,0,0,0,.024-4.833c-.523-.538-1.058-1.064-1.59-1.592a3.4,3.4,0,0,0-3.712-.853.694.694,0,0,1-.788-.175c-.93-.925-1.853-1.858-2.786-2.781a.561.561,0,0,1-.062-.852,3.7,3.7,0,0,0,.654-1.147,3.386,3.386,0,0,0-2.01-4.3.714.714,0,0,1-.548-.9,3.287,3.287,0,0,0-2.2-3.624.64.64,0,0,1-.477-.8,3.356,3.356,0,0,0-2.2-3.693c-.352-.149-.552-.32-.5-.757a3.358,3.358,0,0,0-3.142-3.93,33.413,33.413,0,0,1-3.326-.519c-1.647-.274-3.276-.647-4.928-.9a2.836,2.836,0,0,0-2.058.4,1.119,1.119,0,0,1-.964.171,3.437,3.437,0,0,0-3.991,2.452,4.189,4.189,0,0,0-.061,1.473.538.538,0,0,1-.393.653,3.4,3.4,0,0,0-2.321,3.854.6.6,0,0,1-.465.683,3.434,3.434,0,0,0-1.924,4.742c.248.535.24.551-.261.828a3.363,3.363,0,0,0-.994,5.327.523.523,0,0,1-.015.834q-1.4,1.387-2.784,2.783a.8.8,0,0,1-.886.2,3.323,3.323,0,0,0-3.508.922c-.547.537-1.094,1.075-1.626,1.627a3.288,3.288,0,0,0,.038,4.8q.956.96,1.916,1.916a2.321,2.321,0,0,0,.382.339.934.934,0,0,0,1.208-.155.838.838,0,0,0-.048-1.119c-.119-.145-.258-.272-.39-.4-.6-.605-1.225-1.185-1.8-1.816a1.5,1.5,0,0,1,.036-2.3c.558-.574,1.124-1.142,1.7-1.7a1.455,1.455,0,0,1,1.952-.13,6.023,6.023,0,0,1,.77.67q4.77,4.773,9.545,9.542c.338.336.64.7.985,1.035a1.358,1.358,0,0,1,.011,1.825,26.035,26.035,0,0,1-2.06,2.059,1.333,1.333,0,0,1-1.7.11,3.879,3.879,0,0,1-.755-.607c-.6-.6-1.192-1.219-1.813-1.8a.84.84,0,0,0-1.2-.056.871.871,0,0,0-.058,1.245c1.165,1.106,2.078,2.506,3.64,3.155.1.042.235.083.2.246h1.329C1180.507,140.144,1180.729,140.17,1180.871,140.123Zm30.479-16.992a1.369,1.369,0,0,1,2.082.009c.563.545,1.108,1.107,1.667,1.657a1.5,1.5,0,0,1,.482,1.017,1.468,1.468,0,0,1-.457,1.065q-5.458,5.453-10.919,10.9a1.36,1.36,0,0,1-2.077-.009c-.576-.556-1.145-1.119-1.7-1.7a1.356,1.356,0,0,1,.006-2.041Q1205.884,128.575,1211.35,123.131Zm-22.837-24.62c1.72.288,3.435.607,5.276.936-.908.907-1.727,1.72-2.539,2.541a.244.244,0,0,1-.35.046,6.81,6.81,0,0,1-2.811-3C1187.868,98.531,1187.955,98.417,1188.514,98.511Zm-4.654,1.252a1.5,1.5,0,0,1,1.715-.684.714.714,0,0,1,.525.481,8.192,8.192,0,0,0,4.532,4.59.982.982,0,0,1,.669,1,1.515,1.515,0,0,1-2.616,1.033q-2.281-2.272-4.554-4.551A1.492,1.492,0,0,1,1183.859,99.764Zm-2.462,4.191a1.487,1.487,0,0,1,2.149.022q1.88,1.835,3.719,3.71a1.442,1.442,0,0,1,.3,1.694,1.412,1.412,0,0,1-1.376.868,1.464,1.464,0,0,1-1.094-.466c-1.228-1.225-2.462-2.443-3.676-3.681A1.484,1.484,0,0,1,1181.4,103.955Zm-2.688,4.482a1.432,1.432,0,0,1,1.95-.116c1.081,1.007,2.109,2.071,3.143,3.128a1.094,1.094,0,0,1,.3.763,1.487,1.487,0,0,1-.8,1.457,1.348,1.348,0,0,1-1.583-.116,36.652,36.652,0,0,1-3.169-3.172A1.424,1.424,0,0,1,1178.71,108.437Zm-1.877,5.487a1.432,1.432,0,0,1,1.846-.327,6.041,6.041,0,0,1,1.651,1.64,1.116,1.116,0,0,1,.182.731,1.452,1.452,0,0,1-.823,1.309,1.361,1.361,0,0,1-1.54-.115,10.594,10.594,0,0,1-1.378-1.357A1.476,1.476,0,0,1,1176.833,113.924Zm6.144,17.6q-4.437-4.454-8.9-8.883c-.221-.22-.275-.342-.018-.59.957-.921,1.892-1.865,2.823-2.814a.411.411,0,0,1,.562-.1,3.53,3.53,0,0,0,5.1-2.906c.03-.284.152-.313.378-.343a3.476,3.476,0,0,0,3.219-3.261c.031-.234.11-.3.339-.333a3.464,3.464,0,0,0,3.257-3.222c.039-.279.132-.349.4-.374a3.535,3.535,0,0,0,2.89-5.014.521.521,0,0,1,.139-.723c.82-.794,1.619-1.61,2.428-2.415a1.531,1.531,0,1,1,2.153,2.127c-.554.554-1.114,1.1-1.663,1.661a1.035,1.035,0,1,0,1.448,1.462c.32-.307.621-.632.944-.935a1.5,1.5,0,0,1,2.116-.028,1.477,1.477,0,0,1,.049,2.11c-.59.638-1.224,1.234-1.833,1.853a1.041,1.041,0,1,0,1.453,1.457c.317-.309.617-.636.947-.931a1.5,1.5,0,0,1,2.125,2.123c-.543.588-1.126,1.138-1.688,1.708a1.061,1.061,0,0,0-.13,1.575,1.047,1.047,0,0,0,1.575-.115c.256-.249.5-.516.762-.756a1.512,1.512,0,0,1,2.156-.01,1.494,1.494,0,0,1-.036,2.153c-.745.772-1.521,1.515-2.269,2.285a1.022,1.022,0,0,0-.167,1.265,1.046,1.046,0,0,0,1.15.461,1.6,1.6,0,0,0,.661-.463c.493-.492.5-.49.979-.007.856.855,1.705,1.716,2.574,2.558.215.21.248.32.013.554q-4.48,4.446-8.933,8.922c-.241.242-.363.225-.589-.007-1.01-1.036-2.04-2.054-3.082-3.1a13.74,13.74,0,0,0,1.463-1.364,1.034,1.034,0,0,0,.086-1.574,1.054,1.054,0,0,0-1.54.12,3.847,3.847,0,0,0-.36.363,3.3,3.3,0,0,1-2.862,1.172c-.851-.018-1.7-.07-2.552-.127a8,8,0,0,0-1.581.056,3.3,3.3,0,0,0-1.977.968c-1.135,1.153-2.3,2.282-3.427,3.44C1183.333,131.767,1183.211,131.756,1182.977,131.522Z" transform="translate(0 -1.29)" fill="#55908c"></path>
+                                        <path d="M1194.882,86.938a1.806,1.806,0,0,0-.527,1.621c.02,1.053.005,2.106.005,3.159,0,.153,0,.306,0,.459.032.656.361,1.046.877,1.043s.857-.4.862-1.048c.011-1.376,0-2.751,0-4.128a1.193,1.193,0,0,0-.4-1c-.089-.073-.191-.15-.162-.294h-.614A.184.184,0,0,1,1194.882,86.938Z" transform="translate(-3.784)" fill="#55908c"></path>
+                                        <path d="M1194.179,88.131c.034,1.358.007,2.718.011,4.077,0,.73.414,1.192,1.038,1.188s1.014-.454,1.015-1.2c0-1.359-.022-2.719.012-4.077a1.313,1.313,0,0,0-.737-1.368c-.029.143.074.221.162.294a1.193,1.193,0,0,1,.4,1c0,1.376.007,2.752,0,4.128-.005.65-.344,1.044-.862,1.048s-.845-.387-.877-1.043c-.008-.153,0-.306,0-.459,0-1.053.015-2.107-.005-3.159a1.806,1.806,0,0,1,.527-1.621.183.183,0,0,0,.045-.188A1.383,1.383,0,0,0,1194.179,88.131Z" transform="translate(-3.761)" fill="#55908c"></path>
+                                        <path d="M1177.5,88.146c-.289-.288-.57-.588-.881-.849a.941.941,0,0,0-1.1-.1.969.969,0,0,0-.539.95,1.034,1.034,0,0,0,.376.767q1.79,1.783,3.577,3.569a1.1,1.1,0,0,0,.552.345.989.989,0,0,0,1.14-.464,1.013,1.013,0,0,0-.2-1.3C1179.455,90.088,1178.475,89.118,1177.5,88.146Z" transform="translate(-1.235 -0.042)" fill="#55908c"></path>
+                                        <path d="M1213.085,87.453c-1.21,1.2-2.409,2.4-3.613,3.6a1,1,0,0,0-.356.747.983.983,0,0,0,.616.984,1.013,1.013,0,0,0,1.17-.248c1.216-1.213,2.435-2.424,3.643-3.645a1.03,1.03,0,1,0-1.46-1.442Z" transform="translate(-5.726 -0.043)" fill="#55908c"></path>
+                                        <path d="M1173.434,139.451a1,1,0,0,0,1.017-1.035,1.023,1.023,0,0,0-2.045.01A1.009,1.009,0,0,0,1173.434,139.451Z" transform="translate(-0.897 -6.663)" fill="#55908c"></path>
+                                        <path d="M1205.525,127.9a1.032,1.032,0,0,0,1.036-1.031,1.057,1.057,0,0,0-1.057-1.02,1.033,1.033,0,0,0-1,1.017A1,1,0,0,0,1205.525,127.9Z" transform="translate(-5.119 -5.144)" fill="#55908c"></path>
+                                    </g>
+                                </svg>
+                                <span class="h5">Fully Personalized</span>
+                                <p>A cover design sold once is never sold again – and that's a promise. For each client, the team begins working from a clean slate.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2 class="h2">What Keeps Book Cover Designers Ahead of The Curve?</h2>
+                    <hr class="hr-line">
+                    <p>No myths – no castles in the air; as a highly professional book cover design service in the UK, we work with a well-thought and human-mentality approach. This means that the excellent art covers we designed are not produced incidentally. Instead, the team masters the client's target audience and only then produces a hype-worthy piece of art.</p>
+                    <p>Another thing that keeps us one step ahead of other global book cover design companies is our deep emphasis on customer experience. The client's preference is taken into great consideration, and we do not stop working until the client has a broad smile on their face. The team is always on hot to trot to serve the buyers with the best possible results.</p>
+                    <div class="row m-t-30">
+                        <div class="col-12 col-sm-6 col-lg-5">
+                            <a href="#" class="btn-w btn-dual-shade">
+                                Get a Quote
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-5">
+                            <button role="button" type="button" class="btn-w btn-white-shade">
+                                Chat With us
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row m-t-30">
+                        <div class="col-12 col-sm-6">
+                            <a href="#" class="email-phone text-center">
+                                <span>Email:</span>
+                                info@bookcoverdesigners.co.uk
+                                 |
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <a href="#" class="email-phone">
+                                <span>Phone No:</span>
+                                +44 20 3930 1313
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="book-publisher">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12">
+
+                <span class="h2">Give Your Book The Finish It Deserves…</span>
+
+                <hr class="hr-line">
+
+                <p>Simply put, a beautiful cover, designed by a professional book cover designer, and coupled with your great work can do wonders for your writing career.A well-designed cover instantly communicates the content and theme of your book..</p>
+            <img src="https://www.bookcoverdesigners.co.uk/frontend/images/other/book-publisher.webp" class="img-fluid lazyload show-mobile d-block mx-auto mb-3 m-t-30" alt="Book Publisher" title="Book Publisher" width="535" height="483" loading="lazy">
+
+            </div>
+        </div>
+        <div class="row m-t-30">
+            <div class="col-12 col-lg-6">
+
+                <h2 class="h4">Attractive Book Cover Designs That Stir Curiosity</h2>
+            <p>Book Cover Designers aim to contribute to the value instead of noise – that's why the prepared designs are human-obsessed and strike the right chord to stir curiosity. The team doesn't create what everyone has been creating – instead produces something that the audience actually looking for and warmly welcomes with an open heart.</p>
+            <p>Before getting to the work, we learn about your target market to ensure your audience praises the output. The human-psyche-inspired designs by us are a surefire way towards your success. Most of the orders we prepared have successfully created a buzz for our clients in their over-saturated marketplace – and that's a real accomplishment for us.</p>
+            <h2 class="h4">Game-Changer Cover Designs for Everyone That Redefines Creativity</h2>
+            <p>We hold the pride of dispensing game-changer art book cover designs for everyone! Scroll through the hallowed portfolio and find excellent quality book cover designs for kids, teenagers, adults, and everyone else. Apart from <a href="https://www.bookcoverdesigners.co.uk/childrens-book">children's book cover design</a>, the battalion of professional book cover designers excels in niche-specified designing too.</p>
+            <p>Whether you need minimalistic/simple book cover designs or something with shenanigans, this book cover design agency caters to every requirement. From German book covers to English, French, and other languages, the largest network of creative ninjas knows it all. This helps us to redefine the right meaning of creativity.</p>
+            <h2 class="h4">UK's Top-Rated Book Cover Designers With a Bright Spark of Creativity</h2>
+            <p>Since forming 10 years ago, BookCoverDesigners.co.uk has expanded continuously regarding services, size, and team. The small team of creative heads began by delivering good book cover designs to the audience and later expanded to book illustrations, layout designing, and back book cover designing services.</p>
+            <p>As we continued expanding the service, adding more to the team members became mandatory. And while doing so, our book cover design agency is proud to work with top-notch, ingenious book cover designers in the UK. They have a bright spark of creativity and a huge flair of artistry that drives the highest success rate for us.</p>
+            <h2 class="h4">The Quest to Find "UK's Best Book Cover Designers Near Me" Is Over!</h2>
+            <p>England, London, Ireland, Belfast, Scotland, Edinburgh, Wales, Cardiff, Britain, Liverpool, Edinburgh, Manchester, Bristol, Birmingham, and the list of cities would go on – but you would fail to identify a region that we do not serve. Our insight-full and success-optimized cheap book cover design services are approachable from everywhere.</p>
+            <p>Therefore, we stop your quest to find UK's best book cover designers. Along with the UK – this book cover design agency aids authors residing in the USA, UAE, and different parts of the map. We have the prestige of being the most approachable and professional book cover design service in and outside UK! Our pros are just a shout-away.</p>
+
+            </div>
+            <div class="col-12 col-lg-6">
+
+                <img src="https://www.bookcoverdesigners.co.uk/frontend/images/other/book-publisher.webp" class="img-fluid lazyload show-desktop d-block mx-auto mb-3" alt="Book Publisher" title="Book Publisher" width="535" height="483" loading="lazy">
+            <h2 class="h4">Purposeful and Personalized Book Cover Designs Every Time in UK</h2>
+            <p>This is a trusted book cover design agency. We have the honor of being trusted over thousands of book cover design companies. The audience holds the highest grades of expectations with us. And to ensure they are thrilled with the outcomes, the battalion of experts has taken the pledge to deliver purposeful and personalized outcomes every time.</p>
+            <p>Before the experts sit together to design a book cover, they brainstorm the idea. They look for creative opportunities in your idea. They add wings to your ideas. And only then a rough draft is taken to the screens and finally to you. The product you receive from us is born out of immense dedication, passion, and tough brainstorming sessions.</p>
+            <h2 class="h4">A Book Cover Design Service With Highest Customer Satisfaction Rate!</h2>
+            <p>This book cover design service has thrilled the highest number of clients. Authors entrust our professional book cover design service with their stories – because they acknowledge no one can do it better than our book cover designers in UK. The success possessed by us is an end product of the dedication and passion of our staff.</p>
+            <p>The force of expert book cover designers in the UK here intersects their experience, client's ideas, and creativity to produce something exceptional and unbeatable. This is why BookCoverDesigners.co.uk makes most of its business from its repeated business. We don't market ourselves – word of mouth does its job well.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="faq-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+
+                <span class="h2">Clients Commonly Ask:</span>
+
+                <hr class="hr-line">
+                <div class="accordion" id="faqs">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+
+                                What makes BookCoverDesigners.co.uk the best among others?
+
+                            </button>
+                        </h3>
+                        <div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="heading-1" data-bs-parent="#faqs">
+                            <div class="accordion-body">
+
+                                Our creative flair, cheap prices, and professionalism make us the best book cover design agency among other book cover design companies in the UK. And for being highly genius with our services, we are RAR Award Winners too!
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+
+                                How will you ensure that my book cover design is unique?
+
+                            </button>
+                        </h3>
+                        <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#faqs">
+                            <div class="accordion-body">
+
+                                The squad of expert book cover designers in UK ensures that your cover resembles no other cover in the market. They spend a lot of time cutting, deconstructing, blending, merging images and manipulating to deliver you the best product.
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+
+                                What if I need to make some changes to the cover design?
+
+                            </button>
+                        </h3>
+                        <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#faqs">
+                            <div class="accordion-body">
+
+                                We would happily cater to it! Before making the final delivery, our professional book cover design service providers share a draft with you. You may claim any changes in the design, and it will be catered free of cost.
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+
+                                How do you pick your book cover designers in UK for your team?
+
+                            </button>
+                        </h3>
+                        <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#faqs">
+                            <div class="accordion-body">
+
+                                That's a long and tiring drill – but the results are worth the hassle. Every book cover designer goes through a test where they are required to satisfy several design briefs. Out of thousands of applicants, only a few of them manage to be aboard.
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+
+                                I need cheap book cover design services. Can you guys help?
+
+                            </button>
+                        </h3>
+                        <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#faqs">
+                            <div class="accordion-body">
+
+                                Gladly! This is the UK's cheap book cover design service provider that lends a helping hand to clients at affordable prices. We won't cost you an arm and a leg – and the quality of products would make your spur out WOW!
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+
+                                Can your book cover designers in UK submit an order within 24 hours?
+
+                            </button>
+                        </h3>
+                        <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#faqs">
+                            <div class="accordion-body">
+
+                                Sadly, no! Designing a book cover is a long process. It requires creative research, and plenty of time to prepare a design. However, a rough draft or a mock can be submitted within 24 hours in certain cases. Let the support team know about your requirements.
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+
+                <span class="h2">Got a Brief? Let's Team Up!</span>
+
+                <hr class="hr-line">
+
+                <form id="form" action="#">
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <label for="name" class="form-label">Name:</label>
+            <input id="name" type="text" name="name" class="form-control" required="" value="">
+        </div>
+        <div class="col-md-6 mb-4">
+            <label for="email" class="form-label">Email:</label>
+            <input id="email" type="email" name="email" class="form-control" required="" value="">
+        </div>
+        <div class="col-md-6 mb-4">
+            <label for="phone_no" class="form-label">Phone:</label>
+            <input id="phone_no" type="number" name="phone_no" class="form-control" required="" value="">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="genre" class="form-label">Select Genre</label>
+            <select class="form-control form-select" name="genre" id="genre" required="" value="">
+                <option value="">Select Genre</option>
+                <option value="Action-Adventure">Action-Adventure</option>
+                <option value="Celebrity Biographies">Celebrity Biographies</option>
+                <option value="Classical Drama">Classical Drama</option>
+                <option value="Comparative Religion">Comparative Religion</option>
+                <option value="Contemporary Romance">Contemporary Romance</option>
+                <option value="Cookbooks">Cookbooks</option>
+                <option value="Crime">Crime</option>
+                <option value="Cyberpunk">Cyberpunk</option>
+                <option value="Dystopian">Dystopian</option>
+                <option value="Fairy Tale Retellings">Fairy Tale Retellings</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Gothic Horror">Gothic Horror</option>
+                <option value="Historical Fiction">Historical Fiction</option>
+                <option value="Historical Romance">Historical Romance</option>
+                <option value="Horror">Horror</option>
+                <option value="Literary Fiction">Literary Fiction</option>
+                <option value="Manga">Manga</option>
+                <option value="Memoir">Memoir</option>
+                <option value="Motivational">Motivational</option>
+                <option value="Mystery/Thriller">Mystery/Thriller</option>
+                <option value="Paranormal">Paranormal</option>
+                <option value="Personal Development">Personal Development</option>
+                <option value="Philosophy">Philosophy</option>
+                <option value="Picture Books">Picture Books</option>
+                <option value="Political Biographies">Political Biographies</option>
+                <option value="Psychological Horror">Psychological Horror</option>
+                <option value="Psychological Thriller">Psychological Thriller</option>
+                <option value="Psychology">Psychology</option>
+                <option value="Religion/Spirituality">Religion/Spirituality</option>
+                <option value="Romance">Romance</option>
+                <option value="Science Fiction">Science Fiction</option>
+                <option value="Self-Help">Self-Help</option>
+                <option value="Slam Poetry">Slam Poetry</option>
+                <option value="Spiritual Guides">Spiritual Guides</option>
+                <option value="Superhero Comics">Superhero Comics</option>
+                <option value="Survival">Survival</option>
+                <option value="Suspense">Suspense</option>
+                <option value="Traditional Poetry">Traditional Poetry</option>
+                <option value="Travel">Travel</option>
+                <option value="Urban Fantasy">Urban Fantasy</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mb-3">
+            <label for="select-service">Select Services:</label>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Book Cover Design" id="book-cover-design">
+                <label class="form-check-label" for="book-cover-design">
+                    Book Cover Design
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Book Layout Design" id="book-layout-design">
+                <label class="form-check-label" for="book-layout-design">
+                    Book Layout Design
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Custom Illustrations" id="custom-illustrations">
+                <label class="form-check-label" for="custom-illustrations">
+                    Custom Illustrations
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Book/Ebook Pages Design" id="book-ebook-pages-design">
+                <label class="form-check-label" for="book-ebook-pages-design">
+                    Book/Ebook Pages Design
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Author’s Website" id="authors-website">
+                <label class="form-check-label" for="authors-website">
+                    Author's Website
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Book Promotion Graphics" id="book-promotion-graphics">
+                <label class="form-check-label" for="book-promotion-graphics">
+                    Book Promotion Graphics
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Book Trailer Video" id="book-trailer-video">
+                <label class="form-check-label" for="book-trailer-video">
+                    Book Trailer Video
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Book Printing" id="book-printing">
+                <label class="form-check-label" for="book-printing">
+                    Book Printing
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Ebook Publishing" id="ebook-publishing">
+                <label class="form-check-label" for="ebook-publishing">
+                    Ebook Publishing
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Ghostwriting" id="ghostwriting">
+                <label class="form-check-label" for="ghostwriting">
+                    Ghostwriting
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-4">
+            <div class="form-check">
+                <input class="form-check-input" name="services[]" type="checkbox" value="Other Services" id="other-services">
+                <label class="form-check-label" for="other-services">
+                    Other Services
+                </label>
+            </div>
+        </div>
+        <div class="col-12 mb-4">
+            <input type="file" name="files[]" class="form-control" multiple="">
+        </div>
+    </div>
+    <div class="mb-4">
+        <textarea class="form-control" name="details" rows="3" placeholder="Enter a brief description"></textarea>
+    </div>
+    <div class="g-recaptcha" data-sitekey="6LfwZoIiAAAAAHQpVLxKiv4GU6pMOuR-b_u4a_KP" data-size="invisible" data-callback="formSubmit"></div>
+    <button class="btn-dual-shade" type="submit">Let's Do It!</button>
+</form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <footer class="overflow-hidden">
+            <div class="container">
+                <div class="footer-affordable">
+                    <div class="row">
+                        <div class="col-12 col-lg-5">
+                            <img src="https://www.bookcoverdesigners.co.uk/frontend/images/logo/book-cover-designs.webp" class="img-fluid lazyload" alt="Book Cover Designs" title="Book Cover Designs" loading="lazy" width="130" height="41">
+                            <br>
+                            <p class="text-white mt-3">BookCoverDesigners.co.uk is its kind platform helping authors outstand the shelf with its crazy, innovative, and high-quality book cover. We design covers that capture the attention.</p>
+                        </div>
+                        <div class="col-12 col-lg-7 text-end">
+                            <ul class="list-footer">
+                                <li>
+                                    <a href="#">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Faqs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        About us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Samples
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Reviews
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Sitemap
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Get In Touch
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="social-links m-t-30">
+
+                                
+                                    <a href="#" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                        <span class="sr-only">Facebook</span>
+                                    </a>
+
+                                
+                                    <a href="#" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                        <span class="sr-only">Instagram</span>
+                                    </a>
+
+                                
+                                    <a href="#" target="_blank">
+                                        <i class="fab fa-pinterest-p"></i>
+                                        <span class="sr-only">Pinterest-p</span>
+                                    </a>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer-copyrights">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4">
+                            <ul class="list-inline list-copyrights">
+                                <li class="list-inline-item">
+                                    © 2026 - Book Cover Designer. All rights reserved.
+                                </li>
+                                <li class="list-inline-item" style="margin-bottom: 5px;">
+                                    Powered by <a href="#" class="text-white">Brilliant Minds</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <img src="https://www.bookcoverdesigners.co.uk/frontend/images/icons/secured-payment.webp" class="img-fluid lazyload" alt="Book Cover Designers UK - Secured Payment" title="Book Cover Designers UK - Secured Payment" loading="lazy" width="260" height="33">
+                        </div>
+                        <div class="col-lg-4 text-end">
+                            <ul class="list-footer">
+                                <li>
+                                    <a href="#" class="text-white">
+                                        Terms And Conditions
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white">
+                                        Privacy Policy
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script defer="" src="js/bootstrap.js"></script>
+
+
+
+        
+
+    
+
+</body></html>
