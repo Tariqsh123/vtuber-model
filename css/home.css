@@ -1986,6 +1986,7 @@ header .top-bar {
     align-items: center;
     /* background: linear-gradient(0deg, #dfffff, #fcfcfc); */
     background-color: #adf71a;
+    border-bottom: 2px solid white;
     display: flex;
     max-width: 100%;
     min-height: 40px;
@@ -2049,10 +2050,14 @@ header .top-bar ul li a i.fa-phone {
 header .navbar {
     max-width: 100%;
     min-height: 70px;
+    background: #adf71a;
     padding-bottom: .2rem;
     padding-top: .2rem
 }
-
+header .navbar .btn-dual-shade{
+    background-color: black;
+    color: white !important;
+}
 header .navbar .navbar-brand {
     max-height: 45px;
     max-width: 144px
@@ -2075,12 +2080,6 @@ header .navbar .nav-item .nav-link {
     width: 120px
 }
 
-header .navbar .nav-item .nav-link.active,
-header .navbar .nav-item .nav-link:focus,
-header .navbar .nav-item .nav-link:hover {
-    color: #adf71a !important
-}
-
 header .navbar .nav-item .dropdown-item.active,
 header .navbar .nav-item .dropdown-item:active {
     background-color: #adf71a;
@@ -2089,7 +2088,7 @@ header .navbar .nav-item .dropdown-item:active {
 }
 
 header .navbar.fixed-top {
-    background: #fff;
+    background: #adf71a;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .22)
 }
 
@@ -2928,4 +2927,17 @@ footer .footer-copyrights img {
 }
 section.portfolio .hr-line{
     background-color: white;
+}
+#process-video{
+    height: 500px;
+    width: 350px;
+}
+.process-img{
+    height: 500px;
+    width: 350px;
+}
+@media(max-width:600px){
+    #process-video{
+        width: 100%;
+    }
 }
