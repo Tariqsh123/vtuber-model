@@ -1934,8 +1934,11 @@ textarea:focus {
 section.cta-banner {
     background: #21212d;
 }
-section.cta-banner .h2,section.cta-banner p,section.cta-banner a span ,section.cta-banner .live-chat .chat-text span{
+section.cta-banner p,section.cta-banner a span ,section.cta-banner .live-chat .chat-text span{
     color: white;
+}
+section.cta-banner .h2{
+    color: #adf71a;
 }
 
 section.cta-banner hr {
@@ -2126,7 +2129,9 @@ header .navbar.fixed-top {
     min-height: 40px;
     min-width: 440px
 }
-
+.home-banner .banner-image .h1{
+    color: #adf71a;
+}
 .home-banner .banner-image .h1,
 .home-banner .banner-image h1 {
     font-size: 45px
@@ -2211,7 +2216,7 @@ section.how-order .hr-line {
 section.how-order .text-num {
     align-items: center;
     border: 1px dashed;
-    color: #adf71a;
+    color: #000;
     display: flex;
     font-size: 23px;
     font-weight: 700;
@@ -2240,9 +2245,6 @@ section.book-design {
     background-position: 100%;
     background-repeat: no-repeat;
     background-size: auto
-}
-.book-design .h4{
-    color: #adf71a !important;
 }
 
 section.reviews {
@@ -2331,8 +2333,11 @@ section.reviews .carousel .carousel-inner .carousel-item-start.active {
 section.why-choose {
     background:#21212d;
 }
-section.why-choose h2,section.why-choose p,section.why-choose .email-phone{
+section.why-choose p,section.why-choose .email-phone{
     color: white !important;
+}
+section.why-choose h2{
+    color: #adf71a;
 }
 section.why-choose .btn-w{
     color: white !important;
@@ -2341,6 +2346,9 @@ section.why-choose .btn-w{
 section.why-choose .btn-w:hover{
     background:#adf71a !important;
     color: #000 !important;
+}
+section.why-choose .btn-dual-shade{
+    color: black !important;
 }
 section.why-choose hr {
     margin-left: 0;
@@ -2366,12 +2374,11 @@ section.why-choose .choose-box {
     padding: 20px 30px
 }
 section.why-choose .choose-box .h5{
-    color: white;
+    color: #adf71a;
 }
 
 section.why-choose .choose-box svg {
     margin: 0 0 10px;
-    filter: brightness(100);
 }
 
 section.book-publisher p {
@@ -2398,13 +2405,13 @@ section.faq-form .accordion .accordion-item {
     border-bottom: 1px solid white
 }
 section.faq-form .h2{
-    color: white;
+    color: #adf71a;
 }
 
 section.faq-form .accordion .accordion-item .accordion-header button {
     background: transparent !important;
     box-shadow: none !important;
-    color: #fff !important;
+    color: #adf71a !important;
     font-family: Zilla Slab;
     font-size: 18px;
     font-weight: 700;
@@ -2913,8 +2920,11 @@ footer .footer-copyrights img {
 .portfolio{
     background: #21212d;
 }
-.portfolio h2,.portfolio p{
+.portfolio p{
     color: white;
+}
+.portfolio h2{
+    color: #adf71a;
 }
 section.portfolio .hr-line{
     background-color: white;
