@@ -30,21 +30,21 @@
             <div class="col-12 col-md-4">
 
                 
-                    <a class="social-icons" href="#" target="_blank">
+                    <a class="social-icons" href="#" title="Facebook" target="_blank">
                         <i class="fab fa-facebook-f"></i>
                         <span class="sr-only">Facebook</span>
                     </a>
 
                 
-                    <a class="social-icons" href="#" target="_blank">
+                    <a class="social-icons" href="#" title="Instagram" target="_blank">
                         <i class="fab fa-instagram"></i>
                         <span class="sr-only">Instagram</span>
                     </a>
 
                 
-                    <a class="social-icons" href="#" target="_blank">
+                    <a class="social-icons" href="#" title="Pinterest" target="_blank">
                         <i class="fab fa-pinterest-p"></i>
-                        <span class="sr-only">Pinterest-p</span>
+                        <span class="sr-only">Pinterest</span>
                     </a>
 
                 
@@ -52,7 +52,7 @@
             <div class="col-12 col-md-8">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="#" title="Email">
                             <i class="fas fa-envelope"></i>
                             info@bookcoverdesigners.co.uk
                         </a>
@@ -61,7 +61,7 @@
                         |
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" title="Phone">
                             <i class="fas fa-phone"></i>
                             +44 20 3930 1313
                         </a>
@@ -73,7 +73,7 @@
 </section>
 <nav class="navbar navbar-expand-lg navbar-light" aria-label="Book Cover Designers UK - Navigation">
     <div class="container">
-        <a class="navbar-brand m-0" href="#" aria-current="page">
+        <a class="navbar-brand m-0" href="#" title="Logo" aria-current="page">
             <img src="https://www.bookcoverdesigners.co.uk/frontend/images/logo/book-cover-design.webp" class="img-fluid" alt="logo" title="logo" loading="lazy" width="144" height="45">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bookCoverDesignNavbar" aria-controls="bookCoverDesignNavbar" aria-expanded="false" aria-label="Toggle Navigation">
@@ -82,12 +82,12 @@
         <div class="collapse navbar-collapse justify-content-end" id="bookCoverDesignNavbar">
             <ul class="navbar-nav menu-bar">
                 <li class="nav-item">
-                    <a class="nav-link " href="#">
+                    <a class="nav-link" title="About US" href="#">
                         About us
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdownServices" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdownServices" data-bs-toggle="dropdown" aria-expanded="false" title="Services">
                         Services
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownServices">
@@ -168,7 +168,7 @@
                         <div class="banner-image">
                             <img src="images/hero-bg.png" class="img-fluid  slider-img" alt="Hero Image" title="Hero Image" width="1366" height="640" loading="lazy">
                             <div class="row">
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-lg-6 home-hero-text-container">
                                     <h1 class="h1">Gaming VTuber – Custom VTuber Models & Live2D Rigging for Streamers</h1>
                                     <span class="tag">
                                         2D VTuber | 3D VTuber | Live2D Rigging | PNGTuber | VRChat Avatars
@@ -1162,152 +1162,143 @@
 
                 <hr class="hr-line">
 
-                <form id="form" action="#">
+               <form id="form" action="#">
 
     <div class="row">
         <div class="col-md-6 mb-4">
             <label for="name" class="form-label">Name:</label>
-            <input id="name" type="text" name="name" class="form-control" required="" value="">
+            <input id="name" type="text" name="name" class="form-control" required>
         </div>
+
         <div class="col-md-6 mb-4">
             <label for="email" class="form-label">Email:</label>
-            <input id="email" type="email" name="email" class="form-control" required="" value="">
+            <input id="email" type="email" name="email" class="form-control" required>
         </div>
+
         <div class="col-md-6 mb-4">
-            <label for="phone_no" class="form-label">Phone:</label>
-            <input id="phone_no" type="number" name="phone_no" class="form-control" required="" value="">
+            <label for="contact" class="form-label">Contact:</label>
+            <input id="contact" type="text" name="contact" class="form-control" required>
         </div>
-        <div class="col-md-6 mb-3">
-            <label for="genre" class="form-label">Select Genre</label>
-            <select class="form-control form-select" name="genre" id="genre" required="" value="">
-                <option value="">Select Genre</option>
-                <option value="Action-Adventure">Action-Adventure</option>
-                <option value="Celebrity Biographies">Celebrity Biographies</option>
-                <option value="Classical Drama">Classical Drama</option>
-                <option value="Comparative Religion">Comparative Religion</option>
-                <option value="Contemporary Romance">Contemporary Romance</option>
-                <option value="Cookbooks">Cookbooks</option>
-                <option value="Crime">Crime</option>
-                <option value="Cyberpunk">Cyberpunk</option>
-                <option value="Dystopian">Dystopian</option>
-                <option value="Fairy Tale Retellings">Fairy Tale Retellings</option>
-                <option value="Fantasy">Fantasy</option>
-                <option value="Gothic Horror">Gothic Horror</option>
-                <option value="Historical Fiction">Historical Fiction</option>
-                <option value="Historical Romance">Historical Romance</option>
-                <option value="Horror">Horror</option>
-                <option value="Literary Fiction">Literary Fiction</option>
-                <option value="Manga">Manga</option>
-                <option value="Memoir">Memoir</option>
-                <option value="Motivational">Motivational</option>
-                <option value="Mystery/Thriller">Mystery/Thriller</option>
-                <option value="Paranormal">Paranormal</option>
-                <option value="Personal Development">Personal Development</option>
-                <option value="Philosophy">Philosophy</option>
-                <option value="Picture Books">Picture Books</option>
-                <option value="Political Biographies">Political Biographies</option>
-                <option value="Psychological Horror">Psychological Horror</option>
-                <option value="Psychological Thriller">Psychological Thriller</option>
-                <option value="Psychology">Psychology</option>
-                <option value="Religion/Spirituality">Religion/Spirituality</option>
-                <option value="Romance">Romance</option>
-                <option value="Science Fiction">Science Fiction</option>
-                <option value="Self-Help">Self-Help</option>
-                <option value="Slam Poetry">Slam Poetry</option>
-                <option value="Spiritual Guides">Spiritual Guides</option>
-                <option value="Superhero Comics">Superhero Comics</option>
-                <option value="Survival">Survival</option>
-                <option value="Suspense">Suspense</option>
-                <option value="Traditional Poetry">Traditional Poetry</option>
-                <option value="Travel">Travel</option>
-                <option value="Urban Fantasy">Urban Fantasy</option>
+
+        <div class="col-md-6 mb-4">
+            <label for="discord" class="form-label">Discord Username:</label>
+            <input id="discord" type="text" name="discord" class="form-control" required>
+        </div>
+
+        <div class="col-md-12 mb-4">
+            <label for="streaming-platform" class="form-label">Streaming Platform:</label>
+            <input id="streaming-platform" type="text" name="streaming_platform" class="form-control" required>
+        </div>
+
+        <div class="col-md-12 mb-4">
+            <select class="form-control form-select" name="vtuber_style" id="vtuber-style" required>
+                <option value="">Select VTuber Style</option>
+                <option value="Anime VTuber">Anime VTuber</option>
+                <option value="Cyberpunk VTuber">Cyberpunk VTuber</option>
+                <option value="Fantasy VTuber">Fantasy VTuber</option>
+                <option value="Furry VTuber">Furry VTuber</option>
+                <option value="Cute/Kawaii VTuber">Cute/Kawaii VTuber</option>
+                <option value="Custom VTuber">Custom VTuber</option>
+                <option value="Other">Other</option>
             </select>
         </div>
     </div>
+
     <div class="row">
         <div class="col-12 mb-3">
-            <label for="select-service">Select Services:</label>
+            <label>Select Services:</label>
         </div>
+
         <div class="col-12 col-md-6 mb-2">
             <div class="form-check">
-                <input class="form-check-input" name="services[]" type="checkbox" value="Book Cover Design" id="book-cover-design">
-                <label class="form-check-label" for="book-cover-design">
-                    Book Cover Design
+                <input class="form-check-input" name="services[]" type="checkbox" value="2D VTuber Model" id="2d-vtuber-model">
+                <label class="form-check-label" for="2d-vtuber-model">
+                    2D VTuber Model
                 </label>
             </div>
         </div>
+
         <div class="col-12 col-md-6 mb-2">
             <div class="form-check">
-                <input class="form-check-input" name="services[]" type="checkbox" value="Book Layout Design" id="book-layout-design">
-                <label class="form-check-label" for="book-layout-design">
-                    Book Layout Design
+                <input class="form-check-input" name="services[]" type="checkbox" value="3D VTuber Model" id="3d-vtuber-model">
+                <label class="form-check-label" for="3d-vtuber-model">
+                    3D VTuber Model
                 </label>
             </div>
         </div>
+
         <div class="col-12 col-md-6 mb-2">
             <div class="form-check">
-                <input class="form-check-input" name="services[]" type="checkbox" value="Custom Illustrations" id="custom-illustrations">
-                <label class="form-check-label" for="custom-illustrations">
-                    Custom Illustrations
+                <input class="form-check-input" name="services[]" type="checkbox" value="Live2D Rigging" id="live2d-rigging">
+                <label class="form-check-label" for="live2d-rigging">
+                    Live2D Rigging
                 </label>
             </div>
         </div>
+
         <div class="col-12 col-md-6 mb-2">
             <div class="form-check">
-                <input class="form-check-input" name="services[]" type="checkbox" value="Book/Ebook Pages Design" id="book-ebook-pages-design">
-                <label class="form-check-label" for="book-ebook-pages-design">
-                    Book/Ebook Pages Design
+                <input class="form-check-input" name="services[]" type="checkbox" value="PNGTuber Design" id="pngtuber-design">
+                <label class="form-check-label" for="pngtuber-design">
+                    PNGTuber Design
                 </label>
             </div>
         </div>
+
         <div class="col-12 col-md-6 mb-2">
             <div class="form-check">
-                <input class="form-check-input" name="services[]" type="checkbox" value="Author’s Website" id="authors-website">
-                <label class="form-check-label" for="authors-website">
-                    Author's Website
+                <input class="form-check-input" name="services[]" type="checkbox" value="VRChat Avatar" id="vrchat-avatar">
+                <label class="form-check-label" for="vrchat-avatar">
+                    VRChat Avatar
                 </label>
             </div>
         </div>
+
         <div class="col-12 col-md-6 mb-2">
             <div class="form-check">
-                <input class="form-check-input" name="services[]" type="checkbox" value="Book Promotion Graphics" id="book-promotion-graphics">
-                <label class="form-check-label" for="book-promotion-graphics">
-                    Book Promotion Graphics
+                <input class="form-check-input" name="services[]" type="checkbox" value="VTuber Expressions & Toggles" id="vtuber-expressions">
+                <label class="form-check-label" for="vtuber-expressions">
+                    VTuber Expressions & Toggles
                 </label>
             </div>
         </div>
+
         <div class="col-12 col-md-6 mb-2">
             <div class="form-check">
-                <input class="form-check-input" name="services[]" type="checkbox" value="Book Trailer Video" id="book-trailer-video">
-                <label class="form-check-label" for="book-trailer-video">
-                    Book Trailer Video
+                <input class="form-check-input" name="services[]" type="checkbox" value="VTuber Animation" id="vtuber-animation">
+                <label class="form-check-label" for="vtuber-animation">
+                    VTuber Animation
                 </label>
             </div>
         </div>
+
         <div class="col-12 col-md-6 mb-2">
             <div class="form-check">
-                <input class="form-check-input" name="services[]" type="checkbox" value="Book Printing" id="book-printing">
-                <label class="form-check-label" for="book-printing">
-                    Book Printing
+                <input class="form-check-input" name="services[]" type="checkbox" value="VTube Studio Setup" id="vtube-studio-setup">
+                <label class="form-check-label" for="vtube-studio-setup">
+                    VTube Studio Setup
                 </label>
             </div>
         </div>
+
         <div class="col-12 col-md-6 mb-2">
             <div class="form-check">
-                <input class="form-check-input" name="services[]" type="checkbox" value="Ebook Publishing" id="ebook-publishing">
-                <label class="form-check-label" for="ebook-publishing">
-                    Ebook Publishing
+                <input class="form-check-input" name="services[]" type="checkbox" value="Stream Overlay Design" id="stream-overlay-design">
+                <label class="form-check-label" for="stream-overlay-design">
+                    Stream Overlay Design
                 </label>
             </div>
         </div>
+
         <div class="col-12 col-md-6 mb-2">
             <div class="form-check">
-                <input class="form-check-input" name="services[]" type="checkbox" value="Ghostwriting" id="ghostwriting">
-                <label class="form-check-label" for="ghostwriting">
-                    Ghostwriting
+                <input class="form-check-input" name="services[]" type="checkbox" value="Custom Character Design" id="custom-character-design">
+                <label class="form-check-label" for="custom-character-design">
+                    Custom Character Design
                 </label>
             </div>
         </div>
+
         <div class="col-12 col-md-6 mb-4">
             <div class="form-check">
                 <input class="form-check-input" name="services[]" type="checkbox" value="Other Services" id="other-services">
@@ -1316,15 +1307,31 @@
                 </label>
             </div>
         </div>
+
         <div class="col-12 mb-4">
-            <input type="file" name="files[]" class="form-control" multiple="">
+            <input type="file" name="files[]" class="form-control" multiple>
         </div>
     </div>
+
     <div class="mb-4">
-        <textarea class="form-control" name="details" rows="3" placeholder="Enter a brief description"></textarea>
+        <textarea 
+            class="form-control" 
+            name="details" 
+            rows="5" 
+            placeholder="Character personality, colors, outfit, references, expressions, etc."
+        ></textarea>
     </div>
-    <div class="g-recaptcha" data-sitekey="6LfwZoIiAAAAAHQpVLxKiv4GU6pMOuR-b_u4a_KP" data-size="invisible" data-callback="formSubmit"></div>
-    <button class="btn-dual-shade" type="submit">Let's Do It!</button>
+
+    <div class="g-recaptcha" 
+        data-sitekey="6LfwZoIiAAAAAHQpVLxKiv4GU6pMOuR-b_u4a_KP" 
+        data-size="invisible" 
+        data-callback="formSubmit">
+    </div>
+
+    <button class="btn-dual-shade" type="submit">
+        Let’s Create Your VTuber Model!
+    </button>
+
 </form>
 
             </div>
