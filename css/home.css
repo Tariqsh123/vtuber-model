@@ -2057,6 +2057,9 @@ header .navbar {
 header .navbar .btn-dual-shade{
     background-color: black;
     color: white !important;
+    width: 220px !important;
+    max-width: none !important;
+    min-width: auto !important;
 }
 header .navbar .navbar-brand {
     max-height: 45px;
@@ -2399,13 +2402,23 @@ section.why-choose .email-phone {
 section.why-choose .choose-box {
     background: #2d2d38;
     border-radius: 5px;
+    height: 300px;
     margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
     padding: 20px 30px
 }
 section.why-choose .choose-box .h5{
     color: #adf71a;
 }
-
+@media(max-width:600px){
+    .choose-box .h5{
+        text-align: center;
+        width: 100%;
+    }
+}
 section.why-choose .choose-box svg {
     margin: 0 0 10px;
 }
@@ -3314,8 +3327,8 @@ section.portfolio .hr-line{
   height:fit-content;
   padding: 10px 0;
   border-radius:16px;
-  background:#111;
-  color:#fff;
+  background:#adf71a;
+  color:#000;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -3333,11 +3346,11 @@ section.portfolio .hr-line{
 .featured-package ul li{
   color:#fff;
 }
-
+/* 
 .featured-package .vtuber-package-btn{
   background:#fff;
   color:#111;
-}
+} */
 
 @media(max-width:991px){
 
@@ -3412,7 +3425,7 @@ section.faq-form .h2{
 
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
