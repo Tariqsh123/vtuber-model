@@ -7,174 +7,13 @@
         <title>V Tuber Model</title>
         <style>
             @font-face {
-        	font-family: 'Zilla Slab';
-        	font-style: normal;
-        	font-display: swap;
-        	font-weight: 300;
-        	src: local('Zilla Slab'),
-        		url('fonts/zilla-slab-v11-latin-300.eot');
-        	src: local('Zilla Slab'),
-        		url('fonts/zilla-slab-v11-latin-300.eot#iefix') format('embedded-opentype'),
-        		url('fonts/zilla-slab-v11-latin-300.woff2') format('woff2'),
-        		url('fonts/zilla-slab-v11-latin-300.woff') format('woff'),
-        		url('fonts/zilla-slab-v11-latin-300.ttf') format('truetype'),
-        		url('images/zilla-slab-v11-latin-300.svg#ZillaSlab') format('svg');
-            }
-
-            @font-face {
-            	font-family: 'Zilla Slab';
-            	font-style: normal;
-            	font-display: swap;
-            	font-weight: 400;
-            	src: local('Zilla Slab'),
-            		url('fonts/zilla-slab-v11-latin-regular.eot');
-            	src: local('Zilla Slab'),
-            		url('fonts/zilla-slab-v11-latin-regular.eot#iefix') format('embedded-opentype'),
-            		url('fonts/zilla-slab-v11-latin-regular.woff2') format('woff2'),
-            		url('fonts/zilla-slab-v11-latin-regular.woff') format('woff'),
-            		url('fonts/zilla-slab-v11-latin-regular.ttf') format('truetype'),
-            		url('images/zilla-slab-v11-latin-regular.svg#ZillaSlab') format('svg');
-            }
-            
-            @font-face {
-            	font-family: 'Zilla Slab';
-            	font-style: normal;
-            	font-display: swap;
-            	font-weight: 500;
-            	src: local('Zilla Slab'),
-            		url('fonts/zilla-slab-v11-latin-500.eot');
-            	src: local('Zilla Slab'),
-            		url('fonts/zilla-slab-v11-latin-500.eot#iefix') format('embedded-opentype'),
-            		url('fonts/zilla-slab-v11-latin-500.woff2') format('woff2'),
-            		url('fonts/zilla-slab-v11-latin-500.woff') format('woff'),
-            		url('fonts/zilla-slab-v11-latin-500.ttf') format('truetype'),
-            		url('images/zilla-slab-v11-latin-500.svg#ZillaSlab') format('svg');
-            }
-            
-            @font-face {
-            	font-family: 'Zilla Slab';
-            	font-style: normal;
-            	font-display: swap;
-            	font-weight: 600;
-            	src: local('Zilla Slab'),
-            		url('fonts/zilla-slab-v11-latin-600.eot');
-            	src: local('Zilla Slab'),
-            		url('fonts/zilla-slab-v11-latin-600.eot#iefix') format('embedded-opentype'),
-            		url('fonts/zilla-slab-v11-latin-600.woff2') format('woff2'),
-            		url('fonts/zilla-slab-v11-latin-600.woff') format('woff'),
-            		url('fonts/zilla-slab-v11-latin-600.ttf') format('truetype'),
-            		url('images/zilla-slab-v11-latin-600.svg#ZillaSlab') format('svg');
-            }
-            
-            @font-face {
-            	font-family: 'Zilla Slab';
-            	font-style: normal;
-            	font-display: swap;
-            	font-weight: 700;
-            	src: local('Zilla Slab'),
-            		url('fonts/zilla-slab-v11-latin-700.eot');
-            	src: local('Zilla Slab'),
-            		url('fonts/zilla-slab-v11-latin-700.eot#iefix') format('embedded-opentype'),
-            		url('fonts/zilla-slab-v11-latin-700.woff2') format('woff2'),
-            		url('fonts/zilla-slab-v11-latin-700.woff') format('woff'),
-            		url('fonts/zilla-slab-v11-latin-700.ttf') format('truetype'),
-            		url('images/zilla-slab-v11-latin-700.svg#ZillaSlab') format('svg');
-            }
-            
-            @font-face {
-            	font-family: 'Open Sans';
-            	font-style: normal;
-            	font-display: swap;
-            	font-weight: 300;
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-300.eot');
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-300.eot#iefix') format('embedded-opentype'),
-            		url('fonts/open-sans-v34-latin-300.woff2') format('woff2'),
-            		url('fonts/open-sans-v34-latin-300.woff') format('woff'),
-            		url('fonts/open-sans-v34-latin-300.ttf') format('truetype'),
-            		url('images/open-sans-v34-latin-300.svg#OpenSans') format('svg');
-            }
-            
-            @font-face {
-            	font-family: 'Open Sans';
-            	font-style: normal;
-            	font-display: swap;
-            	font-weight: 400;
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-regular.eot');
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-regular.eot#iefix') format('embedded-opentype'),
-            		url('fonts/open-sans-v34-latin-regular.woff2') format('woff2'),
-            		url('fonts/open-sans-v34-latin-regular.woff') format('woff'),
-            		url('fonts/open-sans-v34-latin-regular.ttf') format('truetype'),
-            		url('images/open-sans-v34-latin-regular.svg#OpenSans') format('svg');
-            }
-            
-            @font-face {
-            	font-family: 'Open Sans';
-            	font-style: normal;
-            	font-display: swap;
-            	font-weight: 500;
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-500.eot');
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-500.eot#iefix') format('embedded-opentype'),
-            		url('fonts/open-sans-v34-latin-500.woff2') format('woff2'),
-            		url('fonts/open-sans-v34-latin-500.woff') format('woff'),
-            		url('fonts/open-sans-v34-latin-500.ttf') format('truetype'),
-            		url('images/open-sans-v34-latin-500.svg#OpenSans') format('svg');
-            }
-            
-            @font-face {
-            	font-family: 'Open Sans';
-            	font-style: normal;
-            	font-display: swap;
-            	font-weight: 600;
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-600.eot');
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-600.eot#iefix') format('embedded-opentype'),
-            		url('fonts/open-sans-v34-latin-600.woff2') format('woff2'),
-            		url('fonts/open-sans-v34-latin-600.woff') format('woff'),
-            		url('fonts/open-sans-v34-latin-600.ttf') format('truetype'),
-            		url('images/open-sans-v34-latin-600.svg#OpenSans') format('svg');
-            }
-            
-            @font-face {
-            	font-family: 'Open Sans';
-            	font-style: normal;
-            	font-display: swap;
-            	font-weight: 700;
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-700.eot');
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-700.eot#iefix') format('embedded-opentype'),
-            		url('fonts/open-sans-v34-latin-700.woff2') format('woff2'),
-            		url('fonts/open-sans-v34-latin-700.woff') format('woff'),
-            		url('fonts/open-sans-v34-latin-700.ttf') format('truetype'),
-            		url('images/open-sans-v34-latin-700.svg#OpenSans') format('svg');
-            }
-            
-            @font-face {
-            	font-family: 'Open Sans';
-            	font-style: normal;
-            	font-display: swap;
-            	font-weight: 800;
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-800.eot');
-            	src: local('Open Sans'),
-            		url('fonts/open-sans-v34-latin-800.eot#iefix') format('embedded-opentype'),
-            		url('fonts/open-sans-v34-latin-800.woff2') format('woff2'),
-            		url('fonts/open-sans-v34-latin-800.woff') format('woff'),
-            		url('fonts/open-sans-v34-latin-800.ttf') format('truetype'),
-            		url('images/open-sans-v34-latin-800.svg#OpenSans') format('svg');
-            }
-            
-            
-            .fa-pinterest-p:before {
-                content: "\f231";
-            }
+    font-family: 'Creato Display';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 800;
+    src: local('Creato Display'),
+         url('fonts/CreatoDisplay-Black.otf') format('opentype');
+}
         </style>
 
         
@@ -235,7 +74,7 @@
 <nav class="navbar navbar-expand-lg navbar-light" aria-label="Book Cover Designers UK - Navigation">
     <div class="container">
         <a class="navbar-brand m-0" href="#" aria-current="page">
-            <img src="https://www.bookcoverdesigners.co.uk/frontend/images/logo/book-cover-design.webp" class="img-fluid " alt="logo" title="logo" loading="lazy" width="144" height="45">
+            <img src="https://www.bookcoverdesigners.co.uk/frontend/images/logo/book-cover-design.webp" class="img-fluid" alt="logo" title="logo" loading="lazy" width="144" height="45">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bookCoverDesignNavbar" aria-controls="bookCoverDesignNavbar" aria-expanded="false" aria-label="Toggle Navigation">
             <span class="navbar-toggler-icon"></span>
@@ -281,22 +120,22 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownServices">
                         <li>
-                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=15532&format=png&color=000000" alt="" style="height: 20px;width: auto;"> Vtuber USA </a>
+                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=15532&format=png&color=000000" alt="Vtuber USA" title="Vtuber USA" style="height: 20px;width: auto;" loading="lazy"> Vtuber USA </a>
                         </li>
                         <li>
-                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=15512&format=png&color=000000" alt="" style="height: 20px;width: auto;"> Vtuber Canada </a>
+                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=15512&format=png&color=000000" alt="Vtuber Canada " title="Vtuber Canada " style="height: 20px;width: auto;" loading="lazy" > Vtuber Canada </a>
                         </li>
                         <li>
-                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=15534&format=png&color=000000" alt="" style="height: 20px;width: auto;"> Vtuber UK</a>
+                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=15534&format=png&color=000000" alt="Vtuber UK" title="Vtuber UK" style="height: 20px;width: auto;" loading="lazy"> Vtuber UK</a>
                         </li>
                         <li>
-                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=22557&format=png&color=000000" alt="" style="height: 20px;width: auto;"> Vtuber Australia</a>
+                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=22557&format=png&color=000000" alt="Vtuber Australia" title="Vtuber Australia" style="height: 20px;width: auto;" loading="lazy"> Vtuber Australia</a>
                         </li>
                         <li>
-                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=15502&format=png&color=000000" alt="" style="height: 20px;width: auto;"> Vtuber Germany </a>
+                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=15502&format=png&color=000000" alt="Vtuber Germany" title="Vtuber Germany" style="height: 20px;width: auto;" loading="lazy"> Vtuber Germany </a>
                         </li>
                         <li>
-                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=15542&format=png&color=000000" alt="" style="height: 20px;width: auto;"> Vtuber Italy</a>
+                            <a class="dropdown-item " href="#"><img src="https://img.icons8.com/?size=100&id=15542&format=png&color=000000" alt="Vtuber Italy" title="Vtuber Italy" style="height: 20px;width: auto;" loading="lazy"> Vtuber Italy</a>
                         </li>
                     </ul>
                 </li>
@@ -327,7 +166,7 @@
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active" data-bs-interval="2500">
                         <div class="banner-image">
-                            <img src="images/hero-bg.png" class="img-fluid  slider-img" alt="Book Cover Designers" title="Book Cover Designers" width="1366" height="640" loading="lazy">
+                            <img src="images/hero-bg.png" class="img-fluid  slider-img" alt="Hero Image" title="Hero Image" width="1366" height="640" loading="lazy">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
                                     <h1 class="h1">Gaming VTuber – Custom VTuber Models & Live2D Rigging for Streamers</h1>
@@ -344,8 +183,7 @@
                                                     <path d="M2920.512,551.988c.04.034.087.073.131.115.532.5,1.069.99,1.591,1.5.145.14.223.149.375,0q3.131-3.03,6.27-6.049c.157-.152.237-.132.376.006.347.344.7.68,1.068,1,.155.137.143.211,0,.349q-2.517,2.4-5.022,4.808-1.356,1.3-2.71,2.6c-.112.108-.174.149-.312.018q-1.515-1.441-3.051-2.861c-.135-.125-.177-.193-.011-.337.382-.331.741-.689,1.113-1.032C2920.378,552.061,2920.417,551.994,2920.512,551.988Z" transform="translate(-2777.435 63.607)" fill="#fff"></path>
                                                 </g>
                                             </svg>
-                                             
-                                             Professional VTuber Artists
+                                            Professional VTuber Artists
                                         </li>
                                         <li>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14.096" height="13.786" viewBox="0 0 14.096 13.786">
@@ -406,7 +244,7 @@
             <hr class="hr-line">
             <p>Gaming VTuber is a creative VTuber design studio specializing in custom VTuber models, Live2D rigging, anime avatars, and virtual streamer branding. Whether you’re starting your first Twitch stream or building a professional virtual creator brand, our team creates high-quality VTuber avatars designed to match your personality and audience.</p>
             <p>We help creators transform their ideas into expressive virtual identities that engage viewers and build memorable online personas.</p>
-            <img src="images/home-after-hero-img.png" class="img-fluid  d-block mx-auto" alt="Fantasy Book Cover" title="Fantasy Book Cover" width="766" height="459" loading="lazy">
+            <img src="images/home-after-hero-img.png" class="img-fluid  d-block mx-auto" alt="home-after-hero-img" title="home-after-hero-img" width="766" height="459" loading="lazy">
             <!-- <a href="#" class="btn-dual-shade">
                 Get Your Book Cover Design Now
             </a> -->
@@ -427,7 +265,7 @@
 
       <div class="service-box">
         <div class="service-image">
-          <img src="https://img.icons8.com/?size=100&id=bo6rRzvwKQA3&format=png&color=1A1A1A" alt="2D VTuber Models">
+          <img src="https://img.icons8.com/?size=100&id=bo6rRzvwKQA3&format=png&color=1A1A1A" alt="2D VTuber Models" title="2D VTuber Models" loading="lazy">
         </div>
         <h3>2D VTuber Models</h3>
         <p>
@@ -437,7 +275,7 @@
 
       <div class="service-box">
         <div class="service-image">
-          <img src="https://img.icons8.com/?size=100&id=I8LuLeWM8rtN&format=png&color=1A1A1A" alt="Live2D Rigging">
+          <img src="https://img.icons8.com/?size=100&id=I8LuLeWM8rtN&format=png&color=1A1A1A" alt="Live2D Rigging" title="Live2D Rigging" loading="lazy">
         </div>
         <h3>Live2D Rigging</h3>
         <p>
@@ -447,7 +285,7 @@
 
       <div class="service-box">
         <div class="service-image">
-          <img src="https://img.icons8.com/?size=100&id=iBXheBH7blk1&format=png&color=1A1A1A" alt="3D VTuber Models">
+          <img src="https://img.icons8.com/?size=100&id=iBXheBH7blk1&format=png&color=1A1A1A" alt="3D VTuber Models" title="3D VTuber Models" loading="lazy">
         </div>
         <h3>3D VTuber Models</h3>
         <p>
@@ -457,7 +295,7 @@
 
       <div class="service-box">
         <div class="service-image">
-          <img src="https://img.icons8.com/?size=100&id=55808&format=png&color=1A1A1A" alt="PNGTubers">
+          <img src="https://img.icons8.com/?size=100&id=55808&format=png&color=1A1A1A" alt="PNGTubers" title="PNGTubers" loading="lazy">
         </div>
         <h3>PNGTubers</h3>
         <p>
@@ -467,7 +305,7 @@
 
       <div class="service-box">
         <div class="service-image">
-          <img src="https://img.icons8.com/?size=100&id=TdLIndAhkbvL&format=png&color=1A1A1A" alt="VTuber Expressions">
+          <img src="https://img.icons8.com/?size=100&id=TdLIndAhkbvL&format=png&color=1A1A1A" alt="VTuber Expressions" title="VTuber Expressions" loading="lazy">
         </div>
         <h3>VTuber Expressions & Toggles</h3>
         <p>
@@ -477,7 +315,7 @@
 
       <div class="service-box">
         <div class="service-image">
-          <img src="https://img.icons8.com/?size=100&id=QNr7RXJBRIb2&format=png&color=1A1A1A" alt="VRChat Avatars">
+          <img src="https://img.icons8.com/?size=100&id=QNr7RXJBRIb2&format=png&color=1A1A1A" alt="VRChat Avatars" title="VRChat Avatars" loading="lazy">
         </div>
         <h3>VRChat Avatars</h3>
         <p>
@@ -561,7 +399,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6">
-                    <img src="https://www.bookcoverdesigners.co.uk/frontend/images/other/book-design.webp" class="img-fluid  d-block mx-auto" alt="Awesome Book Cover in UK" title="Awesome Book Cover in UK" width="565" height="536" loading="lazy">
+                    <img src="images/process-left-image.jpeg" class="img-fluid  d-block mx-auto" alt="process-left-image" title="process-left-image" width="565" height="536" loading="lazy">
                 </div>
                 <div class="col-12 col-lg-6">
                     <h2 class="h2">How We Create Your VTuber Model</h2>
@@ -792,12 +630,12 @@
 
             <div class="col-12 col-lg-4 text-center">
 
-                <img src="https://www.bookcoverdesigners.co.uk/frontend/images/other/client-satisfaction.webp"
+                <img src="images/cta-image.jpeg"
                     class="img-fluid d-block mx-auto"
                     alt="100% Satisfaction"
                     title="100% Satisfaction"
-                    width="267"
-                    height="268"
+                    width="350"
+                    height="350"
                     loading="lazy">
 
             </div>
@@ -878,11 +716,19 @@
 
                 <div class="row m-t-20 mb-5 align-itmes-center justify-content-center">
 
-                    <div class="col-12 col-sm-6 col-md-5 col-lg-4">
+                    <div class="col-12 col-sm-6 col-md-5 col-lg-4 cta-banner-btn-container">
 
                         <a href="#" class="live-chat">
 
                             <!-- icon unchanged -->
+                             <svg xmlns="http://www.w3.org/2000/svg" width="37.202" height="37.184" viewBox="0 0 37.202 37.184">
+                                    <g transform="matrix(0.974, 0.225, -0.225, 0.974, -5619.225, -1723.919)">
+                                        <path d="M5893.136,445.116a15.531,15.531,0,0,1-5.746-1.48,30.966,30.966,0,0,1-12.488-9.926,27.868,27.868,0,0,1-4.375-8.2,12.356,12.356,0,0,1-.581-5.958,7.421,7.421,0,0,1,2.711-4.609,3.86,3.86,0,0,1,2.117-.747c.707-.072,1.423-.062,2.136-.08a.584.584,0,0,1,.6.409c1.071,2.642,2.132,5.289,3.231,7.919a1.721,1.721,0,0,1-.323,2c-.673.749-1.339,1.5-2.02,2.247a.7.7,0,0,0-.153.942,9.427,9.427,0,0,0,1.6,2.427,48.472,48.472,0,0,0,5.394,5.353,8.463,8.463,0,0,0,2.1,1.287.723.723,0,0,0,.887-.159c.748-.707,1.527-1.381,2.3-2.066a1.662,1.662,0,0,1,1.907-.308c2.653,1.1,5.322,2.168,7.976,3.269a.717.717,0,0,1,.376.5,8.789,8.789,0,0,1-.336,3.458,4.254,4.254,0,0,1-1.377,1.819A8.281,8.281,0,0,1,5893.136,445.116ZM5870.9,421.272c0,.124,0,.249,0,.373a15.577,15.577,0,0,0,1.621,5.959,30.284,30.284,0,0,0,13.887,14.356,17.268,17.268,0,0,0,6.4,2.027,7.185,7.185,0,0,0,5.095-1.249,3.462,3.462,0,0,0,1.667-2.3c.08-.628.1-1.262.158-1.893.017-.194-.071-.277-.241-.345-.484-.191-.958-.407-1.441-.6-2.015-.813-4.033-1.617-6.045-2.435a.635.635,0,0,0-.74.108c-.749.673-1.519,1.324-2.251,2.016a1.787,1.787,0,0,1-2.2.37,10.929,10.929,0,0,1-2.637-1.716,43.941,43.941,0,0,1-5.2-5.263,11.5,11.5,0,0,1-1.723-2.593,1.759,1.759,0,0,1,.378-2.193c.69-.732,1.345-1.5,2.015-2.253a.605.605,0,0,0,.116-.708c-1.032-2.513-2.048-5.032-3.081-7.544a.383.383,0,0,0-.292-.192c-.576.02-1.152.057-1.726.115a2.942,2.942,0,0,0-1.862.951A6.837,6.837,0,0,0,5870.9,421.272Z" fill="#fff"></path>
+                                        <path d="M5904.1,430.153c0,.124.006.317,0,.509a.559.559,0,0,1-.554.6c-.322,0-.526-.231-.534-.614a11.309,11.309,0,0,0-1.2-5.078,11.678,11.678,0,0,0-10.3-6.665c-.08-.005-.158,0-.238-.006-.4-.015-.631-.223-.624-.558a.543.543,0,0,1,.653-.527,18.975,18.975,0,0,1,2.261.226,12.885,12.885,0,0,1,10.387,10.724C5904.018,429.2,5904.044,429.645,5904.1,430.153Z" transform="translate(-5.878 -1.043)" fill="#fff"></path>
+                                        <path d="M5901.184,431.506c0,.1,0,.2,0,.306a.543.543,0,0,1-.558.591c-.31,0-.5-.224-.536-.58a16.381,16.381,0,0,0-.268-2.082,8.883,8.883,0,0,0-8.476-6.783c-.438-.009-.664-.164-.7-.483-.039-.359.219-.612.64-.607a9.622,9.622,0,0,1,5.436,1.68A9.917,9.917,0,0,1,5901.184,431.506Z" transform="translate(-5.877 -2.186)" fill="#fff"></path>
+                                        <path d="M5891.429,426.329a6.824,6.824,0,0,1,6.552,6.644c0,.418-.2.681-.531.692s-.544-.23-.56-.659a5.7,5.7,0,0,0-5.516-5.575c-.462-.014-.736-.262-.729-.568C5890.655,426.5,5890.917,426.316,5891.429,426.329Z" transform="translate(-5.877 -3.443)" fill="#333"></path>
+                                    </g>
+                                </svg>
 
                             <div class="chat-text">
                                 <span>+44 20 3930 1313</span>
@@ -895,15 +741,14 @@
                     <div class="col-12 col-sm-6 col-md-5 col-lg-8">
 
                         <button role="button" type="button" class="live-chat">
-
-                            <!-- icon unchanged -->
-
-                            <div class="chat-text">
-                                <span class="font-bold">Start Live Chat</span>
-                                <span class="font-light">Let’s Build Something Amazing Together</span>
-                            </div>
-
-                        </button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35.052" height="30.535" viewBox="0 0 35.052 30.535">
+                                    <path d="M6701.662,162.836l-1.259,1.291q-.64.655-1.284,1.309a.577.577,0,0,1-.7.195.617.617,0,0,1-.338-.634c.007-.921,0-1.843,0-2.765v-.247c-.323-.034-.623-.04-.913-.1a2.682,2.682,0,0,1-2.117-2.6q-.015-4.815,0-9.631a2.664,2.664,0,0,1,2.649-2.671q7.64,0,15.283,0a2.665,2.665,0,0,1,2.61,2.634c.009.6,0,1.2,0,1.8v.27h10.974a3.533,3.533,0,0,1,3.515,3.543q.018,6.713,0,13.426a3.549,3.549,0,0,1-3.582,3.625h-.655c-.006.072-.017.131-.017.191,0,1.453,0,2.905,0,4.358a.6.6,0,0,1-.337.632.589.589,0,0,1-.7-.193q-2.361-2.415-4.726-4.825a.5.5,0,0,0-.4-.168q-7.2.006-14.41,0a3.536,3.536,0,0,1-3.578-3.185,11.492,11.492,0,0,1-.025-1.428q0-2.261,0-4.523Zm22.966,12.709.084-.057v-.223c0-1.148,0-2.3,0-3.444,0-.469.2-.675.656-.68.39,0,.781,0,1.171,0a2.44,2.44,0,0,0,2.434-2.436q0-6.689,0-13.379a2.412,2.412,0,0,0-2.436-2.493H6705.19a2.422,2.422,0,0,0-2.414,2.471q0,2.518,0,5.037,0,4.193,0,8.388a2.384,2.384,0,0,0,2.208,2.385c1.385.048,2.771.025,4.158.026q5.444,0,10.891,0a.749.749,0,0,1,.573.24q1.848,1.893,3.7,3.781C6724.427,175.274,6724.521,175.414,6724.627,175.545Zm-25.419-11.9.089.053a1.414,1.414,0,0,1,.145-.21c.674-.693,1.349-1.385,2.033-2.069a.6.6,0,0,0,.192-.468c-.007-1.874-.005-3.749-.005-5.623a3.544,3.544,0,0,1,3.562-3.639h9.263c0-.681,0-1.328,0-1.975a1.571,1.571,0,0,0-1.58-1.6c-.414,0-.828,0-1.241,0l-13.856,0a1.581,1.581,0,0,0-1.639,1.681c.006,1.28,0,2.561,0,3.842,0,1.859,0,3.717,0,5.576a1.552,1.552,0,0,0,1.55,1.6c.283.007.567,0,.85,0a.575.575,0,0,1,.633.633c.006.359,0,.718,0,1.078S6699.208,163.27,6699.208,163.643Z" transform="translate(-6695.046 -146.979)" fill="#fff"></path>
+                                </svg>
+                                <div class="chat-text">
+                                    <span class="font-bold">Live Chat</span>
+                                    <span class="font-light">To Make Something</span>
+                                </div>
+                            </button>
 
                     </div>
 
@@ -1170,43 +1015,71 @@
         <div class="row text-center">
             <div class="col-12">
 
-                <span class="h2">Give Your Book The Finish It Deserves…</span>
+                <span class="h2">Bring Your VTuber Model To Life…</span>
 
                 <hr class="hr-line">
 
-                <p>Simply put, a beautiful cover, designed by a professional book cover designer, and coupled with your great work can do wonders for your writing career.A well-designed cover instantly communicates the content and theme of your book..</p>
-            <img src="https://www.bookcoverdesigners.co.uk/frontend/images/other/book-publisher.webp" class="img-fluid  show-mobile d-block mx-auto mb-3 m-t-30" alt="Book Publisher" title="Book Publisher" width="535" height="483" loading="lazy">
+                <p>A professionally designed VTuber model can instantly elevate your online presence and make your content unforgettable. From expressive avatars to unique character identities, a high-quality VTuber model helps streamers, gamers, creators, and influencers connect deeply with their audience.</p>
+
+                <img src="images/why-right-image.jpeg" class="img-fluid show-mobile d-block mx-auto mb-3 m-t-30" alt="VTuber Model" title="VTuber Model" width="535" height="483" loading="lazy">
 
             </div>
         </div>
+
         <div class="row m-t-30">
+
             <div class="col-12 col-lg-6">
 
-                <h2 class="h4">Attractive Book Cover Designs That Stir Curiosity</h2>
-            <p>Book Cover Designers aim to contribute to the value instead of noise – that's why the prepared designs are human-obsessed and strike the right chord to stir curiosity. The team doesn't create what everyone has been creating – instead produces something that the audience actually looking for and warmly welcomes with an open heart.</p>
-            <p>Before getting to the work, we learn about your target market to ensure your audience praises the output. The human-psyche-inspired designs by us are a surefire way towards your success. Most of the orders we prepared have successfully created a buzz for our clients in their over-saturated marketplace – and that's a real accomplishment for us.</p>
-            <h2 class="h4">Game-Changer Cover Designs for Everyone That Redefines Creativity</h2>
-            <p>We hold the pride of dispensing game-changer art book cover designs for everyone! Scroll through the hallowed portfolio and find excellent quality book cover designs for kids, teenagers, adults, and everyone else. Apart from <a href="https://www.bookcoverdesigners.co.uk/childrens-book">children's book cover design</a>, the battalion of professional book cover designers excels in niche-specified designing too.</p>
-            <p>Whether you need minimalistic/simple book cover designs or something with shenanigans, this book cover design agency caters to every requirement. From German book covers to English, French, and other languages, the largest network of creative ninjas knows it all. This helps us to redefine the right meaning of creativity.</p>
-            <h2 class="h4">UK's Top-Rated Book Cover Designers With a Bright Spark of Creativity</h2>
-            <p>Since forming 10 years ago, BookCoverDesigners.co.uk has expanded continuously regarding services, size, and team. The small team of creative heads began by delivering good book cover designs to the audience and later expanded to book illustrations, layout designing, and back book cover designing services.</p>
-            <p>As we continued expanding the service, adding more to the team members became mandatory. And while doing so, our book cover design agency is proud to work with top-notch, ingenious book cover designers in the UK. They have a bright spark of creativity and a huge flair of artistry that drives the highest success rate for us.</p>
-            <h2 class="h4">The Quest to Find "UK's Best Book Cover Designers Near Me" Is Over!</h2>
-            <p>England, London, Ireland, Belfast, Scotland, Edinburgh, Wales, Cardiff, Britain, Liverpool, Edinburgh, Manchester, Bristol, Birmingham, and the list of cities would go on – but you would fail to identify a region that we do not serve. Our insight-full and success-optimized cheap book cover design services are approachable from everywhere.</p>
-            <p>Therefore, we stop your quest to find UK's best book cover designers. Along with the UK – this book cover design agency aids authors residing in the USA, UAE, and different parts of the map. We have the prestige of being the most approachable and professional book cover design service in and outside UK! Our pros are just a shout-away.</p>
+                <h2 class="h4">Custom VTuber Models Designed To Match Your Personality</h2>
+
+                <p>VTuber Model aims to create avatars that truly reflect your personality, niche, and streaming style. Whether you want a cute anime-inspired character, a futuristic cyber avatar, or a fantasy-themed personality, every design is crafted with originality and attention to detail.</p>
+
+                <p>We carefully study your vision, audience, and content goals before starting the design process. This allows us to create models that not only look visually stunning but also help you stand out in the highly competitive VTubing industry.</p>
+
+                <h2 class="h4">Creative VTuber Avatars That Build Strong Viewer Engagement</h2>
+
+                <p>Great VTuber models are more than just visuals — they create emotional connections with viewers. Our creative team designs expressive avatars with unique facial expressions, smooth rigging compatibility, and memorable aesthetics that keep audiences engaged during streams and videos.</p>
+
+                <p>From gaming channels and live streaming to YouTube content and virtual performances, our VTuber model services are tailored for creators who want to build a powerful online identity and grow their community.</p>
+
+                <h2 class="h4">Professional VTuber Designers With Industry Experience</h2>
+
+                <p>Our talented VTuber artists and illustrators have years of experience in anime art, digital illustration, Live2D preparation, and character concept design. We combine creativity with technical precision to deliver models that are visually impressive and streaming-ready.</p>
+
+                <p>Over the years, VTuber Model has helped streamers, gamers, influencers, and content creators launch unique VTuber personas that attract attention across platforms like Twitch, YouTube, TikTok, and Discord.</p>
+
+                <h2 class="h4">VTuber Model Services Available Worldwide</h2>
+
+                <p>Whether you are located in the UK, USA, Canada, UAE, Australia, or anywhere else in the world, our VTuber model services are accessible globally. We collaborate with creators remotely and ensure smooth communication throughout the project.</p>
+
+                <p>From concept sketches to final avatar delivery, our team ensures every client receives personalized support, premium-quality artwork, and a VTuber model that feels truly unique and original.</p>
 
             </div>
+
             <div class="col-12 col-lg-6">
 
-                <img src="https://www.bookcoverdesigners.co.uk/frontend/images/other/book-publisher.webp" class="img-fluid  show-desktop d-block mx-auto mb-3" alt="Book Publisher" title="Book Publisher" width="535" height="483" loading="lazy">
-            <h2 class="h4">Purposeful and Personalized Book Cover Designs Every Time in UK</h2>
-            <p>This is a trusted book cover design agency. We have the honor of being trusted over thousands of book cover design companies. The audience holds the highest grades of expectations with us. And to ensure they are thrilled with the outcomes, the battalion of experts has taken the pledge to deliver purposeful and personalized outcomes every time.</p>
-            <p>Before the experts sit together to design a book cover, they brainstorm the idea. They look for creative opportunities in your idea. They add wings to your ideas. And only then a rough draft is taken to the screens and finally to you. The product you receive from us is born out of immense dedication, passion, and tough brainstorming sessions.</p>
-            <h2 class="h4">A Book Cover Design Service With Highest Customer Satisfaction Rate!</h2>
-            <p>This book cover design service has thrilled the highest number of clients. Authors entrust our professional book cover design service with their stories – because they acknowledge no one can do it better than our book cover designers in UK. The success possessed by us is an end product of the dedication and passion of our staff.</p>
-            <p>The force of expert book cover designers in the UK here intersects their experience, client's ideas, and creativity to produce something exceptional and unbeatable. This is why BookCoverDesigners.co.uk makes most of its business from its repeated business. We don't market ourselves – word of mouth does its job well.</p>
+                <img src="images/why-right-image.jpeg"
+                    class="img-fluid show-desktop d-block mx-auto mb-3"
+                    alt="VTuber Model"
+                    title="VTuber Model"
+                    width="535"
+                    height="483"
+                    loading="lazy">
+
+                <h2 class="h4">High-Quality VTuber Models Tailored For Every Creator</h2>
+
+                <p>Every creator has a unique story, and our mission is to transform that vision into a captivating VTuber character. We create personalized avatars designed specifically for your branding, audience preferences, and content style.</p>
+
+                <p>Before beginning the project, our team brainstorms ideas, explores creative concepts, and develops a visual direction that perfectly matches your personality. The final result is a VTuber model crafted with passion, creativity, and precision.</p>
+
+                <h2 class="h4">VTuber Model Services With Exceptional Client Satisfaction</h2>
+
+                <p>Our VTuber model design service is trusted by creators who value quality, creativity, and professionalism. Clients choose VTuber Model because we focus on delivering eye-catching avatars that enhance content quality and improve audience engagement.</p>
+
+                <p>By combining artistic creativity, anime aesthetics, and modern design techniques, we deliver VTuber models that help creators stand out in the digital world. Most of our clients return for additional designs, outfits, expressions, and future upgrades because of the exceptional experience we provide.</p>
 
             </div>
+
         </div>
     </div>
 </section>

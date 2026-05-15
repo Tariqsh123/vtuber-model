@@ -2171,7 +2171,7 @@ header .navbar.fixed-top {
     -webkit-user-select: text;
     -moz-user-select: text;
     user-select: text;
-    width: 200px
+    width: fit-content
 }
 
 .home-banner .container {
@@ -2601,7 +2601,7 @@ footer .footer-copyrights img {
     }
 
     section.reviews .carousel {
-        height: 920px
+        height: fit-content
     }
 
     section.reviews .carousel-item .carousel-item-next,
@@ -2937,13 +2937,13 @@ section.portfolio .hr-line{
     background-color: white;
 }
 #process-video{
-    height: 500px;
-    width: 350px;
+    height: auto;
+    width: 270px;
 }
 .process-img {
-    height: 480px;
-    width: 350px;
-    margin-top: 37px;
+    height: auto;
+    width: 370px;
+    /* margin-top: 37px; */
 }
 @media(max-width:600px){
     #process-video{
@@ -3017,7 +3017,7 @@ section.portfolio .hr-line{
 }
 
 .service-box h3{
-  font-size:24px;
+  font-size:22px;
   color:#111;
   margin-bottom:15px;
   font-weight:700;
@@ -3040,7 +3040,7 @@ section.portfolio .hr-line{
 
 
   .services-heading h2{
-    font-size:32px;
+    font-size:35px;
   }
 
   .services-grid{
@@ -3333,6 +3333,16 @@ section.portfolio .hr-line{
   .vtuber-price{
     font-size:42px;
   }
+  .cta-banner-btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  section.cta-banner .live-chat{
+    margin: 10px auto;
+  }
 
 }
 
@@ -3343,10 +3353,11 @@ section.portfolio .hr-line{
 
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
-    font-family: sans-serif;
+     font-family: 'Creato Display', sans-serif !important; 
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 p,.p,a,span,li{
-    font-family: 'Times New Roman', Times, serif !important;
+      font-family: "Roboto", sans-serif !important; 
 }
 
 
