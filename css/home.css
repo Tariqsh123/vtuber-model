@@ -2731,7 +2731,8 @@ footer .footer-copyrights img {
     }
 
     .home-banner {
-        background: #343438
+        background: #343438;
+        margin-top: 45px;
     }
 
     .home-banner .container {
@@ -3150,7 +3151,6 @@ section.portfolio .hr-line{
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  box-shadow: 1px 1px 10px;
   border: 2px solid #adf71a;
   text-align:center;
 }
@@ -3201,204 +3201,186 @@ section.portfolio .hr-line{
 
 
 
-
-.vtuber-packages .container{
-  width:95%;
-  max-width:1200px;
-  margin:auto;
+.vtuber-packages {
+  padding: 60px 20px;
+  background: #f8f9fa;
 }
 
-.vtuber-packages-heading{
-  text-align:center;
-  margin-bottom:60px;
-}
+.container { max-width: 1200px; margin: auto; }
 
-.vtuber-packages-heading p{
-  font-size:14px;
-  letter-spacing:3px;
-  color:#777;
-  margin-bottom:15px;
-  font-weight:600;
-}
-
-.vtuber-packages-heading h2{
-  font-size:40px;
-  color:#111;
-  font-weight:700;
-}
-
-.vtuber-packages-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-}
-
-.vtuber-package-card{
-  background:#fff;
-  border-radius:28px;
-  padding:45px 35px;
-  box-shadow: 1px 1px 5px gray;
-  border:1px solid #ececec;
-  position:relative;
-  transition:0.4s ease;
-}
-
-.vtuber-package-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 20px 50px rgba(0,0,0,0.08);
-}
-
-.featured-package{
-  background:#111;
-  transform:scale(1.04);
-}
-
-.package-tag{
-  position:absolute;
-  top:-14px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#adf71a;
-  color:#000;
-  padding:10px 22px;
-  border-radius:50px;
-  font-size:13px;
-  font-weight:600;
-}
-
-.vtuber-package-top{
-  margin-bottom:35px;
-}
-
-.vtuber-package-top h3{
-  font-size:large;
-  line-height:1.3;
+.vtuber-packages-heading {
   text-align: center;
-  margin-bottom:20px;
-  color:#111;
+  margin-bottom: 50px;
+}
+.vtuber-packages-heading h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #111;
+}
+.subtitle { color: #555; font-size: 18px; }
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 60px;
+}
+.toggle-text { font-weight: 600; color: #555; }
+.toggle-text.active { color: #111; font-weight: 700; }
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 62px;
+  height: 32px;
+}
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #ddd;
+  transition: .4s;
+  border-radius: 50px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider { background: #111; }
+input:checked + .slider:before { transform: translateX(30px); }
+
+.save-badge {
+  background: #adf71a;
+  color: #000;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
 }
 
-.vtuber-price{
-  font-size:35px;
+/* Cards */
+.vtuber-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.vtuber-package-card {
+  background: white;
+  border-radius: 24px;
+  padding: 45px 35px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+  border: 1px solid #f0f0f0;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.vtuber-package-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+}
+
+.featured {
+  background: #111;
+  color: white;
+  transform: scale(1.07);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+}
+
+.package-tag {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #adf71a;
+  color: #000;
+  padding: 8px 28px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Text Styling */
+.plan-header h3 { font-size: 23px; margin-bottom: 8px; }
+.plan-subtitle { font-size: 15px; margin-bottom: 35px; }
+.featured .plan-subtitle { color: #ccc; }
+
+.price {
+  font-size: 54px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  line-height: 1;
+}
+.period { font-size: 18px; font-weight: 500; }
+.featured .price, .featured .period ,.featured h3 { color: white; }
+
+/* All Buttons Same - Green BG + Black Text */
+.select-btn {
+  display: block;
+  width: 100%;
+  padding: 8px 20px;
   text-align: center;
-  font-weight:800;
-  color:#111;
+  border-radius: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 17px;
+  margin-bottom: 40px;
+  background: #adf71a;
+  color: #000;
+  transition: 0.3s;
 }
 
-.vtuber-package-card ul{
-  list-style:none;
-  padding:0;
-  margin:0 0 35px;
+.select-btn:hover {
+  color: black;
 }
 
-.vtuber-package-card ul li{
-  font-size:17px;
-  color:#000;
-  margin-bottom:18px;
-  line-height:1.7;
-  display:flex;
-  align-items:flex-start;
+/* Features */
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 35px;
 }
+.features li {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  font-size: 16.2px;
+}
+.features li span {
+  color: #adf71a;
+  font-size: 20px;
+  margin-right: 12px;
+}
+.featured .features li span { color: #adf71a; }
 
-.vtuber-package-card ul li span{
-  min-width:24px;
-  height:24px;
-  border-radius:50%;
-  background:#adf71a;
-  color:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:14px;
-  font-weight:700;
-  margin-right:12px;
-  margin-top:2px;
-}
+.delivery { font-weight: 600; margin-top: auto; }
+.featured .delivery { color: #ddd; }
 
-.vtuber-delivery{
-  font-size:16px;
-  color:#666;
-  margin-bottom:35px;
-  font-weight:600;
-}
-
-.vtuber-package-btn{
-  width:100%;
-  height:fit-content;
-  padding: 10px 0;
-  border-radius:16px;
-  background:#adf71a;
-  color:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  font-size:16px;
-  font-weight:600;
-  transition:0.3s ease;
-}
-.vtuber-package-btn:hover{
-    color: white;
-}
-.featured-package h3,
-.featured-package .vtuber-price,
-.featured-package .vtuber-delivery,
-.featured-package ul li{
-  color:#fff;
-}
-/* 
-.featured-package .vtuber-package-btn{
-  background:#fff;
-  color:#111;
-} */
-
-@media(max-width:991px){
-
-  .vtuber-packages-grid{
-    grid-template-columns:repeat(2,1fr);
+/* Responsive */
+@media (max-width: 991px) {
+  .vtuber-packages-grid { 
+    grid-template-columns: repeat(2, 1fr); 
   }
-
-  .featured-package{
-    transform:none;
-  }
-
-  .vtuber-packages-heading h2{
-    font-size:40px;
-  }
-
+  .featured { transform: none; }
 }
 
-@media(max-width:767px){
-
-  
-  .vtuber-packages-grid{
-    grid-template-columns:1fr;
+@media (max-width: 767px) {
+  .vtuber-packages-grid { 
+    grid-template-columns: 1fr; 
   }
-
-  .vtuber-packages-heading h2{
-    font-size:32px;
+  .vtuber-package-card {
+    padding: 35px 25px;
   }
-
-  .vtuber-package-card{
-    padding:35px 25px;
-  }
-
-  .vtuber-price{
-    font-size:42px;
-  }
-  .cta-banner-btn-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-  section.cta-banner .live-chat{
-    margin: 10px auto;
-  }
-
 }
-
 
 
 .portfolio h2,

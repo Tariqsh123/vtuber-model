@@ -517,21 +517,37 @@
   <div class="container">
 
     <div class="vtuber-packages-heading">
-      <p>PRICING PLANS</p>
       <h2>VTuber Packages</h2>
+      <p class="subtitle">Professional models & rigging to bring your avatar to life</p>
+    </div>
+
+    <!-- Working Toggle -->
+    <div class="toggle-container">
+      <span class="toggle-text monthly active">Monthly</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="billing-toggle">
+        <span class="slider round"></span>
+      </label>
+      <span class="toggle-text yearly">Yearly <span class="save-badge">Save 20%</span></span>
     </div>
 
     <div class="vtuber-packages-grid">
 
-      <!-- Package 1 -->
+      <!-- Basic -->
       <div class="vtuber-package-card">
-
-        <div class="vtuber-package-top">
-          <h3>BASIC 2D VTUBER MODEL</h3>
-          <div class="vtuber-price">$300</div>
+        <div class="plan-header">
+          <h3>Basic 2D VTuber Model</h3>
+          <p class="plan-subtitle">Ideal for beginners</p>
+        </div>
+        
+        <div class="price">
+          $<span class="amount" data-monthly="29" data-yearly="278">29</span>
+          <span class="period">/month</span>
         </div>
 
-        <ul>
+        <a href="#" class="select-btn">Select Plan</a>
+
+        <ul class="features">
           <li><span>✓</span> Custom 2D VTuber Design</li>
           <li><span>✓</span> Anime Style Artwork</li>
           <li><span>✓</span> Layered PSD File</li>
@@ -539,78 +555,81 @@
           <li><span>✓</span> Ready for Rigging</li>
         </ul>
 
-        <div class="vtuber-delivery">
-          <span style="color: #adf71a;">⧗</span> Delivery: 1 Week
-        </div>
-
-        <a href="#" class="vtuber-package-btn">
-          Get Started
-        </a>
-
+        <div class="delivery">⧗ Delivery: 1 Week</div>
       </div>
 
-      <!-- Package 2 -->
-      <div class="vtuber-package-card featured-package">
-
-        <div class="package-tag">
-          Most Popular
+      <!-- Featured -->
+      <div class="vtuber-package-card featured">
+        <div class="package-tag">Most Popular</div>
+        
+        <div class="plan-header">
+          <h3>2D VTuber Model + Rigging</h3>
+          <p class="plan-subtitle">For serious VTubers</p>
+        </div>
+        
+        <div class="price">
+          $<span class="amount" data-monthly="59" data-yearly="566">59</span>
+          <span class="period">/month</span>
         </div>
 
-        <div class="vtuber-package-top">
-          <h3>2D VTUBER MODEL WITH RIGGING</h3>
-          <div class="vtuber-price">$500</div>
-        </div>
+        <a href="#" class="select-btn">Select Plan</a>
 
-        <ul>
+        <ul class="features">
           <li><span>✓</span> Custom 2D VTuber Model</li>
           <li><span>✓</span> Professional Live2D Rigging</li>
-          <li><span>✓</span> Face Tracking</li>
+          <li><span>✓</span> Face Tracking & Expressions</li>
           <li><span>✓</span> Eye & Mouth Animation</li>
           <li><span>✓</span> Stream Ready Setup</li>
         </ul>
 
-        <div class="vtuber-delivery">
-          <span style="color: #adf71a;">⧗</span> Delivery: 2 Weeks
-        </div>
-
-        <a href="#" class="vtuber-package-btn">
-          Get Started
-        </a>
-
+        <div class="delivery">⧗ Delivery: 2 Weeks</div>
       </div>
 
-      <!-- Package 3 -->
+      <!-- Premium -->
       <div class="vtuber-package-card">
-
-        <div class="vtuber-package-top">
-          <h3>PREMIUM VTUBER PACKAGE</h3>
-          <div class="vtuber-price">$1000</div>
+        <div class="plan-header">
+          <h3>Premium VTuber Package</h3>
+          <p class="plan-subtitle">For professional streamers</p>
+        </div>
+        
+        <div class="price">
+          $<span class="amount" data-monthly="99" data-yearly="950">99</span>
+          <span class="period">/month</span>
         </div>
 
-        <ul>
+        <a href="#" class="select-btn">Select Plan</a>
+
+        <ul class="features">
           <li><span>✓</span> Premium 2D VTuber Model</li>
           <li><span>✓</span> Advanced Live2D Rigging</li>
-          <li><span>✓</span> 3 Expressions/Reactions</li>
+          <li><span>✓</span> 3 Expressions & Reactions</li>
           <li><span>✓</span> 3 Toggles</li>
           <li><span>✓</span> Physics & Advanced Animation</li>
           <li><span>✓</span> Full Streaming Setup</li>
         </ul>
 
-        <div class="vtuber-delivery">
-          <span style="color: #adf71a;">⧗</span> Delivery: 3 Weeks
-        </div>
-
-        <a href="#" class="vtuber-package-btn">
-          Get Started
-        </a>
-
+        <div class="delivery">⧗ Delivery: 3 Weeks</div>
       </div>
 
     </div>
-
   </div>
 </section>
 
+<script>
+  const toggle = document.getElementById('billing-toggle');
+  const amounts = document.querySelectorAll('.amount');
+  const periods = document.querySelectorAll('.period');
+
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      amounts.forEach(am => am.textContent = am.dataset.yearly);
+      periods.forEach(p => p.textContent = '/year');
+    } else {
+      amounts.forEach(am => am.textContent = am.dataset.monthly);
+      periods.forEach(p => p.textContent = '/month');
+    }
+  });
+</script>
     <section class="cta-banner">
     <div class="container">
         <div class="row align-items-center">
