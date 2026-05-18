@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTuber Form</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+
+<!-- section 1 -->
+<div class="form-hero-section-container">
+    <div class="form-hero-section-wrapper">
+        <img src="images/logo.png" alt="Logo" class="form-hero-section-logo">
+
+        <h3 class="form-hero-section-title">
+            Answer a few short questions <br> about your avatar
+        </h3>
+
+        <p class="form-hero-section-text">
+            Then we'll either start creating your avatar right away or talk to you about your project.
+        </p>
+
+        <button class="form-hero-section-btn" id="startBtn">Start</button>
+
+        <span class="form-hero-section-note">Takes 3 minutes</span>
+    </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="step">
+    <div class="form-box">
+        <h4>What should we call you?</h4>
+        <input type="text" placeholder="Type your answer">
+        <button class="ok-btn">OK</button>
+    </div>
+</div>
+
+<!-- STEP 3 -->
+<!-- STEP 3 -->
+<div class="step">
+    <div class="form-box">
+
+        <h4>What's the best way to reach you?</h4>
+
+        <p>Basically, this is where we'll discuss revisions and everything else about your project.</p>
+
+        <!-- FIX RADIO INPUTS -->
+
+<label class="contact-option">
+    <input type="radio" name="contact-method" value="discord">
+
+    <div class="contact-option-box">
+        <span class="option-letter">A</span>
+        <span class="option-text">Discord</span>
+    </div>
+</label>
+
+<label class="contact-option">
+    <input type="radio" name="contact-method" value="email">
+
+    <div class="contact-option-box">
+        <span class="option-letter">B</span>
+        <span class="option-text">E-mail</span>
+    </div>
+</label>
+        <button class="ok-btn">OK</button>
+    </div>
+</div>
+
+<!-- STEP 4 DISCORD -->
+<div class="step" id="discordStep">
+    <div class="form-box">
+
+        <h4>What's your Discord username?</h4>
+
+        <p>
+            Example: username#0000 (Case sensitive)
+            Please make sure that your friend requests are open. :)
+        </p>
+
+        <input type="text" placeholder="Type Your Answer Here">
+
+        <button class="ok-btn">OK</button>
+
+    </div>
+</div>
+
+<!-- STEP 5 EMAIL -->
+<div class="step" id="emailStep">
+    <div class="form-box">
+
+        <h4>What is your email address? (Double check it)*</h4>
+
+        <p>
+            We will never send you spam. This is important for revisions and the final delivery so make sure to add your main email address.
+        </p>
+
+        <input type="email" placeholder="Type Your Answer Here">
+
+        <button class="ok-btn">OK</button>
+
+    </div>
+</div>
+
+
+<!-- section 6 -->
+ <div class="step">
+    <div class="form-box">
+
+        <h4>
+            All right. What does your avatar look like?
+        </h4>
+
+        <p>
+            Try to be as detailed as possible and tell us what your avatar is all about. In case you're not sure right now, we'll definitely help you decide.
+        </p>
+
+        <textarea placeholder="Type your answer here..."></textarea>
+        <span>Shift ⇧ + Enter ↵ to make a line break</span>
+
+        <button class="ok-btn">OK</button>
+
+    </div>
+</div>
+
+<!-- section 7 -->
+ <!-- STEP: REFERENCE IMAGE -->
+<div class="step">
+    <div class="form-box">
+
+        <h4>Would you like to upload a reference image?*</h4>
+
+        <p>
+            Any sort of image of something similar to what you had in mind would be very useful for our talented artists.
+        </p>
+
+        <div class="contact-options">
+
+            <label class="contact-option">
+                <input type="radio" name="reference-image" value="yes">
+
+                <div class="contact-option-box">
+                    <span class="option-letter">Y</span>
+                    <span class="option-text">Yes</span>
+                </div>
+            </label>
+
+            <label class="contact-option">
+                <input type="radio" name="reference-image" value="no">
+
+                <div class="contact-option-box">
+                    <span class="option-letter">N</span>
+                    <span class="option-text">No</span>
+                </div>
+            </label>
+
+        </div>
+
+        <button class="ok-btn">OK</button>
+
+    </div>
+</div>
+
+<!-- Section 8 -->
+ <div class="step">
+    <div class="form-box">
+
+        <h4>Nice, this will help a lot. Please upload a reference file.</h4>
+
+        <p>
+            In this section, you can only upload one file btw. But no worries,
+            you'll be able to send them all directly once we get in contact.
+        </p>
+
+        <div class="upload-box">
+
+    <img src="https://img.icons8.com/?size=100&id=42373&format=png&color=000000" class="upload-icon" alt="upload">
+
+    <div class="upload-text">
+        <span class="title">Choose file or drag here</span>
+        <span class="limit">Size limit: 10MB</span>
+    </div>
+
+    <input type="file" class="file-input">
+
+</div>
+
+        <button class="ok-btn">OK</button>
+
+    </div>
+</div>
+
+
+<!-- section 9  -->
+ <div class="step">
+    <div class="form-box">
+
+        <h4>
+            What type of avatar would you like? (All of them are $100 off this month only ^^ )
+        </h4>
+
+        <p>
+            The pricing includes the entire creation of your avatar. Basically, you'll have a ready-to-use model you can use in your videos and streams. ❤️
+        </p>
+
+        <div class="avatar-options">
+
+            <label class="avatar-option">
+                <input type="radio" name="avatar-type" value="chibi">
+
+                <div class="avatar-card">
+                    <img src="https://images.typeform.com/images/bJVfDHZBkp5B" />
+                    <span>A - Chibi ($445)</span>
+                </div>
+            </label>
+
+            <label class="avatar-option">
+                <input type="radio" name="avatar-type" value="chest">
+
+                <div class="avatar-card">
+                    <img src="https://images.typeform.com/images/Ype8H4HtRgdj" />
+                    <span>B - Chest-up ($695)</span>
+                </div>
+            </label>
+
+            <label class="avatar-option">
+                <input type="radio" name="avatar-type" value="half">
+
+                <div class="avatar-card">
+                    <img src="https://images.typeform.com/images/h9AkzJ2BD96e" />
+                    <span>C - Half-body ($795)</span>
+                </div>
+            </label>
+
+            <label class="avatar-option">
+                <input type="radio" name="avatar-type" value="full">
+
+                <div class="avatar-card">
+                    <img src="https://images.typeform.com/images/AmhFcdTnJwyf" />
+                    <span>D - Full-body ($895)</span>
+                </div>
+            </label>
+
+        </div>
+
+        <button class="ok-btn">OK</button>
+
+    </div>
+</div>
+
+<!-- FIXED NAV -->
+<div class="fixed-nav">
+    <button id="prev">⮜</button>
+    <button id="next">⮞</button>
+</div>
+
+<script>
+let current = -1;
+
+const hero = document.querySelector(".form-hero-section-container");
+const steps = Array.from(document.querySelectorAll(".step"));
+
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+
+let completedSteps = [];
+
+let selectedMethod = "";
+let referenceChoice = "";
+let avatarType = "";
+
+// STEP INDEX MAP (IMPORTANT: matches your HTML order)
+const STEP = {
+    NAME: 0,
+    CONTACT: 1,
+    DISCORD: 2,
+    EMAIL: 3,
+    DESCRIPTION: 4,
+    REFERENCE: 5,
+    UPLOAD: 6,
+    AVATAR: 7,
+    FINAL: 8
+};
+
+// ---------------- UI ----------------
+function updateUI() {
+
+    steps.forEach((step, i) => {
+        step.classList.toggle("active", i === current);
+    });
+
+    if (current === -1) {
+        hero.style.display = "flex";
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+        return;
+    }
+
+    hero.style.display = "none";
+    prevBtn.style.display = "flex";
+    nextBtn.style.display = "flex";
+
+    prevBtn.disabled = current === STEP.NAME;
+    nextBtn.disabled = !completedSteps.includes(current);
+
+    prevBtn.style.opacity = prevBtn.disabled ? "0.5" : "1";
+    nextBtn.style.opacity = nextBtn.disabled ? "0.5" : "1";
+
+    prevBtn.style.cursor = prevBtn.disabled ? "not-allowed" : "pointer";
+    nextBtn.style.cursor = nextBtn.disabled ? "not-allowed" : "pointer";
+}
+
+// ---------------- START ----------------
+document.getElementById("startBtn").addEventListener("click", () => {
+    current = STEP.NAME;
+    updateUI();
+});
+
+// ---------------- NEXT ----------------
+nextBtn.addEventListener("click", () => {
+
+    if (!completedSteps.includes(current)) return;
+
+    if (current === STEP.CONTACT) {
+        current = (selectedMethod === "discord") ? STEP.DISCORD : STEP.EMAIL;
+        updateUI();
+        return;
+    }
+
+    if (current === STEP.DISCORD || current === STEP.EMAIL) {
+        current = STEP.DESCRIPTION;
+        updateUI();
+        return;
+    }
+
+    if (current === STEP.DESCRIPTION) {
+        current = STEP.REFERENCE;
+        updateUI();
+        return;
+    }
+
+    if (current === STEP.REFERENCE) {
+        current = STEP.UPLOAD;
+        updateUI();
+        return;
+    }
+
+    if (current === STEP.UPLOAD) {
+        current = STEP.AVATAR;
+        updateUI();
+        return;
+    }
+
+    if (current === STEP.AVATAR) {
+        current = STEP.FINAL;
+        updateUI();
+        return;
+    }
+});
+
+// ---------------- PREV ----------------
+prevBtn.addEventListener("click", () => {
+
+    if (current === STEP.FINAL) {
+        current = STEP.AVATAR;
+        updateUI();
+        return;
+    }
+
+    if (current === STEP.AVATAR) {
+        current = STEP.UPLOAD;
+        updateUI();
+        return;
+    }
+
+    if (current === STEP.UPLOAD) {
+        current = STEP.REFERENCE;
+        updateUI();
+        return;
+    }
+
+    if (current === STEP.REFERENCE) {
+        current = STEP.DESCRIPTION;
+        updateUI();
+        return;
+    }
+
+    if (current === STEP.DESCRIPTION) {
+        current = (selectedMethod === "discord") ? STEP.DISCORD : STEP.EMAIL;
+        updateUI();
+        return;
+    }
+
+    if (current === STEP.DISCORD || current === STEP.EMAIL) {
+        current = STEP.CONTACT;
+        updateUI();
+        return;
+    }
+
+    if (current > STEP.NAME) {
+        current--;
+        updateUI();
+    }
+});
+
+// ---------------- OK BUTTONS ----------------
+document.querySelectorAll(".ok-btn").forEach((btn) => {
+
+    btn.addEventListener("click", () => {
+
+        const input = steps[current]?.querySelector("input, textarea, input[type='file']");
+
+        // NAME
+        if (current === STEP.NAME) {
+            if (input.value.trim() === "") return alert("Please enter your name");
+
+            completedSteps.push(current);
+            current = STEP.CONTACT;
+            updateUI();
+            return;
+        }
+
+        // CONTACT
+        if (current === STEP.CONTACT) {
+
+            const selected = document.querySelector('input[name="contact-method"]:checked');
+
+            if (!selected) return alert("Select Discord or Email");
+
+            selectedMethod = selected.value;
+
+            completedSteps.push(current);
+            current = (selectedMethod === "discord") ? STEP.DISCORD : STEP.EMAIL;
+            updateUI();
+            return;
+        }
+
+        // DISCORD
+        if (current === STEP.DISCORD) {
+
+            if (input.value.trim() === "") return alert("Enter Discord username");
+
+            completedSteps.push(current);
+            current = STEP.DESCRIPTION;
+            updateUI();
+            return;
+        }
+
+        // EMAIL
+        if (current === STEP.EMAIL) {
+
+            if (input.value.trim() === "") return alert("Enter email");
+
+            completedSteps.push(current);
+            current = STEP.DESCRIPTION;
+            updateUI();
+            return;
+        }
+
+        // DESCRIPTION
+        if (current === STEP.DESCRIPTION) {
+
+            if (input.value.trim() === "") return alert("Describe your avatar");
+
+            completedSteps.push(current);
+            current = STEP.REFERENCE;
+            updateUI();
+            return;
+        }
+
+        // REFERENCE
+        if (current === STEP.REFERENCE) {
+
+            const selected = document.querySelector('input[name="reference-image"]:checked');
+
+            if (!selected) return alert("Select Yes or No");
+
+            referenceChoice = selected.value;
+
+            completedSteps.push(current);
+            current = STEP.UPLOAD;
+            updateUI();
+            return;
+        }
+
+        // UPLOAD
+        if (current === STEP.UPLOAD) {
+
+            const fileInput = steps[current].querySelector("input[type='file']");
+
+            if (!fileInput.files.length) return alert("Upload a file");
+
+            completedSteps.push(current);
+            current = STEP.AVATAR;
+            updateUI();
+            return;
+        }
+
+        // AVATAR TYPE (SECTION 9)
+        if (current === STEP.AVATAR) {
+
+            const selected = document.querySelector('input[name="avatar-type"]:checked');
+
+            if (!selected) return alert("Select avatar type");
+
+            avatarType = selected.value;
+
+            completedSteps.push(current);
+            current = STEP.FINAL;
+            updateUI();
+            return;
+        }
+
+        // FINAL
+        if (current === STEP.FINAL) {
+
+            if (input.value.trim() === "") return alert("Describe final details");
+
+            alert("Form completed 🎉");
+
+            console.log({
+                name: steps[0].querySelector("input").value,
+                method: selectedMethod,
+                contact: steps[selectedMethod === "discord" ? 2 : 3].querySelector("input").value,
+                reference: referenceChoice,
+                avatarType: avatarType,
+                description: input.value
+            });
+
+        }
+
+    });
+
+});
+
+// INIT
+updateUI();
+</script>
+
+
+
+</body>
+</html>
