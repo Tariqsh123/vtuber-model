@@ -37,7 +37,6 @@
 </div>
 
 <!-- STEP 3 -->
-<!-- STEP 3 -->
 <div class="step">
     <div class="form-box">
 
@@ -180,11 +179,25 @@
     <div class="upload-text">
         <span class="title">Choose file or drag here</span>
         <span class="limit">Size limit: 10MB</span>
+        <span class="filename">File Name : <b id="fileName">No file chosen</b></span>
     </div>
 
-    <input type="file" class="file-input">
+    <input type="file" class="file-input" id="fileInput">
 
 </div>
+
+<script>
+    const fileInput = document.getElementById("fileInput");
+    const fileName = document.getElementById("fileName");
+
+    fileInput.addEventListener("change", function () {
+        if (fileInput.files.length > 0) {
+            fileName.textContent = fileInput.files[0].name;
+        } else {
+            fileName.textContent = "No file chosen";
+        }
+    });
+</script>
 
         <button class="ok-btn">OK</button>
 
@@ -526,7 +539,26 @@ let discountChoice = "";
 let discountCode = "";
 let checkoutChoice = "";
 
-// STEP MAP
+// Pricing
+const avatarPrices = {
+    chibi: 445,
+    chest: 695,
+    half: 795,
+    full: 895
+};
+
+const servicePrices = {
+    reference_sheet: 190,
+    prop_asset: 50,
+    custom_logo: 150,
+    animated_overlay: 180,
+    emotes_pack_6: 150,
+    stream_panels: 120,
+    stream_screens: 190,
+    channel_banner: 180
+};
+
+// STEP MAP (Important: Keep this in order of your HTML steps)
 const STEP = {
     NAME: 0,
     CONTACT: 1,
@@ -542,9 +574,29 @@ const STEP = {
     CHECKOUT: 11
 };
 
-// ---------------- UI UPDATE ----------------
+// Calculate Total
+function calculateTotal() {
+    let total = avatarPrices[avatarType] || 0;
+    
+    selectedServices.forEach(service => {
+        if (service !== "no_thanks") {
+            total += servicePrices[service] || 0;
+        }
+    });
+
+    // You can add discount logic here later
+    return total;
+}
+
+// Update Payment Screen
+function updatePaymentScreen() {
+    const total = calculateTotal();
+    const amountEl = paymentScreen.querySelector(".pay-amount b");
+    if (amountEl) amountEl.textContent = `$${total.toFixed(2)}`;
+}
+
+// UI Update
 function updateUI() {
-    // Hide everything first
     hero.style.display = "none";
     steps.forEach(s => s.style.display = "none");
     paymentScreen.style.display = "none";
@@ -552,168 +604,145 @@ function updateUI() {
 
     if (current === -1) {
         hero.style.display = "flex";
-    } 
-    else if (current === "payment") {
+    } else if (current === "payment") {
+        updatePaymentScreen();
         paymentScreen.style.display = "flex";
-    } 
-    else if (current === "thankyou") {
+    } else if (current === "thankyou") {
         thankYouScreen.style.display = "block";
-    } 
-    else {
-        // Normal steps
-        if (steps[current]) {
-            steps[current].style.display = "block";
-        }
+    } else {
+        if (steps[current]) steps[current].style.display = "block";
     }
 
-    // Navigation buttons
-    const isSpecialScreen = current === "payment" || current === "thankyou";
-    prevBtn.style.display = (current === -1 || isSpecialScreen) ? "none" : "flex";
-    nextBtn.style.display = (current === -1 || isSpecialScreen) ? "none" : "flex";
+    const isSpecial = current === "payment" || current === "thankyou";
+    prevBtn.style.display = (current === -1 || isSpecial) ? "none" : "flex";
+    nextBtn.style.display = (current === -1 || isSpecial) ? "none" : "flex";
 }
 
-// ---------------- START ----------------
+// Start Button
 document.getElementById("startBtn").onclick = () => {
     current = STEP.NAME;
     updateUI();
 };
 
-// ---------------- ENTER KEY ----------------
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        const activeBtn = document.querySelector(".step.active .ok-btn") || 
-                         document.querySelector(".step[style*='block'] .ok-btn");
-        if (activeBtn) activeBtn.click();
-    }
-});
-
-// ---------------- OK BUTTONS ----------------
+// OK Buttons Logic
 document.querySelectorAll(".ok-btn").forEach(btn => {
     btn.onclick = () => {
-        const stepIndex = Array.from(steps).indexOf(btn.closest(".step"));
+        const stepEl = btn.closest(".step");
+        const stepIndex = Array.from(steps).indexOf(stepEl);
         if (stepIndex === -1) return;
 
-        current = stepIndex; // ensure sync
-
-        // NAME
-        if (current === STEP.NAME) {
-            const input = steps[current].querySelector("input");
+        // Name Step
+        if (stepIndex === STEP.NAME) {
+            const input = stepEl.querySelector("input");
             if (!input.value.trim()) return alert("Please enter your name");
-            current = STEP.CONTACT;
         }
 
-        // CONTACT METHOD
-        else if (current === STEP.CONTACT) {
+        // Contact Method
+        else if (stepIndex === STEP.CONTACT) {
             const sel = document.querySelector('input[name="contact-method"]:checked');
             if (!sel) return alert("Please select a contact method");
             selectedMethod = sel.value;
-            current = selectedMethod === "discord" ? STEP.DISCORD : STEP.EMAIL;
         }
 
-        // DISCORD or EMAIL
-        else if (current === STEP.DISCORD || current === STEP.EMAIL) {
-            const input = steps[current].querySelector("input");
+        // Discord / Email
+        else if (stepIndex === STEP.DISCORD || stepIndex === STEP.EMAIL) {
+            const input = stepEl.querySelector("input");
             if (!input.value.trim()) return alert("Please fill this field");
-            current = STEP.DESCRIPTION;
         }
 
-        // DESCRIPTION
-        else if (current === STEP.DESCRIPTION) {
-            const input = steps[current].querySelector("textarea");
-            if (!input.value.trim()) return alert("Please describe your avatar");
-            current = STEP.REFERENCE;
+        // Description
+        else if (stepIndex === STEP.DESCRIPTION) {
+            const textarea = stepEl.querySelector("textarea");
+            if (!textarea.value.trim()) return alert("Please describe your avatar");
         }
 
-        // REFERENCE IMAGE
-        else if (current === STEP.REFERENCE) {
+        // Reference Choice
+        else if (stepIndex === STEP.REFERENCE) {
             const sel = document.querySelector('input[name="reference-image"]:checked');
             if (!sel) return alert("Please choose Yes or No");
             referenceChoice = sel.value;
-            current = referenceChoice === "yes" ? STEP.UPLOAD : STEP.AVATAR;
         }
 
-        // UPLOAD
-        else if (current === STEP.UPLOAD) {
-            const fileInput = steps[current].querySelector("input[type='file']");
+        // Upload
+        else if (stepIndex === STEP.UPLOAD) {
+            const fileInput = stepEl.querySelector("input[type='file']");
             if (!fileInput.files.length) return alert("Please upload a reference image");
-            current = STEP.AVATAR;
         }
 
-        // AVATAR TYPE
-        else if (current === STEP.AVATAR) {
+        // Avatar Type
+        else if (stepIndex === STEP.AVATAR) {
             const sel = document.querySelector('input[name="avatar-type"]:checked');
             if (!sel) return alert("Please select avatar type");
             avatarType = sel.value;
-            current = STEP.SERVICES;
         }
 
-        // SERVICES
-        else if (current === STEP.SERVICES) {
+        // Services
+        else if (stepIndex === STEP.SERVICES) {
             selectedServices = Array.from(
                 document.querySelectorAll('input[name="services"]:checked')
             ).map(el => el.value);
-            current = STEP.DISCOUNT;
         }
 
-        // DISCOUNT QUESTION
-        else if (current === STEP.DISCOUNT) {
+        // Discount Question
+        else if (stepIndex === STEP.DISCOUNT) {
             const sel = document.querySelector('input[name="discount-code"]:checked');
             if (!sel) return alert("Please select Yes or No");
             discountChoice = sel.value;
-            current = discountChoice === "yes" ? STEP.DISCOUNT_INPUT : STEP.CHECKOUT;
         }
 
-        // DISCOUNT CODE INPUT
-        else if (current === STEP.DISCOUNT_INPUT) {
-            const input = steps[current].querySelector("input");
+        // Discount Code Input
+        else if (stepIndex === STEP.DISCOUNT_INPUT) {
+            const input = stepEl.querySelector("input");
             if (!input.value.trim()) return alert("Please enter discount code");
             discountCode = input.value;
-            current = STEP.CHECKOUT;
         }
 
-        // CHECKOUT CHOICE
-        else if (current === STEP.CHECKOUT) {
+        // Checkout Choice
+        else if (stepIndex === STEP.CHECKOUT) {
             const sel = document.querySelector('input[name="checkout-choice"]:checked');
             if (!sel) return alert("Please choose an option");
-
             checkoutChoice = sel.value;
-            
-            // Go to payment screen for both options
+
             current = "payment";
             updateUI();
             return;
+        }
+
+        // Move to next step
+        if (stepIndex === STEP.CONTACT) {
+            current = selectedMethod === "discord" ? STEP.DISCORD : STEP.EMAIL;
+        } 
+        else if (stepIndex === STEP.REFERENCE) {
+            current = referenceChoice === "yes" ? STEP.UPLOAD : STEP.AVATAR;
+        } 
+        else if (stepIndex === STEP.DISCOUNT) {
+            current = discountChoice === "yes" ? STEP.DISCOUNT_INPUT : STEP.CHECKOUT;
+        } 
+        else {
+            current = stepIndex + 1;
         }
 
         updateUI();
     };
 });
 
-// ---------------- PAYMENT SUBMIT ----------------
+// Payment Submit
 paySubmit.onclick = () => {
     current = "thankyou";
     updateUI();
 
     setTimeout(() => {
-        alert("Thank you! Redirecting to home...");
-        window.location.href = "index.html"; // Change if needed
-    }, 4000);
+        alert("Thank you! Your order has been received ❤️");
+        // window.location.href = "index.html";
+    }, 3000);
 };
 
-// ---------------- NAVIGATION ----------------
-prevBtn.onclick = () => {
-    if (current > 0) {
-        current--;
-        updateUI();
-    }
-};
-
-nextBtn.onclick = () => {
-    // Optional: allow manual next if step is completed
-    updateUI();
-};
+// Navigation
+prevBtn.onclick = () => { if (current > 0) { current--; updateUI(); } };
+nextBtn.onclick = () => { updateUI(); };
 
 updateUI();
 </script>
+
 </body>
 </html>
