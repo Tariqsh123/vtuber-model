@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 :root {
     --animate-duration: 1s
 }
@@ -1770,7 +1771,7 @@ a {
     color: #000 !important;
     display: flex;
     font-family: Open Sans;
-    font-size: 14px;
+    font-size: large;
     font-weight: 600;
     height: 40px;
     justify-content: center;
@@ -1826,7 +1827,7 @@ a {
     color: #333 !important;
     display: flex;
     font-family: Open Sans;
-    font-size: 14px;
+    font-size: large;
     font-weight: 600;
     height: 40px;
     justify-content: center;
@@ -2059,6 +2060,7 @@ header .navbar .btn-dual-shade{
     color: white !important;
     width: 260px !important;
     max-width: none !important;
+    font-size: large;
     min-width: auto !important;
 }
 header .navbar .navbar-brand {
@@ -2196,8 +2198,11 @@ header .navbar.fixed-top {
 
 .home-banner .banner-image a {
     display: inline-block;
-    min-height: 40px;
     padding: 10px 50px;
+    font-size: large ;
+    height: fit-content;
+    font-weight: 600;
+    max-width: none;
     -webkit-user-select: text;
     -moz-user-select: text;
     user-select: text;
@@ -2228,6 +2233,13 @@ header .navbar.fixed-top {
 
 section.portfolio .hr-line {
     margin: 20px 0
+}
+section.portfolio .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 section.portfolio .container-fluid {
@@ -3525,6 +3537,136 @@ section.faq-form .h2{
 }
 
 
+.content-area ,section.how-order,section.reviews{
+    background: #D9E9CF;
+}
+
+/* =========================
+   NEW REVIEW SECTION
+========================= */
+
+.new-review-section{
+    padding: 60px 20px;
+    background: #D9E9CF;
+}
+
+.review-container{
+    max-width: 1300px;
+    margin: auto;
+}
+
+.review-heading{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.review-heading h2{
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.review-heading p{
+    max-width: 800px;
+    margin: auto;
+}
+
+/* GRID */
+
+.review-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* BOX */
+
+.review-box{
+    width: calc(33.33% - 20px);
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.review-box img{
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+}
+
+/* CONTENT */
+
+.review-content{
+    padding: 25px;
+}
+
+.review-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.review-top h3{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.stars{
+    color: #ffd700;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.review-content p{
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 991px){
+
+    .review-box{
+        width: calc(50% - 15px);
+    }
+
+    .review-heading h2{
+        font-size: 38px;
+    }
+
+}
+
+@media(max-width: 767px){
+
+    .review-box{
+        width: 100%;
+    }
+
+    .review-heading h2{
+        font-size: 30px;
+    }
+
+    .review-heading p{
+        font-size: 16px;
+    }
+
+    .review-top{
+        /* flex-direction: column;
+        align-items: flex-start; */
+    }
+
+}
+
+
+
+
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
      font-family: 'Creato Display', sans-serif !important; 
 }
@@ -3536,9 +3678,11 @@ section.faq-form .accordion .accordion-item .accordion-header button{
 p,.p,a,span,li,section.faq-form form button{
       font-family: "Roboto", sans-serif !important; 
 }
-p,.p,li span{
-    font-size: medium !important;
-
+p,.p,li ,span{
+  font-family: "Arimo", sans-serif;
+  font-size: 1.35rem !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
 }
 
 
