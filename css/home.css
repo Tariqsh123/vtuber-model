@@ -932,6 +932,7 @@ textarea.form-control {
     padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
     text-align: inherit;
     text-decoration: none;
+    font-size: medium !important;
     white-space: nowrap;
     width: 100%
 }
@@ -1986,7 +1987,11 @@ input[type=number] {
 header .top-bar {
     align-items: center;
     /* background: linear-gradient(0deg, #dfffff, #fcfcfc); */
-    background-color: #adf71a;
+    /* background: url(../images/vtuber-form-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;     */
     border-bottom: 2px solid white;
     display: flex;
     max-width: 100%;
@@ -2008,7 +2013,13 @@ header .top-bar ul {
     justify-content: end;
     margin: 0
 }
-
+header{
+    background: url(../images/vtuber-form-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+}
 header .top-bar ul li {
     display: flow-root;
     margin: 0 5px;
@@ -2050,8 +2061,12 @@ header .top-bar ul li a i.fa-phone {
 
 header .navbar {
     max-width: 100%;
-    min-height: 70px;
-    background: #adf71a;
+    /* min-height: 70px; */
+    /* background: url(../images/vtuber-form-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box; */
     padding-bottom: .2rem;
     padding-top: .2rem
 }
@@ -2077,17 +2092,15 @@ header .navbar .nav-item button.btn-white-shade {
     border-color: #fff !important;
     color: #fff !important
 }
-
 header .navbar .nav-item .nav-link {
     color: #333 !important;
-    font-family: Zilla Slab;
     font-size: large !important;
     font-weight: 700;
-    height: 30px;
-    margin: 0 2px 0 0;
+    margin: 0 10px;
     padding: 0;
+    font-size: medium !important;
     text-align: center;
-    width: 120px
+    width: auto
 }
 
 header .navbar .nav-item .dropdown-item.active,
@@ -2098,7 +2111,12 @@ header .navbar .nav-item .dropdown-item:active {
 }
 
 header .navbar.fixed-top {
-    background: #adf71a;
+    background: url(../images/vtuber-form-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    /* background: #adf71a; */
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .22)
 }
 
@@ -2191,6 +2209,26 @@ header .navbar.fixed-top {
     font-size: 14px;
     color: #ccc;
     margin-bottom: 10px
+}
+.hero-ul li {
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+    border-bottom: 1px solid #ccc;
+    max-width: 350px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.hero-ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: #adf71a; /* dot color */
+    border-radius: 50%;
 }
 .home-banner .banner-image p{
     color: #ccc;
@@ -2412,24 +2450,25 @@ section.why-choose .btn-w {
 section.why-choose .email-phone {
     color: #333;
     display: block;
-    font-size: 13px;
+    font-size: large;
     font-weight: 700
 }
 
 section.why-choose .choose-box {
     background: #2d2d38;
     border-radius: 5px;
-    height: 300px;
+    height: 400px;
     margin: 10px 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    padding: 20px 30px
+    padding: 20px;
 }
 section.why-choose .choose-box .h5{
     color: #adf71a;
 }
+
 @media(max-width:600px){
     .choose-box .h5{
         text-align: center;
@@ -2511,6 +2550,7 @@ section.faq-form .accordion .accordion-item .accordion-header button:not(.collap
 section.faq-form .accordion .accordion-item .accordion-body {
     padding: 0 0 20px;
     color: #ccc;
+    font-size: 1.35rem;
 }
 
 section.faq-form form {
@@ -2773,6 +2813,10 @@ footer .footer-copyrights img {
     .home-banner .banner-image ul li {
         text-align: center !important
     }
+    .home-banner .banner-image ul li{
+        text-align: left !important;
+        font-size: large !important;
+    }
 
     br {
         display: none
@@ -2866,12 +2910,12 @@ footer .footer-copyrights img {
 @media (min-width:992px) {
     ul.navbar-nav.menu-bar {
         flex: auto;
-        justify-content: center !important
+        justify-content: center !important;
     }
 
     ul.navbar-nav.menu-btn {
         max-height: 40px;
-        max-width: 160px
+        /* max-width: 160px */
     }
 
     section.cta-banner .btn-dual-shade {
@@ -2931,9 +2975,9 @@ footer .footer-copyrights img {
         right: -20px
     }
 
-    section.why-choose .email-phone {
+    /* section.why-choose .email-phone {
         font-size: 11px
-    }
+    } */
 
     footer .footer-affordable .list-footer li a {
         font-size: 14px !important
@@ -2974,9 +3018,9 @@ footer .footer-copyrights img {
 }
 
 @media (min-width:1400px) {
-    section.why-choose .email-phone {
+    /* section.why-choose .email-phone {
         font-size: 15px
-    }
+    } */
 }
 
 @media (min-width:1200px) and (max-width:1399px) {
@@ -2993,6 +3037,14 @@ footer .footer-copyrights img {
     .cta-banner-two .row a {
         justify-content: left !important;
         text-align: left !important
+    }
+    header .navbar{
+        z-index: 9999;
+        background-image: url(../images/vtuber-form-bg.png) !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-clip: border-box;
     }
 }
 .portfolio{
@@ -3412,7 +3464,11 @@ section.faq-form .h2{
 }
 
 .vt-footer {
-  background: #adf71a;
+  background: url(../images/vtuber-form-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
   color: #000;
   padding: 60px 40px 20px;
 }
@@ -3453,7 +3509,7 @@ section.faq-form .h2{
   text-decoration: none;
   color: #000;
   font-weight: 600 ;
-  font-size: 14px;
+  font-size: large;
   transition: 0.3s;
 }
 
@@ -3479,6 +3535,9 @@ section.faq-form .h2{
   padding-top: 15px;
   border-top: 1px solid rgba(0,0,0,0.2);
   font-size: 14px;
+}
+.footer-bottom p{
+    color: black;
 }
 @media (max-width: 992px) {
   .footer-container {
@@ -3515,7 +3574,9 @@ section.faq-form .h2{
   .footer-col ul li {
     font-size: 13px;
   } */
-
+.footer-col ul li {
+    font-size: large !important;
+  }
   .social-icons {
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -3664,7 +3725,85 @@ section.faq-form .h2{
 
 }
 
+.form-hero-section-container{
+    width: 100%;
+    display: flex;
+    background-image: url(../images/vtuber-form-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    justify-content: center;
+    align-items: center;
+}
 
+/* WRAPPER */
+.form-hero-section-wrapper{
+    width: 100%;
+    max-width: 1200px;
+    height: fit-content;
+    text-align: center;
+    padding: 40px 20px;
+    color: black;
+    backdrop-filter: blur(4px);
+}
+
+/* LOGO */
+.form-hero-section-logo{
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+/* TITLE */
+.form-hero-section-title{
+    font-size: 45px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* TEXT */
+.form-hero-section-text{
+    font-size: large;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* BUTTON */
+.form-hero-section-btn{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    background: black;
+    border: 2px solid black;
+    font-weight: 600;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.form-hero-section-btn:hover{
+    background: white;
+    color: black;
+}
+
+/* NOTE */
+.form-hero-section-note {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.form-hero-section-note::before {
+    content: "⏲";
+    margin-right: 5px;
+}
+@media(max-width:600px){
+    .form-hero-section-title{
+        font-size: 35px;
+    }
+}
 
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
@@ -3681,10 +3820,12 @@ p,.p,a,span,li,section.faq-form form button{
 p,.p,li ,span{
   font-family: "Arimo", sans-serif;
   font-size: 1.35rem !important;
-  line-height: normal !important;
+  line-height: 1.5 !important;
   letter-spacing: normal !important;
 }
-
+.live-chat .chat-text span{
+    font-size: large !important;
+}
 
 
 

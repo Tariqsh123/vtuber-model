@@ -224,12 +224,11 @@ body{
 }
 
 .option-letter{
-    width: 35px;
-    height: 35px;
     display: flex;
     background: #adf71a79;
-    border-radius: 10px;
+    border-radius: 50%;
     justify-content: center;
+    padding: 5px 10px;
     font-size: large;
     align-items: center;
     font-weight: bold;
@@ -474,10 +473,42 @@ body{
 /* MOBILE */
 @media(max-width:768px){
     .payment-screen{
-        grid-template-columns: 1fr;
+        flex-direction: column;
         text-align: center;
+        height: 95vh;
     }
-
+    .payment-right h2 {
+    font-size: large;
+}
+    .pay-subtitle ,.pay-amount{
+    font-size: small !important;
+}
+.payment-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.card-form {
+    padding: 05px;
+    gap: 10px;
+    width: 100%;
+}
+.card-form .row{
+    flex-direction: column;
+    text-align: left;
+}
+.card-icons{
+    justify-content: center;
+    align-items: center;
+}
+.field label{
+    text-align: left;
+}
+    .payment-left{
+        display: none;
+    }
     .payment-left img{
         width: 160px;
     }
