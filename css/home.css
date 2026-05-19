@@ -2504,6 +2504,7 @@ section.faq-form .accordion .accordion-item {
 }
 section.faq-form .h2{
     color: #adf71a;
+    font-size: 35px !important;
 }
 
 section.faq-form .accordion .accordion-item .accordion-header button{
