@@ -2000,7 +2000,7 @@ header .top-bar {
 }
 
 header .top-bar a.social-icons {
-    color: #333;
+    color: #fff;
     display: inline-block;
     height: 20px;
     margin: 0 5px;
@@ -2014,11 +2014,12 @@ header .top-bar ul {
     margin: 0
 }
 header{
-    background: url(../images/vtuber-form-bg.png);
+    /* background: url(../images/vtuber-form-bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-clip: border-box;
+    background-clip: border-box; */
+    background: #181717;
 }
 header .top-bar ul li {
     display: flow-root;
@@ -2041,14 +2042,14 @@ header .top-bar ul li:nth-child(3) {
 
 header .top-bar ul li a {
     align-items: center;
-    color: #333;
+    color: #fff;
     display: inline-flex;
     font-size: 14px;
     font-weight: 400
 }
 
 header .top-bar ul li a i {
-    color: #333;
+    color: #fff;
     display: block;
     height: 10px;
     margin-right: 5px;
@@ -2071,8 +2072,8 @@ header .navbar {
     padding-top: .2rem
 }
 header .navbar .btn-dual-shade{
-    background: black;
-    color: white !important;
+    background: #adf71a;
+    color: black !important;
     width: 260px !important;
     max-width: none !important;
     font-size: large;
@@ -2093,7 +2094,7 @@ header .navbar .nav-item button.btn-white-shade {
     color: #fff !important
 }
 header .navbar .nav-item .nav-link {
-    color: #333 !important;
+    color: #fff !important;
     font-size: large !important;
     font-weight: 700;
     margin: 0 10px;
@@ -2111,12 +2112,12 @@ header .navbar .nav-item .dropdown-item:active {
 }
 
 header .navbar.fixed-top {
-    background: url(../images/vtuber-form-bg.png);
+    /* background: url(../images/vtuber-form-bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-clip: border-box;
-    /* background: #adf71a; */
+    background-clip: border-box; */
+    background: #181717;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .22)
 }
 
@@ -2612,7 +2613,7 @@ section.faq-form form button:hover{
 }
 
 footer {
-    background: linear-gradient(45deg, #333 10%, #383743);
+    /* background: linear-gradient(45deg, #333 10%, #383743); */
     padding: 20px 0
 }
 
@@ -3465,12 +3466,13 @@ section.faq-form .h2{
 }
 
 .vt-footer {
-  background: url(../images/vtuber-form-bg.png);
+  /* background: url(../images/vtuber-form-bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-clip: border-box;
-  color: #000;
+  background-clip: border-box; */
+  background-color: #181717;
+  color: white;
   padding: 60px 40px 20px;
 }
 
@@ -3487,12 +3489,14 @@ section.faq-form .h2{
 
 .footer-desc {
   font-size: 14px;
+  color: white;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .footer-col h3 {
   font-size: 22px;
+  color: #adf71a;
   margin-bottom: 15px;
   padding: 0px;
 }
@@ -3508,14 +3512,14 @@ section.faq-form .h2{
 }
 .footer-col ul li a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-weight: 600 ;
   font-size: large;
   transition: 0.3s;
 }
 
 .footer-col ul li a:hover {
-  color: #000;
+  color: #adf71a;
   text-decoration: underline;
 }
 
@@ -3526,6 +3530,7 @@ section.faq-form .h2{
 
 .social-icons a img {
   width: 50px;
+  filter: brightness(100);
   height: 50px;
   padding: 4px;
 }
@@ -3538,7 +3543,7 @@ section.faq-form .h2{
   font-size: 14px;
 }
 .footer-bottom p{
-    color: black;
+    color: white;
 }
 @media (max-width: 992px) {
   .footer-container {
@@ -3729,11 +3734,12 @@ section.faq-form .h2{
 .form-hero-section-container{
     width: 100%;
     display: flex;
-    background-image: url(../images/vtuber-form-bg.png);
+    /* background-image: url(../images/vtuber-form-bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-clip: border-box;
+    background-clip: border-box; */
+    background: #181717;
     justify-content: center;
     align-items: center;
 }
@@ -3745,7 +3751,7 @@ section.faq-form .h2{
     height: fit-content;
     text-align: center;
     padding: 40px 20px;
-    color: black;
+    color: white;
     backdrop-filter: blur(4px);
 }
 
@@ -3760,6 +3766,7 @@ section.faq-form .h2{
     font-size: 45px;
     text-align: center;
     font-weight: 600;
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -3767,18 +3774,19 @@ section.faq-form .h2{
 .form-hero-section-text{
     font-size: large;
     margin-bottom: 25px;
+    color: white;
     line-height: 1.5;
 }
 
 /* BUTTON */
 .form-hero-section-btn{
-    padding: 10px 30px;
+    padding: 7px 30px;
     border: none;
-    border-radius: 8px;
-    background: black;
-    border: 2px solid black;
+    border-radius: 20px;
+    background: #adf71a;
+    border: 2px solid #adf71a;
     font-weight: 600;
-    color: white;
+    color: black;
     font-size: large;
     cursor: pointer;
     transition: 0.3s ease;
