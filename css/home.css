@@ -259,7 +259,7 @@ small {
 }
 
 a {
-    color: #adf71a;
+    color: #007ed8;
     text-decoration: underline
 }
 
@@ -1103,19 +1103,14 @@ textarea.form-control {
 }
 
 .navbar-toggler-icon {
-    /* background-image: url(https://img.icons8.com/?size=100&id=undefined&format=png&color=FFFFFF);
-    background-position: center;
+    background-image: var(--bs-navbar-toggler-icon-bg);
+    background-position: 50%;
     background-repeat: no-repeat;
-    background-size: contain;
-    filter: brightness(100);
-    color: white;
-    background-repeat: no-repeat;
+    background-size: 100%;
     display: inline-block;
     height: 1.5em;
     vertical-align: middle;
-    width: 1.5em */
-    color: white;
-    font-size: xx-large !important;
+    width: 1.5em
 }
 
 @media (min-width:992px) {
@@ -1771,10 +1766,10 @@ a {
 .btn-dual-shade {
     align-items: center;
     /* background: linear-gradient(45deg, #ff753e, #ffb731); */
-    background: linear-gradient(90deg, #c2ffb6 0%, #adf71a 100%);
+     background: linear-gradient(90deg,#00b0ce,#007ed8);
     border-radius: 20px !important;
     box-shadow: none !important;
-    color: #000 !important;
+    color: #fff !important;
     display: flex;
     font-family: Open Sans;
     font-size: large;
@@ -1912,7 +1907,8 @@ a {
     margin: 20px auto 10px;
     opacity: 1;
     position: relative;
-    width: 100px
+    width: 100px;
+    display: none;
 }
 
 input,
@@ -1938,14 +1934,11 @@ textarea:focus {
     font-family: Font Awesome\ 5 Free
 }
 
-section.cta-banner {
-    background: #21212d;
-}
 section.cta-banner p,section.cta-banner a span ,section.cta-banner .live-chat .chat-text span{
-    color: #ccc;
+    /* color: #ccc; */
 }
 section.cta-banner .h2{
-    color: #adf71a;
+    color: #007ed8;
 }
 
 section.cta-banner hr {
@@ -1997,7 +1990,7 @@ header .top-bar {
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: border-box;     */
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #000;
     display: flex;
     max-width: 100%;
     min-height: 40px;
@@ -2005,7 +1998,7 @@ header .top-bar {
 }
 
 header .top-bar a.social-icons {
-    color: #fff;
+    color: #000;
     display: inline-block;
     height: 20px;
     margin: 0 5px;
@@ -2024,7 +2017,7 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: border-box; */
-    background: #181717;
+    background: #FFFFFF;
 }
 header .top-bar ul li {
     display: flow-root;
@@ -2047,14 +2040,14 @@ header .top-bar ul li:nth-child(3) {
 
 header .top-bar ul li a {
     align-items: center;
-    color: #fff;
+    color: #000;
     display: inline-flex;
     font-size: 14px;
     font-weight: 400
 }
 
 header .top-bar ul li a i {
-    color: #fff;
+    color: #007ed8;
     display: block;
     height: 10px;
     margin-right: 5px;
@@ -2077,8 +2070,8 @@ header .navbar {
     padding-top: .2rem
 }
 header .navbar .btn-dual-shade{
-    background: #adf71a;
-    color: black !important;
+     background: linear-gradient(90deg,#00b0ce,#007ed8);
+    color: white !important;
     width: 260px !important;
     max-width: none !important;
     font-size: large;
@@ -2095,11 +2088,11 @@ header .navbar .navbar-brand img{
 }
 
 header .navbar .nav-item button.btn-white-shade {
-    border-color: #fff !important;
-    color: #fff !important
+    border-color: #000 !important;
+    color: #000 !important
 }
 header .navbar .nav-item .nav-link {
-    color: #fff !important;
+    color: #000 !important;
     font-size: large !important;
     font-weight: 700;
     margin: 0 10px;
@@ -2108,10 +2101,12 @@ header .navbar .nav-item .nav-link {
     text-align: center;
     width: auto
 }
-
+header .navbar .nav-item .nav-link:hover{
+    color: #007ed8 !important;
+}
 header .navbar .nav-item .dropdown-item.active,
 header .navbar .nav-item .dropdown-item:active {
-    background-color: #adf71a;
+    background-color: #007ed8;
     color: #fff;
     text-decoration: none
 }
@@ -2122,7 +2117,7 @@ header .navbar.fixed-top {
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: border-box; */
-    background: #181717;
+    background: #FFFFFF;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .22)
 }
 
@@ -2178,7 +2173,7 @@ header .navbar.fixed-top {
     min-width: 440px
 }
 .home-banner .banner-image .h1{
-    background: linear-gradient(90deg, #d7fcac 0%, #adf71a 100%);
+    background: linear-gradient(90deg,#00b0ce,#007ed8);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -2233,7 +2228,7 @@ header .navbar.fixed-top {
     top: 8px;
     width: 8px;
     height: 8px;
-    background: #adf71a; /* dot color */
+    background: #007ed8; /* dot color */
     border-radius: 50%;
 }
 .home-banner .banner-image p{
@@ -2263,6 +2258,11 @@ header .navbar.fixed-top {
     max-height: 130px;
     max-width: 690px;
     min-height: 42px;
+     background: linear-gradient(90deg,#00b0ce,#007ed8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
     min-width: 280px
 }
 
@@ -2300,7 +2300,9 @@ section.how-order {
     background-repeat: no-repeat;
     background-size: auto
 }
-
+.how-order .h5{
+    color: #007ed8;
+}
 section.how-order .hr-line {
     margin: 20px 0;
     width: 100px !important
@@ -2309,7 +2311,7 @@ section.how-order .hr-line {
 section.how-order .text-num {
     align-items: center;
     border: 1px dashed;
-    color: #000;
+    color: #007ed8;
     display: flex;
     font-size: 23px;
     font-weight: 700;
@@ -2339,7 +2341,9 @@ section.book-design {
     background-repeat: no-repeat;
     background-size: auto
 }
-
+.book-design .h4{
+    color: #007ed8;
+}
 section.reviews {
     background: url(../images/bg-vector.webp);
     background-position: 0;
@@ -2364,7 +2368,7 @@ section.reviews .carousel .carousel-item.active {
 }
 
 section.reviews .carousel .carousel-item .reviews-box {
-    background: #adf71a48;
+    background: #007ed848;
     padding: 20px 15px;
     width: 265px
 }
@@ -2399,10 +2403,10 @@ section.reviews .carousel .carousel-indicators button.active {
 }
 
 section.reviews .carousel .w-aut {
-    background-color: #adf71a !important;
-    border: 2px solid #adf71a;
+    background-color: #007ed8 !important;
+    border: 2px solid #007ed8;
     border-radius: 20px;
-    color: #adf71a;
+    color: #007ed8;
     bottom: 0;
     height: 30px;
     margin: auto;
@@ -2423,26 +2427,26 @@ section.reviews .carousel .carousel-inner .carousel-item-start.active {
     transform: translateX(-100%)
 }
 
-section.why-choose {
+/* section.why-choose {
     background:#21212d;
-}
+} */
 section.why-choose p,section.why-choose .email-phone{
-    color: #ccc !important;
+    /* color: #ccc !important; */
 }
 section.why-choose h2{
-    color: #adf71a;
+    color: #007ed8;
 }
 section.why-choose .btn-w{
     color: white !important;
     border-color: white;
 }
 section.why-choose .btn-w:hover{
-    background:#adf71a !important;
+    background:#007ed8 !important;
     color: #000 !important;
 }
-section.why-choose .btn-dual-shade{
+/* section.why-choose .btn-dual-shade{
     color: black !important;
-}
+} */
 section.why-choose hr {
     margin-left: 0;
     background-color: white;
@@ -2461,7 +2465,7 @@ section.why-choose .email-phone {
 }
 
 section.why-choose .choose-box {
-    background: #2d2d38;
+    background: rgb(233, 233, 233);
     border-radius: 5px;
     height: 400px;
     margin: 10px 0;
@@ -2472,7 +2476,7 @@ section.why-choose .choose-box {
     padding: 20px;
 }
 section.why-choose .choose-box .h5{
-    color: #adf71a;
+    color: #007ed8;
 }
 
 @media(max-width:600px){
@@ -2489,16 +2493,6 @@ section.book-publisher p {
     font-size: 16px;
     margin-bottom: 25px
 }
-
-section.faq-form {
-    background: #21212d;
-}
-
-section.faq-form hr {
-    margin-left: 0;
-    background-color: white;
-}
-
 section.faq-form .accordion {
     margin-bottom: 40px
 }
@@ -2506,10 +2500,10 @@ section.faq-form .accordion {
 section.faq-form .accordion .accordion-item {
     background: transparent;
     border: 0;
-    border-bottom: 1px solid white
+    border-bottom: 1px solid gray
 }
 section.faq-form .h2{
-    color: #adf71a;
+    color: #007ed8;
     font-size: 35px !important;
 }
 
@@ -2517,7 +2511,7 @@ section.faq-form .accordion .accordion-item .accordion-header button{
     background: transparent !important;
     box-shadow: none !important;
 
-    background-image: linear-gradient(90deg, #c5fabe 0%, #adf71a 100%) !important;
+    background: linear-gradient(90deg,#00b0ce,#007ed8) !important;
     background-clip: text;
     -webkit-background-clip: text !important;
 
@@ -2555,9 +2549,8 @@ section.faq-form .accordion .accordion-item .accordion-header button:not(.collap
 }
 
 section.faq-form .accordion .accordion-item .accordion-body {
-    padding: 0 0 20px;
-    color: #ccc;
-    font-size: 1.35rem;
+    padding: 0 30px 20px;
+    font-size: medium;
 }
 
 section.faq-form form {
@@ -2597,7 +2590,7 @@ section.faq-form form select:active,section.faq-form form select:focus,
 {
     background-color: transparent;
     color: white;
-    border-color: #adf71a !important;
+    border-color: #007ed8 !important;
 }
 section.faq-form label {
     color: white;
@@ -2613,7 +2606,7 @@ section.faq-form form button {
     width: 100% !important
 }
 section.faq-form form button:hover{
-    background: #adf71a;
+    background: #007ed8;
     color: #000 !important;
 }
 
@@ -2766,8 +2759,7 @@ footer .footer-copyrights img {
     }
 
     header .navbar .navbar-collapse {
-        background: #181717;
-        border-right: 1px solid white;
+        background: #fff;
         box-shadow: 0 0 30px 0 rgba(0, 0, 0, .322);
         height: 100vh !important;
         left: 0;
@@ -2782,9 +2774,19 @@ footer .footer-copyrights img {
         height: auto;
         margin: 0 0 20px;
         text-align: left;
-        width: auto
+        width: auto;
+        font-size: large !important;
     }
-
+    .dropdown-item{
+        font-size: large !important;
+    }
+    header .navbar .btn-dual-shade{
+        font-size: large !important;
+        width: fit-content !important;
+        height: fit-content;
+        padding: 7px 15px;
+        margin: 0;
+    }
     header .navbar button.navbar-toggler {
         border: none;
         box-shadow: none !important
@@ -3053,20 +3055,7 @@ footer .footer-copyrights img {
         background-repeat: no-repeat;
         background-size: cover;
         background-clip: border-box; */
-        background-color: #181717;
     }
-}
-.portfolio{
-    background: #21212d;
-}
-.portfolio p{
-    color: #ccc;
-}
-.portfolio h2{
-    color: #adf71a;
-}
-section.portfolio .hr-line{
-    background-color: white;
 }
 #process-video{
     height: auto;
@@ -3098,7 +3087,11 @@ section.portfolio .hr-line{
 
 .services-heading h2{
   font-size:42px;
-  color:#111;
+   background: linear-gradient(90deg,#00b0ce,#007ed8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
   margin-bottom:15px;
   font-weight:700;
 }
@@ -3118,7 +3111,7 @@ section.portfolio .hr-line{
 }
 
 .service-box{
-    background: linear-gradient(90deg, #c2ffb6 0%, #adf71a 100%);
+  background: linear-gradient(90deg,#00b0ce,#007ed8);
   padding:35px 30px;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.06);
@@ -3143,6 +3136,7 @@ section.portfolio .hr-line{
 }
 
 .service-image img{
+    filter: brightness(100);
   width:100%;
   height:100%;
   object-fit:contain;
@@ -3150,12 +3144,13 @@ section.portfolio .hr-line{
 
 .service-box h3{
   font-size:22px;
-  color:#111;
+  color:#fff;
   margin-bottom:15px;
   font-weight:700;
 }
 
 .service-box p{
+    color: white;
   font-size:16px;
   line-height:1.7;
 }
@@ -3224,7 +3219,7 @@ section.portfolio .hr-line{
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  border: 2px solid #adf71a;
+  border: 2px solid #007ed8;
   text-align:center;
 }
 
@@ -3332,7 +3327,7 @@ input:checked + .slider { background: #111; }
 input:checked + .slider:before { transform: translateX(30px); }
 
 .save-badge {
-  background: #adf71a;
+  background: #007ed8;
   color: #000;
   padding: 3px 10px;
   border-radius: 20px;
@@ -3374,7 +3369,7 @@ input:checked + .slider:before { transform: translateX(30px); }
   top: -16px;
   left: 50%;
   transform: translateX(-50%);
-  background: #adf71a;
+  background: #007ed8;
   color: #000;
   padding: 8px 28px;
   border-radius: 50px;
@@ -3407,7 +3402,7 @@ input:checked + .slider:before { transform: translateX(30px); }
   text-decoration: none;
   font-size: 17px;
   margin-bottom: 40px;
-  background: #adf71a;
+  background: #007ed8;
   color: #000;
   transition: 0.3s;
 }
@@ -3429,11 +3424,11 @@ input:checked + .slider:before { transform: translateX(30px); }
   font-size: 16.2px;
 }
 .features li span {
-  color: #adf71a;
+  color: #007ed8;
   font-size: 20px;
   margin-right: 12px;
 }
-.featured .features li span { color: #adf71a; }
+.featured .features li span { color: #007ed8; }
 
 .delivery { font-weight: 600; margin-top: auto; }
 .featured .delivery { color: #ddd; }
@@ -3457,17 +3452,16 @@ input:checked + .slider:before { transform: translateX(30px); }
 
 
 .portfolio h2,
-section.cta-banner .h2,
-section.why-choose h2,
-section.why-choose .choose-box .h5,
+section.cta-banner .h2,.how-to-heading,.streamer-choice-title h2,
+section.why-choose h2,.roadmap-heading,.review-heading h2,.form-hero-section-title,
+section.why-choose .choose-box .h5,.book-publisher h2,.book-publisher .h2,
 section.faq-form .h2{
-    background: linear-gradient(90deg, #c2ffb6 0%, #adf71a 100%);
+     background: linear-gradient(90deg,#00b0ce,#007ed8);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
 
-    display: inline-block;
     line-height: 1.3;
     padding-bottom: 5px;
 }
@@ -3478,8 +3472,9 @@ section.faq-form .h2{
   background-repeat: no-repeat;
   background-size: cover;
   background-clip: border-box; */
-  background-color: #181717;
+  background-color: #FFFFFF;
   color: white;
+  border-top: 1px solid  #00b0ce;
   padding: 60px 40px 20px;
 }
 
@@ -3496,14 +3491,13 @@ section.faq-form .h2{
 
 .footer-desc {
   font-size: 14px;
-  color: white;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .footer-col h3 {
   font-size: 22px;
-  color: #adf71a;
+  color: #007ed8;
   margin-bottom: 15px;
   padding: 0px;
 }
@@ -3519,14 +3513,14 @@ section.faq-form .h2{
 }
 .footer-col ul li a {
   text-decoration: none;
-  color: #fff;
   font-weight: 600 ;
   font-size: large;
+  color: #000;
   transition: 0.3s;
 }
 
 .footer-col ul li a:hover {
-  color: #adf71a;
+  color: #007ed8;
   text-decoration: underline;
 }
 
@@ -3537,7 +3531,6 @@ section.faq-form .h2{
 
 .social-icons a img {
   width: 50px;
-  filter: brightness(100);
   height: 50px;
   padding: 4px;
 }
@@ -3546,11 +3539,8 @@ section.faq-form .h2{
   text-align: center;
   margin-top: 40px;
   padding-top: 15px;
-  border-top: 1px solid rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(0,0,0);
   font-size: 14px;
-}
-.footer-bottom p{
-    color: white;
 }
 @media (max-width: 992px) {
   .footer-container {
@@ -3611,9 +3601,9 @@ section.faq-form .h2{
 }
 
 
-.content-area ,section.how-order,section.reviews{
+/* .content-area ,section.how-order,section.reviews{
     background: #D9E9CF;
-}
+} */
 
 /* =========================
    NEW REVIEW SECTION
@@ -3621,7 +3611,7 @@ section.faq-form .h2{
 
 .new-review-section{
     padding: 60px 20px;
-    background: #D9E9CF;
+    /* background: #D9E9CF; */
 }
 
 .review-container{
@@ -3661,7 +3651,7 @@ section.faq-form .h2{
     background: #fff;
     border-radius: 20px;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid gainsboro;
 }
 
 .review-box img{
@@ -3746,7 +3736,7 @@ section.faq-form .h2{
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: border-box; */
-    background: #181717;
+    background: #FFFFFF;
     justify-content: center;
     align-items: center;
 }
@@ -3781,7 +3771,7 @@ section.faq-form .h2{
 .form-hero-section-text{
     font-size: large;
     margin-bottom: 25px;
-    color: white;
+    /* color: white; */
     line-height: 1.5;
 }
 
@@ -3790,20 +3780,13 @@ section.faq-form .h2{
     padding: 7px 30px;
     border: none;
     border-radius: 20px;
-    background: #adf71a;
-    border: 2px solid #adf71a;
+     background: linear-gradient(90deg,#00b0ce,#007ed8);
     font-weight: 600;
-    color: black;
+    color: #fff;
     font-size: large;
     cursor: pointer;
     transition: 0.3s ease;
 }
-
-.form-hero-section-btn:hover{
-    background: white;
-    color: black;
-}
-
 /* NOTE */
 .form-hero-section-note {
     display: block;
