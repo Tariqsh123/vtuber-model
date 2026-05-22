@@ -2018,7 +2018,7 @@ header{
     background-size: cover;
     background-clip: border-box; */
     background: #FFFFFF;
-    box-shadow: 1px 1px 5px gray;
+    /* box-shadow: 1px 1px 5px gray; */
 }
 header .top-bar ul li {
     display: flow-root;
@@ -2068,7 +2068,8 @@ header .navbar {
     background-size: cover;
     background-clip: border-box; */
     padding-bottom: .2rem;
-    padding-top: .2rem
+    padding-top: .2rem;
+    box-shadow: 1px 1px 5px gray;
 }
 header .navbar .btn-dual-shade{
      background: linear-gradient(90deg,#00b0ce,#007ed8);
