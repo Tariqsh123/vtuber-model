@@ -1937,9 +1937,9 @@ textarea:focus {
 section.cta-banner p,section.cta-banner a span ,section.cta-banner .live-chat .chat-text span{
     /* color: #ccc; */
 }
-section.cta-banner .h2{
+/* section.cta-banner .h2{
     color: #007ed8;
-}
+} */
 
 section.cta-banner hr {
     margin-left: 0;
@@ -2018,6 +2018,7 @@ header{
     background-size: cover;
     background-clip: border-box; */
     background: #FFFFFF;
+    box-shadow: 1px 1px 5px gray;
 }
 header .top-bar ul li {
     display: flow-root;
@@ -2131,7 +2132,7 @@ header .navbar.fixed-top {
     overflow: visible !important;
     position: inherit !important
 }
-.home-banner .carousel-item::after{
+/* .home-banner .carousel-item::after{
     content: '';
     height: 100%;
     width: 100%;
@@ -2139,7 +2140,7 @@ header .navbar.fixed-top {
     position: absolute;
     top: 0;
     left: 0;
-}
+} */
 
 .home-banner .banner-image {
     color: #fff;
@@ -2166,22 +2167,25 @@ header .navbar.fixed-top {
 
 .home-banner .banner-image .h1,
 .home-banner .banner-image p {
-    color: #fff;
-    max-height: 180px;
+    color: black;
+    /* max-height: 180px;
     max-width: 510px;
     min-height: 40px;
-    min-width: 440px
+    min-width: 440px */
 }
 .home-banner .banner-image .h1{
-    background: linear-gradient(90deg,#00b0ce,#007ed8);
+    line-height: 1.3;
+    padding-bottom: 5px;
+}
+.home-banner .banner-image .h1 span{
+background: linear-gradient(90deg,#00b0ce,#007ed8);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    font-size: 45px !important;
+    font-weight: 900;
     -webkit-text-fill-color: transparent;
 
-    display: inline;
-    line-height: 1.3;
-    padding-bottom: 5px;
 }
 .home-banner .banner-image .h1,
 .home-banner .banner-image h1 {
@@ -2197,7 +2201,7 @@ header .navbar.fixed-top {
 .home-banner .banner-image .tag {
     display: block;
     margin: 50px 0 20px;
-    color: #ccc;
+    color: black;
 }
 .home-banner .banner-image a{
     margin: 10px auto ;
@@ -2208,7 +2212,7 @@ header .navbar.fixed-top {
 
 .home-banner .banner-image ul li {
     font-size: 14px;
-    color: #ccc;
+    color: #000;
     margin-bottom: 10px
 }
 .hero-ul li {
@@ -2232,7 +2236,7 @@ header .navbar.fixed-top {
     border-radius: 50%;
 }
 .home-banner .banner-image p{
-    color: #ccc;
+    color: #000;
 }
 
 .home-banner .banner-image a {
@@ -2255,15 +2259,21 @@ header .navbar.fixed-top {
 .content-area .h2 {
     display: block;
     margin: 0 auto;
-    max-height: 130px;
-    max-width: 690px;
-    min-height: 42px;
-     background: linear-gradient(90deg,#00b0ce,#007ed8);
+    font-weight: 900;
+    /* max-height: 130px;
+    max-width: 690px; */
+    font-size: 45px ;
+    /* min-height: 42px;
+    min-width: 280px */
+}
+.content-area .h2 span{
+ background: linear-gradient(90deg,#00b0ce,#007ed8);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    min-width: 280px
+    font-size: 45px !important;
+    
 }
 
 .content-area p {
@@ -2301,7 +2311,6 @@ section.how-order {
     background-size: auto
 }
 .how-order .h5{
-    color: #007ed8;
 }
 section.how-order .hr-line {
     margin: 20px 0;
@@ -2433,9 +2442,9 @@ section.reviews .carousel .carousel-inner .carousel-item-start.active {
 section.why-choose p,section.why-choose .email-phone{
     /* color: #ccc !important; */
 }
-section.why-choose h2{
+/* section.why-choose h2{
     color: #007ed8;
-}
+} */
 section.why-choose .btn-w{
     color: white !important;
     border-color: white;
@@ -2503,7 +2512,6 @@ section.faq-form .accordion .accordion-item {
     border-bottom: 1px solid gray
 }
 section.faq-form .h2{
-    color: #007ed8;
     font-size: 35px !important;
 }
 
@@ -2684,8 +2692,8 @@ footer .footer-copyrights img {
 }
 
 @media (max-width:576px) {
-    .content-area .h2 {
-        max-height: none
+    .content-area .h2,    .content-area .h2 span {
+        font-size: 35px !important;
     }
 
     .btn-dual-shade,
@@ -2793,7 +2801,7 @@ footer .footer-copyrights img {
     }
 
     .home-banner {
-        background: #343438;
+        /* background: #343438; */
         margin-top: 45px;
     }
 
@@ -2821,7 +2829,9 @@ footer .footer-copyrights img {
 
     .home-banner .banner-image .tag,
     .home-banner .banner-image ul li {
-        text-align: center !important
+        text-align: center !important;
+        width: 300px;
+        margin: 0 auto;
     }
     .home-banner .banner-image ul li{
         text-align: left !important;
@@ -2883,17 +2893,19 @@ footer .footer-copyrights img {
 
     .home-banner .banner-image .h1,
     .home-banner .banner-image p {
-        max-height: none;
+        /* max-height: none;
         max-width: none;
         min-height: auto;
         min-width: auto;
-        width: auto
+        width: auto */
     }
     .home-banner .banner-image .h1{
         text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-size: 41px;
+    }
+    .home-banner .banner-image .h1 span{
+        font-size: 41px !important;
+        text-align: center;
     }
     footer .footer-affordable .text-white {
         max-height: none;
@@ -3006,9 +3018,9 @@ footer .footer-copyrights img {
         width: 210px
     }
 
-    section.home-banner {
+    /* section.home-banner {
         background: #383640
-    }
+    } */
 
     .home-banner .banner-image img.slider-img {
         display: none
@@ -3086,14 +3098,23 @@ footer .footer-copyrights img {
 }
 
 .services-heading h2{
-  font-size:42px;
-   background: linear-gradient(90deg,#00b0ce,#007ed8);
+  font-size:45px;
+  margin-bottom:15px;
+}
+.services-heading h2 span{
+  font-weight:900 !important;
+  font-size:45px !important;
+ background: linear-gradient(90deg,#00b0ce,#007ed8);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-  margin-bottom:15px;
-  font-weight:700;
+  
+}
+@media(max-width:600px){
+    .services-heading h2 span{
+        font-size: 35px !important;
+    }
 }
 
 .services-heading p{
@@ -3111,7 +3132,7 @@ footer .footer-copyrights img {
 }
 
 .service-box{
-  background: linear-gradient(90deg,#00b0ce,#007ed8);
+  background: linear-gradient(to bottom,#00b0ce,#007ed8);
   padding:35px 30px;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.06);
@@ -3450,12 +3471,27 @@ input:checked + .slider:before { transform: translateX(30px); }
   }
 }
 
-
-.portfolio h2,
-section.cta-banner .h2,.how-to-heading,.streamer-choice-title h2,
-section.why-choose h2,.roadmap-heading,.review-heading h2,.form-hero-section-title,
-section.why-choose .choose-box .h5,.book-publisher h2,.book-publisher .h2,
-section.faq-form .h2{
+section.faq-form .h2,.form-hero-section-title,.book-publisher .h2,section.why-choose h2,.portfolio h2,.how-to-heading ,.streamer-choice-title h2 ,section.cta-banner .h2,.roadmap-heading,.review-heading h2{
+    font-size: 45px !important ;
+}
+section.faq-form .h2 span,.form-hero-section-title span, .book-publisher .h2 span, section.why-choose h2 span, .review-heading h2 span,.portfolio h2 span ,.how-to-heading span ,.streamer-choice-title h2 span ,section.cta-banner .h2 span,.roadmap-heading span{
+    font-size: 45px !important;
+    font-weight: 900 !important;
+}
+@media (max-width: 600px){
+ 
+section.faq-form .h2,.form-hero-section-title,.book-publisher .h2,section.why-choose h2,.portfolio h2,.how-to-heading ,.streamer-choice-title h2 ,section.cta-banner .h2,.roadmap-heading,.review-heading h2{
+    font-size: 41px ;
+}
+section.faq-form .h2 span,.form-hero-section-title span,.book-publisher .h2 span,section.why-choose h2 span, .review-heading h2 span, .portfolio h2 span ,.how-to-heading span ,.streamer-choice-title h2 span ,section.cta-banner .h2 span,.roadmap-heading span{
+    font-size: 41px !important;
+}   
+} 
+.portfolio h2 span,
+section.cta-banner .h2 span,.how-to-heading span,.streamer-choice-title h2 span,
+section.why-choose h2 span,.roadmap-heading span,.review-heading h2 span,.form-hero-section-title span,
+section.why-choose .choose-box .h5,.book-publisher .h2 span,
+section.faq-form .h2 span{
      background: linear-gradient(90deg,#00b0ce,#007ed8);
     background-clip: text;
     -webkit-background-clip: text;
@@ -3763,7 +3799,6 @@ section.faq-form .h2{
     font-size: 45px;
     text-align: center;
     font-weight: 600;
-    color: white;
     margin-bottom: 10px;
 }
 
@@ -3828,3 +3863,8 @@ p,.p,li ,span{
 
 
 
+.cta-banner-btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

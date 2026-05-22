@@ -47,8 +47,15 @@ body{
     font-size: 45px;
     text-align: center;
     font-weight: 600;
-    color: #007ed8;
+    color: #000;
     margin-bottom: 10px;
+}
+.form-hero-section-title span{
+ background: linear-gradient(90deg,#00b0ce,#007ed8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 /* TEXT */
