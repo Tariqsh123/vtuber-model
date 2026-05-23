@@ -2539,7 +2539,7 @@ section.faq-form .accordion .accordion-item .accordion-header button:before {
     background: url(../images/faq-before.webp);
     background-repeat: no-repeat;
     bottom: auto;
-    filter: brightness(100);
+    filter: brightness(0);
     content: "";
     height: 20px;
     left: 0;
@@ -3490,7 +3490,7 @@ section.faq-form .h2 span,.form-hero-section-title span,.book-publisher .h2 span
 } 
 .portfolio h2 span,
 section.cta-banner .h2 span,.how-to-heading span,.streamer-choice-title h2 span,
-section.why-choose h2 span,.roadmap-heading span,.review-heading h2 span,.form-hero-section-title span,
+section.why-choose h2 span,.roadmap-heading span,.review-heading h2 span,
 section.why-choose .choose-box .h5,.book-publisher .h2 span,
 section.faq-form .h2 span{
      background: linear-gradient(90deg,#00b0ce,#007ed8);
@@ -3773,7 +3773,7 @@ section.faq-form .h2 span{
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: border-box; */
-    background: #FFFFFF;
+    background:linear-gradient(to bottom,#00b0ce,#007ed8);
     justify-content: center;
     align-items: center;
 }
@@ -3799,12 +3799,14 @@ section.faq-form .h2 span{
 .form-hero-section-title{
     font-size: 45px;
     text-align: center;
+    color: white;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 /* TEXT */
 .form-hero-section-text{
+    color: white;
     font-size: large;
     margin-bottom: 25px;
     /* color: white; */
@@ -3816,9 +3818,9 @@ section.faq-form .h2 span{
     padding: 7px 30px;
     border: none;
     border-radius: 20px;
-     background: linear-gradient(90deg,#00b0ce,#007ed8);
+    background-color: white;
     font-weight: 600;
-    color: #fff;
+    color: #0c63e4;
     font-size: large;
     cursor: pointer;
     transition: 0.3s ease;
