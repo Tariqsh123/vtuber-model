@@ -3319,7 +3319,10 @@ footer .footer-copyrights img {
     }
 
     .inclusive-heading{
-        font-size:40px;
+        font-size:35px !important;
+    }
+    .inclusive-heading span{
+        font-size:35px !important;
     }
 
     .inclusive-box{
@@ -3530,6 +3533,9 @@ footer .footer-copyrights img {
         font-size:8px;
         padding: 2px;
     }
+.pricing-title ,.pricing-title span{
+    font-size: 35px !important;
+}
 
 }
 .pricing-btn-wrapper{
@@ -3642,7 +3648,9 @@ footer .footer-copyrights img {
     }
     .pricing-country-title{
         text-align: center;
+        font-size: 35px;
     }
+   
     .pricing-country-top{
         display: flex;
         justify-content: center;
@@ -4345,6 +4353,18 @@ p,.p,li ,span{
 } 
    .final-cta-btn-container a{
     text-align: center !important;
-    
    }
+   .portfolio h2,.portfolio h2 span{
+    font-size: 35px !important;
+    line-height: normal;
+}
+.how-to-heading{
+    margin-top: 20px;
+}
+ .how-to-heading,.how-to-heading span,.review-heading h2,.review-heading h2 span,.roadmap-heading,.roadmap-heading span,.streamer-choice-title h2,.streamer-choice-title h2 span,section.faq-form .h2,section.faq-form .h2 span,section.cta-banner .h2,section.cta-banner .h2 span{
+        font-size: 35px !important;
+    }
+    .review-top h3 {
+        font-size: large;
+    }
 }
