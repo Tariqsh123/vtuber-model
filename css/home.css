@@ -2280,10 +2280,7 @@ background: linear-gradient(90deg,#00b0ce,#007ed8);
 .content-area p {
     display: block;
     margin: 0 auto;
-    max-height: 340px;
-    max-width: 1230px;
-    min-height: 70px;
-    min-width: 270px
+   
 }
 
 section.portfolio .hr-line {
@@ -3057,10 +3054,10 @@ footer .footer-copyrights img {
 }
 
 @media (max-width:575px) {
-    .cta-banner-two .row a {
+    /* .cta-banner-two .row a {
         justify-content: left !important;
         text-align: left !important
-    }
+    } */
     header .navbar{
         z-index: 9999;
         /* background-image: url(../images/vtuber-form-bg.png) !important;
@@ -3133,21 +3130,21 @@ footer .footer-copyrights img {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap:25px;
+  gap:10px;
 }
 
 .service-box{
   background: linear-gradient(to bottom,#00b0ce,#007ed8);
-  padding:35px 30px;
+  padding:30px 20px;
   max-width: 350px;
   width: 100%;
-  height: 350px;
+  height: 650px;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.06);
   transition:0.4s ease;
   border:1px solid #eee;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   flex-direction: column;
@@ -3158,6 +3155,12 @@ footer .footer-copyrights img {
   box-shadow:0 15px 40px rgba(0,0,0,0.1);
 }
 
+.service-box a{
+    background-color: white;
+    font-size: medium;
+    padding: 7px 10px;
+    border-radius: 20px;
+}
 .service-image{
   width:80px;
   height:80px;
@@ -3172,7 +3175,7 @@ footer .footer-copyrights img {
 }
 
 .service-box h3{
-  font-size:22px;
+  font-size:22px !important;
   color:#fff;
   margin-bottom:15px;
   font-weight:700;
@@ -3180,16 +3183,7 @@ footer .footer-copyrights img {
 
 .service-box p{
     color: white;
-  font-size:16px;
-  line-height:1.7;
-}
-
-@media(max-width:991px){
-
-  .services-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
+  font-size:large !important;
 }
 
 @media(max-width:767px){
@@ -3198,10 +3192,9 @@ footer .footer-copyrights img {
   .services-heading h2{
     font-size:35px;
   }
-
-  .services-grid{
-    grid-template-columns:1fr;
-  }
+.service-box{
+    height: fit-content;
+}
 
 }
 /* Gender Inclusive Audience Section */
@@ -3318,7 +3311,9 @@ footer .footer-copyrights img {
 /* Responsive */
 
 @media(max-width:768px){
-
+.inclusive-title{
+    text-align: center;
+}
     .inclusive-section{
         padding:80px 20px;
     }
@@ -3485,7 +3480,73 @@ footer .footer-copyrights img {
 .pricing-content p{
     text-align: center;
 }
+.pricing-table-wrapper{
+    margin-top:40px;
+}
 
+/* MAIN TABLE */
+.pricing-table{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed; /* IMPORTANT: forces fit */
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+/* HEADER */
+.pricing-table th{
+    background:#007ed8;
+    color:#fff;
+    padding:12px 6px;
+    font-size:13px;
+    text-align:center;
+}
+
+/* CELLS */
+.pricing-table td{
+    padding:12px 6px;
+    font-size:13px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+    word-wrap:break-word; /* prevents overflow */
+}
+
+/* FIRST COLUMN (SERVICE NAME) */
+.pricing-table td:first-child,
+.pricing-table th:first-child{
+    text-align:left;
+    font-weight:600;
+}
+
+/* MOBILE FIX (NO SCROLL, COMPRESS TABLE) */
+@media(max-width:768px){
+
+    .pricing-table{
+        border-radius: 0;
+    }
+    .pricing-table th,
+    .pricing-table td{
+        font-size:8px;
+        padding: 2px;
+    }
+
+}
+.pricing-btn-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.pricing-btn-wrapper a{
+    background: linear-gradient(to right,#00b0ce,#007ed8);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: large;
+    font-weight: 600;
+}
 /* RESPONSIVE */
 @media(max-width:900px){
     .pricing-grid{
@@ -3519,6 +3580,7 @@ footer .footer-copyrights img {
 .pricing-country-title{
     font-size:44px;
     font-weight:800;
+    text-align: center;
     color:#fff;
 }
 
@@ -3526,7 +3588,7 @@ footer .footer-copyrights img {
     margin-top:15px;
     color:#fff;
     font-size:16px;
-    max-width:500px;
+    text-align: center;
 }
 
 /* RIGHT GRID */
@@ -4268,4 +4330,21 @@ p,.p,li ,span{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.final-cta-btn-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+@media(max-width:575px){
+   .final-cta-btn-container{
+    flex-direction: column;
+    text-align: center;
+} 
+   .final-cta-btn-container a{
+    text-align: center !important;
+    
+   }
 }
