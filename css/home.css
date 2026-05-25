@@ -3314,9 +3314,6 @@ footer .footer-copyrights img {
 .inclusive-title{
     text-align: center;
 }
-    .inclusive-section{
-        padding:80px 20px;
-    }
 
     .inclusive-heading{
         font-size:35px !important;
@@ -4311,23 +4308,11 @@ section.faq-form .h2 span{
 }
 
 
-h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
-     font-family: 'Creato Display', sans-serif !important; 
-}
 section.faq-form .accordion .accordion-item .accordion-header button{
      font-family: 'Creato Display', sans-serif !important; 
      letter-spacing: 1px;;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-p,.p,a,span,li,section.faq-form form button{
-      font-family: "Roboto", sans-serif !important; 
-}
-p,.p,li ,span{
-  font-family: "Arimo", sans-serif;
-  font-size: 1.35rem !important;
-  line-height: 1.5 !important;
-  letter-spacing: normal !important;
-}
+
 .live-chat .chat-text span{
     font-size: large !important;
 }
@@ -4367,4 +4352,24 @@ p,.p,li ,span{
     .review-top h3 {
         font-size: large;
     }
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+p,.p,a,span,li,section.faq-form form button{
+      font-family: "Roboto", sans-serif !important; 
+}
+p,.p,li ,span{
+  font-family: "Arimo", sans-serif;
+  font-size: 1.35rem !important;
+  line-height: 1.5 !important;
+  letter-spacing: normal !important;
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
+     font-family: 'Creato Display', sans-serif !important; 
+}
+@media(max-width:600px){
+ 
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,span{
+    line-height: normal !important;
+}   
 }
