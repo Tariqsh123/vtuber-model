@@ -386,132 +386,37 @@
  
 <section class="pricing-section">
 
-<div class="pricing-container">
+    <div class="pricing-container">
 
-    <!-- HEADER -->
-    <div class="pricing-header">
+        <!-- HEADER -->
+        <div class="pricing-header">
 
-        <h2 class="pricing-title">VTuber Model <span> Pricing</span></h2>
+            <h2 class="pricing-title">
+                VTuber Model <span>Pricing</span>
+            </h2>
 
-        <p class="pricing-subtitle">
-            Choose your perfect VTuber package for streaming, YouTube & content creation
-        </p>
-
-        <!-- COUNTRY DROPDOWN -->
-        <select class="pricing-country" id="pricing-country">
-            <option value="us">United States (USD)</option>
-            <option value="eu">Europe (EUR)</option>
-            <option value="uk">UK (GBP)</option>
-            <option value="ae">UAE (AED)</option>
-        </select>
-
-    </div>
-
-    <!-- GRID -->
-    <div class="pricing-grid">
-
-        <!-- CARD 1 -->
-        <div class="pricing-card">
-
-            <h3>Starter Model</h3>
-
-            <div class="pricing-price">$49</div>
-
-            <p class="pricing-desc">Perfect for beginners starting VTuber journey.</p>
-
-            <ul>
-                <li><i class="fa-solid fa-check"></i> Basic Live2D Model</li>
-                <li><i class="fa-solid fa-check"></i> Simple Rigging</li>
-                <li><i class="fa-solid fa-check"></i> 2 Expressions</li>
-            </ul>
-
-            <button>Get Started</button>
+            <p class="pricing-subtitle">
+                Choose premium VTuber solutions designed for streamers, creators, gaming personalities, and digital brands worldwide.
+            </p>
 
         </div>
 
-        <!-- CARD 2 -->
-        <div class="pricing-card pricing-active">
+        <!-- CONTENT -->
+        <div class="pricing-content">
 
-            <h3>Pro Model</h3>
+            <p>
+                Our VTuber model pricing is designed to provide flexible and high-quality solutions for creators at every stage. Whether you are starting your journey as a new streamer or building a professional virtual brand, we focus on delivering expressive Live2D avatars, smooth animations, detailed character rigging, and visually engaging designs tailored to your content style. Every model is created with creativity, performance quality, and audience engagement in mind to help you stand out across Twitch, YouTube, TikTok, and other digital platforms.
+            </p>
 
-            <div class="pricing-price">$149</div>
-
-            <p class="pricing-desc">Best choice for streamers & creators.</p>
-
-            <ul>
-                <li><i class="fa-solid fa-check"></i> Advanced Live2D Model</li>
-                <li><i class="fa-solid fa-check"></i> Full Body Rigging</li>
-                <li><i class="fa-solid fa-check"></i> 8+ Expressions</li>
-                <li><i class="fa-solid fa-check"></i> Physics System</li>
-            </ul>
-
-            <button>Get Started</button>
-
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="pricing-card">
-
-            <h3>Elite Model</h3>
-
-            <div class="pricing-price">$299</div>
-
-            <p class="pricing-desc">Full custom VTuber experience.</p>
-
-            <ul>
-                <li><i class="fa-solid fa-check"></i> Ultra Custom Design</li>
-                <li><i class="fa-solid fa-check"></i> Advanced Rigging</li>
-                <li><i class="fa-solid fa-check"></i> Unlimited Expressions</li>
-            </ul>
-
-            <button>Get Started</button>
+            <p>
+                We work with creators from the United States, United Kingdom, Canada, and Australia, offering scalable VTuber solutions that match different creative goals and production requirements. From custom facial expressions and advanced physics systems to full-body rigging and streaming-ready optimization, our team ensures every VTuber avatar delivers a professional and immersive experience for modern content creation and online entertainment.
+            </p>
 
         </div>
 
     </div>
-
-</div>
 
 </section>
-
-<script>
-
-/* COUNTRY PRICING SYSTEM */
-const country = document.getElementById("pricing-country");
-const prices = document.querySelectorAll(".pricing-price");
-
-const data = {
-    us: [49, 149, 299],
-    eu: [45, 135, 275],
-    uk: [39, 120, 250],
-    ae: [180, 550, 1100]
-};
-
-country.addEventListener("change", function(){
-
-    let val = this.value;
-
-    prices.forEach((price, i) => {
-
-         if(val === "eu"){
-            price.innerText = "€ " + data[val][i];
-        }
-        else if(val === "uk"){
-            price.innerText = "£ " + data[val][i];
-        }
-        else if(val === "ae"){
-            price.innerText = "AED " + data[val][i];
-        }
-        else{
-            price.innerText = "$ " + data[val][i];
-        }
-
-    });
-
-});
-
-</script>
-
 
 
     <section class="portfolio">
@@ -636,39 +541,39 @@ country.addEventListener("change", function(){
         <!-- RIGHT SIDE -->
         <div class="pricing-country-right">
 
-            <div class="pricing-country-card">
-                <div class="pricing-country-top">
-                    <img src="https://flagcdn.com/w40/us.png" alt="US Flag">
-                    <h3>United States</h3>
-                </div>
-                <p>Premium VTuber models for Twitch, YouTube & professional creators with advanced rigging quality.</p>
-            </div>
-
-            <div class="pricing-country-card">
-                <div class="pricing-country-top">
-                    <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag">
-                    <h3>United Kingdom</h3>
-                </div>
-                <p>High-quality character design and expressive animation for growing digital creators and agencies.</p>
-            </div>
-
-            <div class="pricing-country-card">
-                <div class="pricing-country-top">
-                    <img src="https://flagcdn.com/w40/eu.png" alt="Europe Flag">
-                    <h3>Europe</h3>
-                </div>
-                <p>Multilingual-friendly VTuber solutions with scalable design for beginners and professionals.</p>
-            </div>
-
-            <div class="pricing-country-card">
-                <div class="pricing-country-top">
-                    <img src="https://flagcdn.com/w40/ae.png" alt="UAE Flag">
-                    <h3>UAE</h3>
-                </div>
-                <p>Luxury-style VTuber branding with premium animation and business-focused identity design.</p>
-            </div>
-
+    <div class="pricing-country-card">
+        <div class="pricing-country-top">
+            <img src="https://flagcdn.com/w40/us.png" alt="US Flag">
+            <h3>United States</h3>
         </div>
+        <p>Premium VTuber models for Twitch, YouTube & professional creators with advanced rigging quality.</p>
+    </div>
+
+    <div class="pricing-country-card">
+        <div class="pricing-country-top">
+            <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag">
+            <h3>United Kingdom</h3>
+        </div>
+        <p>High-quality character design and expressive animation for growing digital creators and agencies.</p>
+    </div>
+
+    <div class="pricing-country-card">
+        <div class="pricing-country-top">
+            <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag">
+            <h3>Canada</h3>
+        </div>
+        <p>Creative VTuber avatar solutions with smooth Live2D rigging and engaging streaming experiences.</p>
+    </div>
+
+    <div class="pricing-country-card">
+        <div class="pricing-country-top">
+            <img src="https://flagcdn.com/w40/au.png" alt="Australia Flag">
+            <h3>Australia</h3>
+        </div>
+        <p>Custom VTuber models tailored for content creators, gaming channels, and online entertainment brands.</p>
+    </div>
+
+</div>
 
     </div>
 
