@@ -4443,8 +4443,39 @@ section.faq-form .accordion .accordion-item .accordion-header button{
     font-size: large !important;
     cursor: pointer;
     letter-spacing: 0.3px;
+
+    position: relative;
+    overflow: hidden;
+}
+.pricing-page-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 20%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.1) 80%,
+        transparent 100%
+    );
+
+    transform: skewX(-20deg);
+    animation: pricing-page-btn-shine 2.2s infinite linear;
 }
 
+@keyframes pricing-page-btn-shine {
+    0% {
+        left: -70%;
+    }
+    100% {
+        left: 130%;
+    }
+}
         .pricing-page-card.visible {
             opacity: 1;
             transform: translateY(0);
