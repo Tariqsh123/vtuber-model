@@ -5144,3 +5144,13 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,span{
     font-size: 35px;
 }
 }
+.process-left-video-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.process-left-video-container video{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
