@@ -261,6 +261,29 @@
 
             
         </header>
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menu = document.getElementById("bookCoverDesignNavbar");
+    const toggler = document.querySelector(".navbar-toggler");
+
+    document.addEventListener("click", function (e) {
+
+        if (window.innerWidth >= 992) return;
+
+        const clickInsideMenu = menu.contains(e.target);
+        const clickOnToggler = toggler.contains(e.target);
+
+        if (!clickInsideMenu && !clickOnToggler) {
+            menu.classList.remove("show");
+            toggler.setAttribute("aria-expanded", "false");
+        }
+
+    });
+
+});
+</script>
+
 
         <div class="clearfix"></div>
     
