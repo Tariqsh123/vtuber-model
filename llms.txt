@@ -1,0 +1,17 @@
+# VTuber Model Commission — llms.txt
+# This file helps AI language models understand our site structure.
+
+## About
+VTuber Model Commission is a custom VTuber avatar studio specialising in
+Live2D and 3D model commissions for male, female, and non-binary streamers
+in the USA, UK, Canada, and Australia.
+
+## Key pages
+- Homepage: https://vtubermodelcommission.com/
+- Pricing: https://vtubermodelcommission.com/pricing.html
+- USA commissions: https://vtubermodelcommission.com/vtuber-usa.html
+- UK commissions: https://vtubermodelcommission.com/vtuber-uk.html
+- Canada commissions: https://vtubermodelcommission.com/vtuber-canada.html
+- Australia commissions: https://vtubermodelcommission.com/vtuber-australua.html
+- Portfolio & reviews: https://vtubermodelcommission.com/portfolio-and-reviews.html
+- Commission brief form: https://vtubermodelcommission.com/get-started.html
