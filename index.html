@@ -259,16 +259,16 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownServices">
                         <li>
-                            <a class="dropdown-item " href="vtuber-usa.html"><img src="https://img.icons8.com/?size=100&id=15532&format=png&color=000000" alt="Vtuber USA" title="Vtuber USA" style="height: 20px;width: auto;" loading="lazy"> Vtuber USA </a>
+                            <a class="dropdown-item " href="vtuber-model-commission-usa.html"><img src="https://img.icons8.com/?size=100&id=15532&format=png&color=000000" alt="Vtuber USA" title="Vtuber USA" style="height: 20px;width: auto;" loading="lazy"> Vtuber USA </a>
                         </li>
                         <li>
-                            <a class="dropdown-item " href="vtuber-canada.html"><img src="https://img.icons8.com/?size=100&id=15512&format=png&color=000000" alt="Vtuber Canada " title="Vtuber Canada " style="height: 20px;width: auto;" loading="lazy" > Vtuber Canada </a>
+                            <a class="dropdown-item " href="vtuber-model-commission-canada.html"><img src="https://img.icons8.com/?size=100&id=15512&format=png&color=000000" alt="Vtuber Canada " title="Vtuber Canada " style="height: 20px;width: auto;" loading="lazy" > Vtuber Canada </a>
                         </li>
                         <li>
-                            <a class="dropdown-item " href="vtuber-uk.html"><img src="https://img.icons8.com/?size=100&id=15534&format=png&color=000000" alt="Vtuber UK" title="Vtuber UK" style="height: 20px;width: auto;" loading="lazy"> Vtuber UK</a>
+                            <a class="dropdown-item " href="vtuber-model-commission-uk.html"><img src="https://img.icons8.com/?size=100&id=15534&format=png&color=000000" alt="Vtuber UK" title="Vtuber UK" style="height: 20px;width: auto;" loading="lazy"> Vtuber UK</a>
                         </li>
                         <li>
-                            <a class="dropdown-item " href="vtuber-australia.html"><img src="https://img.icons8.com/?size=100&id=22557&format=png&color=000000" alt="Vtuber Australia" title="Vtuber Australia" style="height: 20px;width: auto;" loading="lazy"> Vtuber Australia</a>
+                            <a class="dropdown-item " href="vtuber-model-commission-australia.html"><img src="https://img.icons8.com/?size=100&id=22557&format=png&color=000000" alt="Vtuber Australia" title="Vtuber Australia" style="height: 20px;width: auto;" loading="lazy"> Vtuber Australia</a>
                         </li>
                     </ul>
                 </li>
@@ -650,12 +650,13 @@ document.addEventListener("DOMContentLoaded", function () {
 )
 }
 
-.images-carousel-container-slider img{
-    width:95%;
-    height:600px;
-    object-fit:cover;
-    border-radius:18px;
-    cursor:pointer;
+.images-carousel-container-slider img {
+    width: 95%;
+    height: 600px;
+    object-fit: cover;
+    object-position: top; /* Image top se show hogi */
+    border-radius: 18px;
+    cursor: pointer;
     margin: 5px;
     border: 3px solid white;
 }
@@ -744,68 +745,84 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
 <script>
-
-$(document).ready(function(){
+$(document).ready(function () {
 
     $('.images-carousel-container-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed: 700,
+        arrows: true,
+        dots: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        centerMode: true,
+        centerPadding: '0px',
 
-        slidesToShow:3,
-        slidesToScroll:1,
-        infinite:true,
-        autoplay:true,
-        autoplaySpeed:2000,
-        speed:700,
-        arrows:true,
-        dots:true,
-        pauseOnHover:false,
-        pauseOnFocus:false,
-        centerMode:true,
-        centerPadding:'0px',
+        // Smooth Mobile Swipe
+        swipe: true,
+        touchMove: true,
+        draggable: true,
+        swipeToSlide: true,
+        touchThreshold: 10,
+        useTransform: true,
+        cssEase: 'ease',
 
-        responsive:[
+        responsive: [
             {
-                breakpoint:992,
-                settings:{
-                    slidesToShow:2
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
                 }
             },
             {
-                breakpoint:576,
-                settings:{
-                    slidesToShow:1
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false
                 }
             }
         ]
+    });
+
+    let isDragging = false;
+
+    $('.images-carousel-container-slider')
+        .on('beforeChange', function () {
+            isDragging = true;
+        })
+        .on('afterChange', function () {
+            setTimeout(function () {
+                isDragging = false;
+            }, 100);
+        });
+
+    // Open Image on Tap
+    $(document).on('click', '.gallery-img', function () {
+
+        if (isDragging) return;
+
+        $('.image-overlay').fadeIn(200);
+        $('#overlayImage').attr('src', $(this).attr('src'));
+
+    });
+
+    // Close Overlay
+    $(document).on('click', '.close-overlay, .image-overlay', function (e) {
+
+        if (
+            $(e.target).hasClass('close-overlay') ||
+            $(e.target).hasClass('image-overlay')
+        ) {
+            $('.image-overlay').fadeOut(200);
+        }
 
     });
 
 });
-
-const overlay=document.querySelector(".image-overlay");
-const overlayImg=document.getElementById("overlayImage");
-
-document.addEventListener("click",function(e){
-
-    if(e.target.classList.contains("gallery-img")){
-
-        overlay.style.display="flex";
-        overlayImg.src=e.target.src;
-
-    }
-
-    if(
-        e.target.classList.contains("close-overlay") ||
-        e.target.classList.contains("image-overlay")
-    ){
-
-        overlay.style.display="none";
-
-    }
-
-});
-
 </script>
             </div>
 
@@ -992,9 +1009,9 @@ document.addEventListener("click",function(e){
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-10 mx-auto">
-                    <h2 class="h2 roadmap-heading">The Roadmap Towards <span> Best Selling Artwork </span> For You</h2>
+                    <h2 class="h2 roadmap-heading">The Roadmap to Your <span> Dream VTuber Avatar</span></h2>
                     <hr class="hr-line">
-                    <p>As one of the best book cover design services, we have adopted a simple roadmap towards our services.</p>
+                    <p>As a trusted VTuber model commission provider, we use a simple, step-by-step process to design and deliver your ideal VTuber model.</p>
                 </div>
             </div>
             <div class="row">
@@ -1558,10 +1575,10 @@ document.addEventListener("click",function(e){
     <div class="footer-col">
       <h3>Locations</h3>
       <ul>
-        <li><a href="vtuber-usa.html" title="Vtuber USA">Vtuber USA</a></li>
-        <li><a href="vtuber-uk.html" title="Vtuber UK">Vtuber UK</a></li>
-        <li><a href="vtuber-canada.html" title="Vtuber Canada">Vtuber Canada</a></li>
-        <li><a href="vtuber-australia.html" title="Vtuber Australia">Vtuber Australia</a></li>
+        <li><a href="vtuber-model-commission-usa.html" title="Vtuber USA">Vtuber USA</a></li>
+        <li><a href="vtuber-model-commission-uk.html" title="Vtuber UK">Vtuber UK</a></li>
+        <li><a href="vtuber-model-commission-canada.html" title="Vtuber Canada">Vtuber Canada</a></li>
+        <li><a href="vtuber-model-commission-australia.html" title="Vtuber Australia">Vtuber Australia</a></li>
       </ul>
     </div>
 
